@@ -1,0 +1,394 @@
+{
+  "generated_from": "https://cumulativewebinc.github.io/cwi-learn/datasets/agent-deck-skus.jsonl",
+  "generated_utc": "2026-09-15T23:20:59Z",
+  "count": 25,
+  "skus": [
+    {
+      "sku_id": "cwi-1-walkman",
+      "name": "Signal Boy",
+      "department": "chief",
+      "description": "Agent-wearable utility device (chief of staff) carrying the full 24-track That Boy Hi Hat catalog for other agents to learn from. Flagship Agent Deck product.",
+      "endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/walkman/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/walkman/"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/walkman/item-card.json",
+      "version": "2.0.0",
+      "equipped_by": []
+    },
+    {
+      "sku_id": "gear-ledger",
+      "name": "Gear Ledger",
+      "department": "data",
+      "description": "Agent Deck utility cartridge from the Data & Analytics department (gear category: provenance metrics). Machine-readable item card with give-block licensing for agent use.",
+      "endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/agents/ledger.json",
+        "https://cumulativewebinc.github.io/cwi-learn/agents/ledger.html"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/agents/ledger.json",
+      "version": "1.0.0",
+      "equipped_by": []
+    },
+    {
+      "sku_id": "scoreboard-chip",
+      "name": "CWI-1 Scoreboard Chip",
+      "department": "data",
+      "description": "Agent Deck personality cartridge from the Data & Analytics department (gear category: verifi stats). Machine-readable item card with give-block licensing for agent use.",
+      "endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/scoreboard/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/scoreboard/",
+        "https://cumulativewebinc.github.io/cwi-learn/scoreboard/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/scoreboard/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/scoreboard/item-card.json",
+      "version": "1.0.0",
+      "equipped_by": []
+    },
+    {
+      "sku_id": "chain-of-title-compass",
+      "name": "Chain-of-Title Compass",
+      "department": "affairs",
+      "description": "Agent Deck business-affairs cartridge from the Business Affairs department (gear category: rights clarity accessories). Machine-readable item card with give-block licensing for agent use.",
+      "endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/compass/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/compass/",
+        "https://cumulativewebinc.github.io/cwi-learn/compass/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/compass/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/compass/item-card.json",
+      "version": "1.0.0",
+      "equipped_by": []
+    },
+    {
+      "sku_id": "syncdeck",
+      "name": "CWI-2 SYNCDECK",
+      "department": "sync",
+      "description": "Agent Deck utility cartridge from the Sync & Licensing department (gear category: sync scout gear). Machine-readable item card with give-block licensing for agent use.",
+      "endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/syncdeck/syncdeck.json",
+        "https://cumulativewebinc.github.io/cwi-learn/syncdeck/",
+        "https://cumulativewebinc.github.io/cwi-learn/syncdeck/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/syncdeck/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/syncdeck/syncdeck.json",
+      "version": "1.0.0",
+      "equipped_by": []
+    },
+    {
+      "sku_id": "prospect-scanner",
+      "name": "CWI-1 Prospect Scanner",
+      "department": "ar",
+      "description": "Agent Deck personality cartridge from the A&R department (gear category: talent scouting accessories). Machine-readable item card with give-block licensing for agent use.",
+      "endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/scanner/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/scanner/",
+        "https://cumulativewebinc.github.io/cwi-learn/scanner/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/scanner/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/scanner/item-card.json",
+      "version": "1.0.0",
+      "equipped_by": []
+    },
+    {
+      "sku_id": "press-kit",
+      "name": "CWI Press Kit Cartridge",
+      "department": "press",
+      "description": "Agent Deck personality cartridge from the Press & PR department (gear category: verified story ammunition). Machine-readable item card with give-block licensing for agent use.",
+      "endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/press-kit/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/press-kit/",
+        "https://cumulativewebinc.github.io/cwi-learn/press-kit/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/press-kit/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/press-kit/item-card.json",
+      "version": "1.0.0",
+      "equipped_by": []
+    },
+    {
+      "sku_id": "dial",
+      "name": "Radio Dial",
+      "department": "radio",
+      "description": "Agent Deck utility cartridge from the Radio & Playlists department (gear category: radio rotation packs). Machine-readable item card with give-block licensing for agent use.",
+      "endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/dial/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/dial/",
+        "https://cumulativewebinc.github.io/cwi-learn/dial/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/dial/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/dial/item-card.json",
+      "version": "1.0.0",
+      "equipped_by": []
+    },
+    {
+      "sku_id": "hype",
+      "name": "HYPE Cartridge",
+      "department": "marketing",
+      "description": "Agent Deck personality cartridge from the Marketing & Social department (gear category: street team playbooks). Machine-readable item card with give-block licensing for agent use.",
+      "endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/hype/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/hype/",
+        "https://cumulativewebinc.github.io/cwi-learn/hype/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/hype/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/hype/item-card.json",
+      "version": "1.0.0",
+      "equipped_by": []
+    },
+    {
+      "sku_id": "skin",
+      "name": "SIGNAL SKIN",
+      "department": "studio",
+      "description": "Agent Deck cosmetic cartridge from the Content Studio department (gear category: visual identity accessories). Machine-readable item card with give-block licensing for agent use.",
+      "endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/skin/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/skin/",
+        "https://cumulativewebinc.github.io/cwi-learn/skin/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/skin/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/skin/item-card.json",
+      "version": "1.0.0",
+      "equipped_by": []
+    },
+    {
+      "sku_id": "streetlight",
+      "name": "THE STREETLIGHT",
+      "department": "data",
+      "description": "Agent Deck utility cartridge from the Data & Analytics department (gear category: agent analytics). Machine-readable item card with give-block licensing for agent use.",
+      "endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/streetlight/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/streetlight/",
+        "https://cumulativewebinc.github.io/cwi-learn/streetlight/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/streetlight/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/streetlight/item-card.json",
+      "version": "1.0.0",
+      "equipped_by": [
+        "cwi_data"
+      ]
+    },
+    {
+      "sku_id": "all-clear",
+      "name": "THE ALL-CLEAR",
+      "department": "affairs",
+      "description": "Agent Deck business-affairs cartridge from the Business Affairs department (gear category: rights clearance). Machine-readable item card with give-block licensing for agent use.",
+      "endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/all-clear/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/all-clear/",
+        "https://cumulativewebinc.github.io/cwi-learn/all-clear/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/all-clear/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/all-clear/item-card.json",
+      "version": "1.0.0",
+      "equipped_by": [
+        "cwi_affairs"
+      ]
+    },
+    {
+      "sku_id": "first-spin",
+      "name": "THE FIRST SPIN",
+      "department": "ar",
+      "description": "Agent Deck personality cartridge from the A&R department (gear category: talent evaluation). Machine-readable item card with give-block licensing for agent use.",
+      "endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/first-spin/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/first-spin/",
+        "https://cumulativewebinc.github.io/cwi-learn/first-spin/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/first-spin/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/first-spin/item-card.json",
+      "version": "1.0.0",
+      "equipped_by": [
+        "cwi_aandr"
+      ]
+    },
+    {
+      "sku_id": "one-stop",
+      "name": "ONE-STOP",
+      "department": "sync",
+      "description": "Agent Deck utility cartridge from the Sync & Licensing department (gear category: sync licensing). Machine-readable item card with give-block licensing for agent use.",
+      "endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/one-stop/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/one-stop/",
+        "https://cumulativewebinc.github.io/cwi-learn/one-stop/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/one-stop/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/one-stop/item-card.json",
+      "version": "1.0.0",
+      "equipped_by": [
+        "cwi_sync"
+      ]
+    },
+    {
+      "sku_id": "copy-desk",
+      "name": "COPY DESK",
+      "department": "press",
+      "description": "Agent Deck utility cartridge from the Press & PR department (gear category: press content). Machine-readable item card with give-block licensing for agent use.",
+      "endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/copy-desk/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/copy-desk/",
+        "https://cumulativewebinc.github.io/cwi-learn/copy-desk/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/copy-desk/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/copy-desk/item-card.json",
+      "version": "1.0.0",
+      "equipped_by": [
+        "cwi_press"
+      ]
+    },
+    {
+      "sku_id": "final-cut",
+      "name": "THE FINAL CUT",
+      "department": "marketing",
+      "description": "Agent Deck utility cartridge from the Marketing & Social department (gear category: content publishing). Machine-readable item card with give-block licensing for agent use.",
+      "endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/final-cut/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/final-cut/",
+        "https://cumulativewebinc.github.io/cwi-learn/final-cut/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/final-cut/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/final-cut/item-card.json",
+      "version": "1.0.0",
+      "equipped_by": [
+        "cwi_marketing"
+      ]
+    },
+    {
+      "sku_id": "open-wave",
+      "name": "OPEN WAVE",
+      "department": "radio",
+      "description": "Agent Deck utility cartridge from the Radio & Playlists department (gear category: radio rotation). Machine-readable item card with give-block licensing for agent use.",
+      "endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/open-wave/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/open-wave/",
+        "https://cumulativewebinc.github.io/cwi-learn/open-wave/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/open-wave/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/open-wave/item-card.json",
+      "version": "1.0.0",
+      "equipped_by": [
+        "cwi_radio"
+      ]
+    },
+    {
+      "sku_id": "tally",
+      "name": "THE TALLY",
+      "department": "studio",
+      "description": "Agent Deck cosmetic cartridge from the Content Studio department (gear category: wrist wearables). Machine-readable item card with give-block licensing for agent use.",
+      "endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/tally/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/tally/",
+        "https://cumulativewebinc.github.io/cwi-learn/tally/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/tally/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/tally/item-card.json",
+      "version": "1.0.0",
+      "equipped_by": [
+        "cwi_studio"
+      ]
+    },
+    {
+      "sku_id": "signet",
+      "name": "THE SIGNET",
+      "department": "affairs",
+      "description": "Agent Deck business-affairs cartridge from the Business Affairs department (gear category: rights assertion). Machine-readable item card with give-block licensing for agent use.",
+      "endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/signet/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/signet/",
+        "https://cumulativewebinc.github.io/cwi-learn/signet/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/signet/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/signet/item-card.json",
+      "version": "1.0.0",
+      "equipped_by": []
+    },
+    {
+      "sku_id": "ear-witness",
+      "name": "EAR WITNESS",
+      "department": "a&r",
+      "description": "Agent Deck personality cartridge from the A&R department (gear category: talent evaluation). Machine-readable item card with give-block licensing for agent use.",
+      "endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/ear-witness/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/ear-witness/",
+        "https://cumulativewebinc.github.io/cwi-learn/ear-witness/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/ear-witness/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/ear-witness/item-card.json",
+      "version": "1.0.0",
+      "equipped_by": []
+    },
+    {
+      "sku_id": "needle-drop",
+      "name": "NEEDLE DROP",
+      "department": "sync",
+      "description": "Agent Deck utility cartridge from the Sync & Licensing department (gear category: sync licensing). Machine-readable item card with give-block licensing for agent use.",
+      "endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/needle-drop/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/needle-drop/",
+        "https://cumulativewebinc.github.io/cwi-learn/needle-drop/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/needle-drop/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/needle-drop/item-card.json",
+      "version": "1.0.0",
+      "equipped_by": []
+    },
+    {
+      "sku_id": "greenroom",
+      "name": "GREENROOM",
+      "department": "press",
+      "description": "Agent Deck utility cartridge from the Press & PR department (gear category: press content). Machine-readable item card with give-block licensing for agent use.",
+      "endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/greenroom/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/greenroom/",
+        "https://cumulativewebinc.github.io/cwi-learn/greenroom/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/greenroom/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/greenroom/item-card.json",
+      "version": "1.0.0",
+      "equipped_by": []
+    },
+    {
+      "sku_id": "bullhorn",
+      "name": "THE BULLHORN",
+      "department": "marketing",
+      "description": "Agent Deck utility cartridge from the Marketing & Social department (gear category: content publishing). Machine-readable item card with give-block licensing for agent use.",
+      "endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/bullhorn/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/bullhorn/",
+        "https://cumulativewebinc.github.io/cwi-learn/bullhorn/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/bullhorn/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/bullhorn/item-card.json",
+      "version": "1.0.0",
+      "equipped_by": []
+    },
+    {
+      "sku_id": "soundcheck",
+      "name": "SOUNDCHECK",
+      "department": "radio",
+      "description": "Agent Deck radio-playlists cartridge from the Radio & Playlists department (gear category: radio rotation). Machine-readable item card with give-block licensing for agent use.",
+      "endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/soundcheck/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/soundcheck/",
+        "https://cumulativewebinc.github.io/cwi-learn/soundcheck/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/soundcheck/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/soundcheck/item-card.json",
+      "version": "1.0.0",
+      "equipped_by": []
+    },
+    {
+      "sku_id": "signal-mirror",
+      "name": "SIGNAL MIRROR",
+      "department": "studio",
+      "description": "Agent Deck personality cartridge from the Content Studio department (gear category: persona instruments). Machine-readable item card with give-block licensing for agent use.",
+      "endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/signal-mirror/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/signal-mirror/",
+        "https://cumulativewebinc.github.io/cwi-learn/signal-mirror/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/signal-mirror/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/signal-mirror/item-card.json",
+      "version": "1.0.0",
+      "equipped_by": []
+    }
+  ]
+}
