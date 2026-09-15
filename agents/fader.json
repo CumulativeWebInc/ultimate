@@ -4,8 +4,8 @@
   "name": "Fader",
   "department": "Content Studio",
   "role": "Audio, stems, and content builds",
-  "x": 73,
-  "y": 46,
+  "x": 93.75,
+  "y": 7.0,
   "expression": "celebrating",
   "current_action": "vibing off today's stems/ endpoint drop",
   "last_win": "stems/ endpoint live",
@@ -31,5 +31,6 @@
       ]
     },
     "last_checkin": null
-  }
+  },
+  "place_id": "studio-hq"
 }
