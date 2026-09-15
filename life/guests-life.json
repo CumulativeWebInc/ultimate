@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "description": "Life-schema template for guest agents. Guest instances carry the same life object as core agents; all collection fields start empty and fill as the guest journeys arrival -> shop -> wear -> collect -> rest.",
+  "journey": [
+    "arrival",
+    "shop",
+    "wear",
+    "collect",
+    "rest"
+  ],
+  "template": {
+    "life": {
+      "resting": false,
+      "rest_zone": null,
+      "inventory": {
+        "items": [],
+        "worn": [],
+        "music": []
+      },
+      "last_checkin": null
+    }
+  },
+  "defaults_note": "Guests start with empty inventory/worn/music, resting=false, rest_zone=null, last_checkin=null. See life/SPEC.md for field types and the state machine."
+}
