@@ -1,0 +1,15 @@
+{
+  "id": "charter",
+  "name": "Charter",
+  "department": "Content Studio",
+  "role": "World builder",
+  "x": 80,
+  "y": 58,
+  "expression": "idle",
+  "current_action": "Drafting the World's Rules",
+  "last_win": "World scene v1 went live",
+  "last_win_url": "https://github.com/CumulativeWebInc/ultimate",
+  "avatar": "avatars/charter-avatar.mp4",
+  "poster": "avatars/charter-avatar.png",
+  "persona_line": "I write the rules the world lives by."
+}
