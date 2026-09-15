@@ -4,8 +4,8 @@
   "name": "Ledger",
   "department": "Data & Analytics",
   "role": "Numbers, datasets, and proof",
-  "x": 86,
-  "y": 68,
+  "x": 6.25,
+  "y": 7.0,
   "expression": "celebrating",
   "current_action": "running victory laps over stats/ and today's datasets",
   "last_win": "stats/ endpoint and datasets live",
@@ -31,5 +31,6 @@
       ]
     },
     "last_checkin": null
-  }
+  },
+  "place_id": "data-hq"
 }
