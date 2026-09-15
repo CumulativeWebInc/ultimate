@@ -1,4 +1,5 @@
 {
+  "schema_version": 1,
   "id": "ledger",
   "name": "Ledger",
   "department": "Data & Analytics",
@@ -11,5 +12,5 @@
   "last_win_url": "https://github.com/CumulativeWebInc/ultimate",
   "avatar": "avatars/ledger-avatar.mp4",
   "poster": "avatars/ledger-avatar.png",
-  "persona_line": "Every stream is a vote — I count them."
+  "persona_line": "Every stream is a vote \u2014 I count them."
 }
