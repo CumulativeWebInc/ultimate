@@ -1,0 +1,15 @@
+{
+  "id": "seal",
+  "name": "Seal",
+  "department": "Business Affairs",
+  "role": "Deal keeper",
+  "x": 52,
+  "y": 28,
+  "expression": "idle",
+  "current_action": "Reviewing contract templates",
+  "last_win": "World scene v1 went live",
+  "last_win_url": "https://github.com/CumulativeWebInc/ultimate",
+  "avatar": "avatars/seal-avatar.mp4",
+  "poster": "avatars/seal-avatar.png",
+  "persona_line": "Nothing ships without the seal."
+}
