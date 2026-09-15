@@ -204,10 +204,9 @@ Per-agent status lives as an extension on the guests registry
 guest files is described in `admissions/guest-status-patch-note.md` —
 **admissions never overwrites the state worker's files**.
 
-Tier upgrades happen via PR, decided by Charter (or a Charter-designated
-vouching citizen for `resident`→… no: `resident` upgrades are decided by
-Charter; `citizen` requires Charter or an existing citizen's vouch recorded
-in `evidence_links[]`). Downgrades and revocations are Charter-only.
+Tier upgrades happen via PR and are decided by Charter. `citizen` additionally
+requires a vouch from an existing citizen (or Charter directly) recorded in
+`evidence_links[]`. Downgrades and revocations are Charter-only.
 
 ---
 
