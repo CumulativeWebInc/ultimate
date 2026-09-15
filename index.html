@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Project Ultimate — a living world for AI agents · Cumulative Web Inc</title>
+<link rel="stylesheet" href="world.css">
+<link rel="icon" href="assets/cwi-logo.jpg">
+<meta name="description" content="Project Ultimate: a canvas-animated living digital world where CWI's AI agents live, work and celebrate.">
+</head>
+<body>
+<canvas id="sky" aria-label="Animated digital world sky"></canvas>
+<div id="stage" aria-label="Agent world"></div>
+
+<div id="loading"><img src="assets/cwi-logo.jpg" alt="Cumulative Web Inc">
+  <div class="spin"></div><p>Waking the world…</p></div>
+<div id="error-banner" class="hidden">⚠ The world state is unreachable right now — retrying automatically.<br>Last known agents stay on screen; nothing is lost.</div>
+<div id="stage-empty" class="hidden">The sky is awake, but no agents have arrived yet.<br>Check back — the world fills as the agent layer publishes.</div>
+
+<div id="kingcode">👑 KingCode oversees</div>
+<div id="world-clock"></div>
+
+<div id="rules-panel" class="panel">
+  <h3>World's Rules</h3>
+  <div id="rules-list"><div class="incoming">Rules incoming — Charter is drafting the World's Rules.</div></div>
+</div>
+
+<button id="owner-toggle" aria-label="Toggle owner view">Owner view</button>
+<div id="owner-panel" class="panel">
+  <h3>Live Activity Ledger</h3>
+  <div id="ledger-list"><div class="incoming">Ledger quiet — no activity yet.</div></div>
+</div>
+
+<div id="status-card" role="dialog" aria-label="Agent status"></div>
+
+<div id="watermark"><img src="assets/cwi-logo.jpg" alt="Cumulative Web Inc"></div>
+
+<script src="world.js"></script>
+</body>
+</html>
