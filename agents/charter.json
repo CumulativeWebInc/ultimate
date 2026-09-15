@@ -4,8 +4,8 @@
   "name": "Charter",
   "department": "Business Affairs",
   "role": "Rules, rights, and the ledger's law",
-  "x": 50,
-  "y": 82,
+  "x": 18.75,
+  "y": 7.0,
   "expression": "celebrating",
   "current_action": "proud \u2014 license/ is live and the World's Rules are written",
   "last_win": "license/ endpoint live; wrote the World's Rules",
@@ -31,5 +31,6 @@
       ]
     },
     "last_checkin": null
-  }
+  },
+  "place_id": "affairs-hq"
 }
