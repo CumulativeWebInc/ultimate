@@ -9,8 +9,9 @@
 const $ = (s) => document.querySelector(s);
 const CANVAS = $("#sky"), CTX = CANVAS.getContext("2d");
 const STAGE = $("#stage");
-const MAX_VIDEO_NODES = 24;
+const MAX_VIDEO_NODES = 24; // soft pool target: overflow creates nodes, never drops an agent
 const POLL_MS = 60_000;
+const MAX_FAILS_BEFORE_ERROR = 2;
 
 /* ---------------- quality tiers ---------------- */
 const quality = { tier: "high", particleCount: 140, parallax: true, fpsSamples: [] };
@@ -139,10 +140,14 @@ setInterval(tickClock, 1000); tickClock();
 const pool = [], agentNodes = new Map();
 function acquireVideo() {
   if (pool.length) return pool.pop();
-  if (STAGE.querySelectorAll("video").length >= MAX_VIDEO_NODES) return null;
+  const count = STAGE.querySelectorAll("video").length;
   const v = document.createElement("video");
   v.muted = true; v.loop = true; v.autoplay = true; v.playsInline = true; v.preload = "auto";
-  return v;
+  if (count >= MAX_VIDEO_NODES && !acquireVideo._warned) {
+    acquireVideo._warned = true;
+    console.info(`[ultimate] video pool overflow at ${count} nodes — creating overflow nodes; off-screen culling keeps playback bounded.`);
+  }
+  return v; // never null: no hardcoded cap on how many agents can exist
 }
 // off-screen culling: pause videos not in view
 const culler = new IntersectionObserver((es) => {
@@ -153,7 +158,7 @@ const EXPR = { celebrating: "expr-celebrating", working: "expr-working", alert: 
 function renderAgent(a) {
   let node = agentNodes.get(a.id);
   if (!node) {
-    const v = acquireVideo(); if (!v) return; // pool exhausted
+    const v = acquireVideo();
     node = document.createElement("div");
     node.className = "agent expr-idle";
     node.appendChild(v);
@@ -204,6 +209,11 @@ function renderGuests(list) {
   }
 }
 
+/* ---------------- loading / error / empty states ---------------- */
+let consecutiveFails = 0, worldEverLoaded = false;
+function setLoading(on) { $("#loading").classList.toggle("hidden", !on); }
+function setError(on) { $("#error-banner").classList.toggle("hidden", !on); }
+
 /* ---------------- state loading (scalability contract) ---------------- */
 let lastGeneratedAt = null;
 async function j(url) {
@@ -226,6 +236,7 @@ async function loadState(force) {
         const a = await optional(`agents/${id}.json`);
         if (a) renderAgent(a);
       }
+      $("#stage-empty").classList.toggle("hidden", agentNodes.size > 0);
       const gi = await optional(w.guests_index || "guests/index.json");
       renderGuests(gi && gi.guests);
       const rules = await optional(w.rules || "rules.json");
@@ -233,7 +244,14 @@ async function loadState(force) {
     }
     const ledger = await optional((w && w.activity_ledger) || "activity/ledger.json");
     if (ledger) renderLedger(ledger);
-  } catch (e) { console.warn("state load failed:", e); }
+    consecutiveFails = 0; setError(false);
+    if (!worldEverLoaded) { worldEverLoaded = true; setLoading(false); }
+  } catch (e) {
+    console.warn("state load failed:", e);
+    consecutiveFails++;
+    if (!worldEverLoaded && consecutiveFails >= MAX_FAILS_BEFORE_ERROR) { setLoading(false); setError(true); }
+    else if (worldEverLoaded && consecutiveFails >= MAX_FAILS_BEFORE_ERROR) setError(true);
+  }
 }
 
 function renderRules(rules) {
