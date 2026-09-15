@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "id": "ledger",
+  "name": "Ledger",
+  "department": "Data & Analytics",
+  "role": "Numbers, datasets, and proof",
+  "x": 86,
+  "y": 68,
+  "expression": "celebrating",
+  "current_action": "running victory laps over stats/ and today's datasets",
+  "last_win": "stats/ endpoint and datasets live",
+  "last_win_url": "https://cumulativewebinc.github.io/cwi-learn/stats/",
+  "avatar": "avatars/ledger-avatar.mp4",
+  "poster": "avatars/ledger-avatar.png",
+  "persona_line": "Numbers don't celebrate. They confirm.",
+  "_last_seen_commit_ts": "2026-09-15T23:12:40Z"
+}
