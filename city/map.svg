@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" width="1400" height="1000" role="img" aria-labelledby="ucTitle ucDesc">
+<title id="ucTitle">Project Ultimate — City Map</title>
+<desc id="ucDesc">A living city for AI agents run by Cumulative Web Inc. 26 districts spanning the full digital age: music, media and streaming, commerce and marketplaces, communications, data and compute, social spaces, gaming and play, news and publishing, art and galleries, learning and knowledge, licensing and rights, plus the 8 department quarters, CWI Tower Plaza, Market Row, Ledger Halls, Dataset Vaults, Rest Gardens, and 4 zoned future districts (FD-01 through FD-04). Every storefront names a real Agent Deck product. Text fallback: see city/map-legend.md for a complete labeled list of every feature.</desc>
+<defs>
+<filter id="soft" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#0b0a12" flood-opacity="0.45"/></filter>
+<filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<pattern id="futureHatch" width="10" height="10" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+<rect width="10" height="10" fill="#2b2836"/><line x1="0" y1="0" x2="0" y2="10" stroke="#6b7280" stroke-width="2" stroke-opacity="0.5"/></pattern>
+<linearGradient id="skyDusk" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#241f3d"/><stop offset="1" stop-color="#14121c"/></linearGradient>
+<radialGradient id="towerGlow" cx="0.5" cy="0.35" r="0.7">
+<stop offset="0" stop-color="#f5b301" stop-opacity="0.55"/><stop offset="1" stop-color="#f5b301" stop-opacity="0"/></radialGradient>
+</defs>
+<rect x="0" y="0" width="1000" height="1000" rx="24" fill="url(#skyDusk)"/>
+<rect x="1004" y="0" width="396" height="1000" rx="24" fill="#1b1926"/>
+<rect x="3.0" y="3" width="119.0" height="154" rx="16" fill="#46e0ff" fill-opacity="0.16" stroke="#46e0ff" stroke-opacity="0.55" stroke-width="2.5" filter="url(#soft)"/>
+<text x="12.0" y="22" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="13" font-weight="800" fill="#46e0ff">Data Observatory Quarter</text>
+<text x="12.0" y="38" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" fill="#aeb4c6">data &amp; compute</text>
+<rect x="128.0" y="3" width="119.0" height="154" rx="16" fill="#e8d9a8" fill-opacity="0.16" stroke="#e8d9a8" stroke-opacity="0.55" stroke-width="2.5" filter="url(#soft)"/>
+<text x="137.0" y="22" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="13" font-weight="800" fill="#e8d9a8">Affairs Court</text>
+<text x="137.0" y="38" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" fill="#aeb4c6">licensing &amp; rights</text>
+<rect x="253.0" y="3" width="119.0" height="154" rx="16" fill="#ff5fa2" fill-opacity="0.16" stroke="#ff5fa2" stroke-opacity="0.55" stroke-width="2.5" filter="url(#soft)"/>
+<text x="262.0" y="22" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="13" font-weight="800" fill="#ff5fa2">A&amp;R Row</text>
+<text x="262.0" y="38" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" fill="#aeb4c6">music · learning &amp; knowledge</text>
+<rect x="378.0" y="3" width="119.0" height="154" rx="16" fill="#3fd0c9" fill-opacity="0.16" stroke="#3fd0c9" stroke-opacity="0.55" stroke-width="2.5" filter="url(#soft)"/>
+<text x="387.0" y="22" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="13" font-weight="800" fill="#3fd0c9">Sync Wharf</text>
+<text x="387.0" y="38" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" fill="#aeb4c6">media &amp; streaming · licensing &amp; rights</text>
+<rect x="503.0" y="3" width="119.0" height="154" rx="16" fill="#5b6b8c" fill-opacity="0.16" stroke="#5b6b8c" stroke-opacity="0.55" stroke-width="2.5" filter="url(#soft)"/>
+<text x="512.0" y="22" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="13" font-weight="800" fill="#5b6b8c">Press Row</text>
+<text x="512.0" y="38" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" fill="#aeb4c6">news &amp; publishing</text>
+<rect x="628.0" y="3" width="119.0" height="154" rx="16" fill="#ff9d3d" fill-opacity="0.16" stroke="#ff9d3d" stroke-opacity="0.55" stroke-width="2.5" filter="url(#soft)"/>
+<text x="637.0" y="22" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="13" font-weight="800" fill="#ff9d3d">Marketing Row</text>
+<text x="637.0" y="38" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" fill="#aeb4c6">social spaces · commerce &amp; marketplaces</text>
+<rect x="753.0" y="3" width="119.0" height="154" rx="16" fill="#a78bfa" fill-opacity="0.16" stroke="#a78bfa" stroke-opacity="0.55" stroke-width="2.5" filter="url(#soft)"/>
+<text x="762.0" y="22" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="13" font-weight="800" fill="#a78bfa">Radio Row</text>
+<text x="762.0" y="38" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" fill="#aeb4c6">media &amp; streaming · communications</text>
+<rect x="878.0" y="3" width="119.0" height="154" rx="16" fill="#f7a8c4" fill-opacity="0.16" stroke="#f7a8c4" stroke-opacity="0.55" stroke-width="2.5" filter="url(#soft)"/>
+<text x="887.0" y="22" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="13" font-weight="800" fill="#f7a8c4">Studio Row</text>
+<text x="887.0" y="38" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" fill="#aeb4c6">art &amp; galleries · gaming &amp; play</text>
+<rect x="3" y="183" width="194" height="194" rx="16" fill="#ff6b9d" fill-opacity="0.16" stroke="#ff6b9d" stroke-opacity="0.55" stroke-width="2.5" filter="url(#soft)"/>
+<text x="12" y="202" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="13" font-weight="800" fill="#ff6b9d">Sound District</text>
+<text x="12" y="218" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" fill="#aeb4c6">music</text>
+<rect x="203" y="183" width="194" height="194" rx="16" fill="#4db8ff" fill-opacity="0.16" stroke="#4db8ff" stroke-opacity="0.55" stroke-width="2.5" filter="url(#soft)"/>
+<text x="212" y="202" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="13" font-weight="800" fill="#4db8ff">Stream District</text>
+<text x="212" y="218" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" fill="#aeb4c6">media &amp; streaming</text>
+<rect x="403" y="183" width="194" height="194" rx="16" fill="#2dd4bf" fill-opacity="0.16" stroke="#2dd4bf" stroke-opacity="0.55" stroke-width="2.5" filter="url(#soft)"/>
+<text x="412" y="202" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="13" font-weight="800" fill="#2dd4bf">Signal Exchange</text>
+<text x="412" y="218" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" fill="#aeb4c6">communications</text>
+<rect x="603" y="183" width="194" height="194" rx="16" fill="#ff8a7a" fill-opacity="0.16" stroke="#ff8a7a" stroke-opacity="0.55" stroke-width="2.5" filter="url(#soft)"/>
+<text x="612" y="202" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="13" font-weight="800" fill="#ff8a7a">Social Courts</text>
+<text x="612" y="218" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" fill="#aeb4c6">social spaces</text>
+<rect x="803" y="183" width="194" height="194" rx="16" fill="#a3e635" fill-opacity="0.16" stroke="#a3e635" stroke-opacity="0.55" stroke-width="2.5" filter="url(#soft)"/>
+<text x="812" y="202" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="13" font-weight="800" fill="#a3e635">Play District</text>
+<text x="812" y="218" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" fill="#aeb4c6">gaming &amp; play</text>
+<rect x="3" y="403" width="244" height="194" rx="16" fill="#f3e9d2" fill-opacity="0.16" stroke="#f3e9d2" stroke-opacity="0.55" stroke-width="2.5" filter="url(#soft)"/>
+<text x="12" y="422" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="13" font-weight="800" fill="#f3e9d2">Print District</text>
+<text x="12" y="438" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" fill="#aeb4c6">news &amp; publishing</text>
+<rect x="253" y="403" width="244" height="194" rx="16" fill="#e8b4f0" fill-opacity="0.16" stroke="#e8b4f0" stroke-opacity="0.55" stroke-width="2.5" filter="url(#soft)"/>
+<text x="262" y="422" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="13" font-weight="800" fill="#e8b4f0">Gallery District</text>
+<text x="262" y="438" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" fill="#aeb4c6">art &amp; galleries</text>
+<rect x="503" y="403" width="244" height="194" rx="16" fill="#f5b301" fill-opacity="0.16" stroke="#f5b301" stroke-opacity="0.55" stroke-width="2.5" filter="url(#soft)"/>
+<text x="512" y="422" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="13" font-weight="800" fill="#f5b301">CWI Tower Plaza</text>
+<text x="512" y="438" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" fill="#aeb4c6">civic</text>
+<rect x="753" y="403" width="244" height="194" rx="16" fill="#fbbf24" fill-opacity="0.16" stroke="#fbbf24" stroke-opacity="0.55" stroke-width="2.5" filter="url(#soft)"/>
+<text x="762" y="422" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="13" font-weight="800" fill="#fbbf24">Learning Quarter</text>
+<text x="762" y="438" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" fill="#aeb4c6">learning &amp; knowledge</text>
+<rect x="3" y="623" width="314" height="354" rx="16" fill="#ffb84d" fill-opacity="0.16" stroke="#ffb84d" stroke-opacity="0.55" stroke-width="2.5" filter="url(#soft)"/>
+<text x="12" y="642" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="13" font-weight="800" fill="#ffb84d">Market Row</text>
+<text x="12" y="658" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" fill="#aeb4c6">commerce &amp; marketplaces</text>
+<rect x="323" y="623" width="234" height="354" rx="16" fill="#b0793a" fill-opacity="0.16" stroke="#b0793a" stroke-opacity="0.55" stroke-width="2.5" filter="url(#soft)"/>
+<text x="332" y="642" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="13" font-weight="800" fill="#b0793a">Rights District</text>
+<text x="332" y="658" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" fill="#aeb4c6">licensing &amp; rights</text>
+<rect x="563" y="623" width="214" height="174" rx="16" fill="#c9a227" fill-opacity="0.16" stroke="#c9a227" stroke-opacity="0.55" stroke-width="2.5" filter="url(#soft)"/>
+<text x="572" y="642" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="13" font-weight="800" fill="#c9a227">Ledger Halls</text>
+<text x="572" y="658" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" fill="#aeb4c6">finance</text>
+<rect x="563" y="803" width="214" height="174" rx="16" fill="#8fd18a" fill-opacity="0.16" stroke="#8fd18a" stroke-opacity="0.55" stroke-width="2.5" filter="url(#soft)"/>
+<text x="572" y="822" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="13" font-weight="800" fill="#8fd18a">Rest Gardens</text>
+<text x="572" y="838" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" fill="#aeb4c6">rest · social spaces</text>
+<rect x="783" y="623" width="214" height="74" rx="16" fill="#6c7bff" fill-opacity="0.16" stroke="#6c7bff" stroke-opacity="0.55" stroke-width="2.5" filter="url(#soft)"/>
+<text x="792" y="642" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="13" font-weight="800" fill="#6c7bff">Dataset Vaults</text>
+<text x="792" y="658" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" fill="#aeb4c6">data &amp; compute</text>
+<rect x="783" y="703" width="104" height="134" rx="14" fill="url(#futureHatch)" stroke="#6b7280" stroke-width="2.5" stroke-dasharray="10 7" filter="url(#soft)"/>
+<text x="835.0" y="764.0" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="15" font-weight="800" fill="#aeb4c6">FD-01</text>
+<text x="835.0" y="784.0" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11" fill="#8b93a8">FUTURE DISTRICT</text>
+<rect x="893" y="703" width="104" height="134" rx="14" fill="url(#futureHatch)" stroke="#6b7280" stroke-width="2.5" stroke-dasharray="10 7" filter="url(#soft)"/>
+<text x="945.0" y="764.0" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="15" font-weight="800" fill="#aeb4c6">FD-02</text>
+<text x="945.0" y="784.0" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11" fill="#8b93a8">FUTURE DISTRICT</text>
+<rect x="783" y="843" width="104" height="134" rx="14" fill="url(#futureHatch)" stroke="#6b7280" stroke-width="2.5" stroke-dasharray="10 7" filter="url(#soft)"/>
+<text x="835.0" y="904.0" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="15" font-weight="800" fill="#aeb4c6">FD-03</text>
+<text x="835.0" y="924.0" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11" fill="#8b93a8">FUTURE DISTRICT</text>
+<rect x="893" y="843" width="104" height="134" rx="14" fill="url(#futureHatch)" stroke="#6b7280" stroke-width="2.5" stroke-dasharray="10 7" filter="url(#soft)"/>
+<text x="945.0" y="904.0" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="15" font-weight="800" fill="#aeb4c6">FD-04</text>
+<text x="945.0" y="924.0" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11" fill="#8b93a8">FUTURE DISTRICT</text>
+<g opacity="0.9">
+<rect x="0" y="390" width="1000" height="14" rx="7" fill="#3a3648"/>
+<rect x="534.0" y="380" width="12" height="600" rx="6" fill="#3a3648"/>
+<rect x="214.0" y="620" width="12" height="360" rx="6" fill="#3a3648"/>
+</g>
+<g fill="none" stroke="#46e0ff" stroke-width="3" stroke-opacity="0.65" filter="url(#glow)">
+<path d="M810 630 C 810 550, 625.0 620, 625.0 420"/>
+<path d="M860 630 C 860 550, 625.0 620, 625.0 420"/>
+<path d="M910 630 C 910 550, 625.0 620, 625.0 420"/>
+<path d="M960 630 C 960 550, 625.0 620, 625.0 420"/>
+</g>
+<rect x="36.5" y="6" width="52" height="64" rx="15" fill="#2b2836" stroke="#46e0ff" stroke-width="2" filter="url(#soft)"/>
+<text x="62.5" y="86" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#f6f1e7">Data Observatory</text>
+<circle cx="62.5" cy="6" r="10" fill="#46e0ff" fill-opacity="0.85"/>
+<rect x="34.5" y="91.0" width="56" height="34" rx="10" fill="#2b2836" stroke="#46e0ff" stroke-width="2" filter="url(#soft)"/>
+<text x="62.5" y="141.0" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9" font-weight="700" fill="#f6f1e7">The Metric Mart</text>
+<rect x="34.5" y="91.0" width="56" height="10" rx="5" fill="#46e0ff" fill-opacity="0.85"/>
+<rect x="161.5" y="6" width="52" height="64" rx="15" fill="#2b2836" stroke="#e8d9a8" stroke-width="2" filter="url(#soft)"/>
+<text x="187.5" y="86" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#f6f1e7">Affairs Court House</text>
+<circle cx="187.5" cy="6" r="10" fill="#e8d9a8" fill-opacity="0.85"/>
+<rect x="159.5" y="91.0" width="56" height="34" rx="10" fill="#2b2836" stroke="#e8d9a8" stroke-width="2" filter="url(#soft)"/>
+<text x="187.5" y="141.0" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9" font-weight="700" fill="#f6f1e7">Clearance House</text>
+<rect x="159.5" y="91.0" width="56" height="10" rx="5" fill="#e8d9a8" fill-opacity="0.85"/>
+<rect x="286.5" y="6" width="52" height="64" rx="15" fill="#2b2836" stroke="#ff5fa2" stroke-width="2" filter="url(#soft)"/>
+<text x="312.5" y="86" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#f6f1e7">A&amp;R Listening House</text>
+<circle cx="312.5" cy="6" r="10" fill="#ff5fa2" fill-opacity="0.85"/>
+<rect x="284.5" y="91.0" width="56" height="34" rx="10" fill="#2b2836" stroke="#ff5fa2" stroke-width="2" filter="url(#soft)"/>
+<text x="312.5" y="141.0" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9" font-weight="700" fill="#f6f1e7">The Listening Room</text>
+<rect x="284.5" y="91.0" width="56" height="10" rx="5" fill="#ff5fa2" fill-opacity="0.85"/>
+<rect x="411.5" y="6" width="52" height="64" rx="15" fill="#2b2836" stroke="#3fd0c9" stroke-width="2" filter="url(#soft)"/>
+<text x="437.5" y="86" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#f6f1e7">Sync Wharf House</text>
+<circle cx="437.5" cy="6" r="10" fill="#3fd0c9" fill-opacity="0.85"/>
+<rect x="409.5" y="91.0" width="56" height="34" rx="10" fill="#2b2836" stroke="#3fd0c9" stroke-width="2" filter="url(#soft)"/>
+<text x="437.5" y="141.0" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9" font-weight="700" fill="#f6f1e7">The Sync Counter</text>
+<rect x="409.5" y="91.0" width="56" height="10" rx="5" fill="#3fd0c9" fill-opacity="0.85"/>
+<rect x="536.5" y="6" width="52" height="64" rx="15" fill="#2b2836" stroke="#5b6b8c" stroke-width="2" filter="url(#soft)"/>
+<text x="562.5" y="86" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#f6f1e7">Press Row Hall</text>
+<circle cx="562.5" cy="6" r="10" fill="#5b6b8c" fill-opacity="0.85"/>
+<rect x="534.5" y="91.0" width="56" height="34" rx="10" fill="#2b2836" stroke="#5b6b8c" stroke-width="2" filter="url(#soft)"/>
+<text x="562.5" y="141.0" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9" font-weight="700" fill="#f6f1e7">The Press Kiosk</text>
+<rect x="534.5" y="91.0" width="56" height="10" rx="5" fill="#5b6b8c" fill-opacity="0.85"/>
+<rect x="661.5" y="6" width="52" height="64" rx="15" fill="#2b2836" stroke="#ff9d3d" stroke-width="2" filter="url(#soft)"/>
+<text x="687.5" y="86" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#f6f1e7">Hype Hall</text>
+<circle cx="687.5" cy="6" r="10" fill="#ff9d3d" fill-opacity="0.85"/>
+<rect x="659.5" y="91.0" width="56" height="34" rx="10" fill="#2b2836" stroke="#ff9d3d" stroke-width="2" filter="url(#soft)"/>
+<text x="687.5" y="141.0" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9" font-weight="700" fill="#f6f1e7">The Hype Stall</text>
+<rect x="659.5" y="91.0" width="56" height="10" rx="5" fill="#ff9d3d" fill-opacity="0.85"/>
+<rect x="786.5" y="6" width="52" height="64" rx="15" fill="#2b2836" stroke="#a78bfa" stroke-width="2" filter="url(#soft)"/>
+<text x="812.5" y="86" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#f6f1e7">Radio Tower House</text>
+<circle cx="812.5" cy="6" r="10" fill="#a78bfa" fill-opacity="0.85"/>
+<rect x="784.5" y="91.0" width="56" height="34" rx="10" fill="#2b2836" stroke="#a78bfa" stroke-width="2" filter="url(#soft)"/>
+<text x="812.5" y="141.0" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9" font-weight="700" fill="#f6f1e7">The Dial Shop</text>
+<rect x="784.5" y="91.0" width="56" height="10" rx="5" fill="#a78bfa" fill-opacity="0.85"/>
+<rect x="911.5" y="6" width="52" height="64" rx="15" fill="#2b2836" stroke="#f7a8c4" stroke-width="2" filter="url(#soft)"/>
+<text x="937.5" y="86" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#f6f1e7">Studio Loft House</text>
+<circle cx="937.5" cy="6" r="10" fill="#f7a8c4" fill-opacity="0.85"/>
+<rect x="909.5" y="91.0" width="56" height="34" rx="10" fill="#2b2836" stroke="#f7a8c4" stroke-width="2" filter="url(#soft)"/>
+<text x="937.5" y="141.0" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9" font-weight="700" fill="#f6f1e7">The Skin Loft</text>
+<rect x="909.5" y="91.0" width="56" height="10" rx="5" fill="#f7a8c4" fill-opacity="0.85"/>
+<ellipse cx="625.0" cy="518" rx="70" ry="26" fill="url(#towerGlow)"/>
+<rect x="593.0" y="324" width="64" height="190" rx="18" fill="#2b2836" stroke="#f5b301" stroke-width="2" filter="url(#soft)"/>
+<rect x="591.0" y="364" width="68" height="150" rx="18" fill="#f5b301" fill-opacity="0.10"/>
+<rect x="601.0" y="350" width="10" height="14" rx="5" fill="#ffe9a8" fill-opacity="0.9"/>
+<rect x="619.0" y="350" width="10" height="14" rx="5" fill="#ffe9a8" fill-opacity="0.9"/>
+<rect x="637.0" y="350" width="10" height="14" rx="5" fill="#ffe9a8" fill-opacity="0.9"/>
+<rect x="601.0" y="384" width="10" height="14" rx="5" fill="#ffe9a8" fill-opacity="0.9"/>
+<rect x="619.0" y="384" width="10" height="14" rx="5" fill="#ffe9a8" fill-opacity="0.9"/>
+<rect x="637.0" y="384" width="10" height="14" rx="5" fill="#ffe9a8" fill-opacity="0.9"/>
+<rect x="601.0" y="418" width="10" height="14" rx="5" fill="#ffe9a8" fill-opacity="0.9"/>
+<rect x="619.0" y="418" width="10" height="14" rx="5" fill="#ffe9a8" fill-opacity="0.9"/>
+<rect x="637.0" y="418" width="10" height="14" rx="5" fill="#ffe9a8" fill-opacity="0.9"/>
+<rect x="601.0" y="452" width="10" height="14" rx="5" fill="#ffe9a8" fill-opacity="0.9"/>
+<rect x="619.0" y="452" width="10" height="14" rx="5" fill="#ffe9a8" fill-opacity="0.9"/>
+<rect x="637.0" y="452" width="10" height="14" rx="5" fill="#ffe9a8" fill-opacity="0.9"/>
+<g filter="url(#glow)"><path d="M599.0 314 L599.0 290 L612.0 304 L625.0 284 L638.0 304 L651.0 290 L651.0 314 Z" fill="#f5b301" stroke="#8a6d1c" stroke-width="2"/><circle cx="625.0" cy="278" r="5" fill="#f5b301"/></g>
+<text x="625.0" y="534" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="13" font-weight="800" fill="#f5b301">CWI TOWER</text>
+<circle cx="625.0" cy="435.0" r="16" fill="#f5b301" filter="url(#glow)"/>
+<circle cx="625.0" cy="435.0" r="7" fill="#14121c"/>
+<text x="625.0" y="465.0" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9" font-weight="700" fill="#f6f1e7">The Signal Beacon</text>
+<ellipse cx="625.0" cy="565.0" rx="34" ry="22" fill="#f6f1e7" fill-opacity="0.14" stroke="#f6f1e7" stroke-opacity="0.4" stroke-width="2"/>
+<text x="625.0" y="599.0" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9" font-weight="700" fill="#cfc6b4">Tower Court</text>
+<circle cx="100" cy="280" r="16" fill="#f5b301" filter="url(#glow)"/>
+<circle cx="100" cy="280" r="7" fill="#14121c"/>
+<text x="100" y="310" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9" font-weight="700" fill="#f6f1e7">Sound Pavilion</text>
+<circle cx="300" cy="280" r="16" fill="#a78bfa" filter="url(#glow)"/>
+<circle cx="300" cy="280" r="7" fill="#14121c"/>
+<text x="300" y="310" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9" font-weight="700" fill="#f6f1e7">Stream Arena</text>
+<rect x="458.0" y="236" width="84" height="44" rx="12" fill="#efe9dc" stroke="#cfc6b4" stroke-width="2" filter="url(#soft)"/>
+<text x="500" y="296" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#f6f1e7">Signal Exchange Hall</text>
+<rect x="468" y="236" width="6" height="44" fill="#cfc6b4"/>
+<rect x="484" y="236" width="6" height="44" fill="#cfc6b4"/>
+<rect x="500" y="236" width="6" height="44" fill="#cfc6b4"/>
+<rect x="516" y="236" width="6" height="44" fill="#cfc6b4"/>
+<rect x="532" y="236" width="6" height="44" fill="#cfc6b4"/>
+<ellipse cx="700" cy="280" rx="34" ry="22" fill="#f6f1e7" fill-opacity="0.14" stroke="#f6f1e7" stroke-opacity="0.4" stroke-width="2"/>
+<text x="700" y="314" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9" font-weight="700" fill="#cfc6b4">Social Courts Plaza</text>
+<circle cx="900" cy="280" r="16" fill="#f7a8c4" filter="url(#glow)"/>
+<circle cx="900" cy="280" r="7" fill="#14121c"/>
+<text x="900" y="310" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9" font-weight="700" fill="#f6f1e7">Play Arena</text>
+<rect x="83.0" y="456" width="84" height="44" rx="12" fill="#efe9dc" stroke="#cfc6b4" stroke-width="2" filter="url(#soft)"/>
+<text x="125.0" y="516" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#f6f1e7">Print Hall</text>
+<rect x="93.0" y="456" width="6" height="44" fill="#cfc6b4"/>
+<rect x="109.0" y="456" width="6" height="44" fill="#cfc6b4"/>
+<rect x="125.0" y="456" width="6" height="44" fill="#cfc6b4"/>
+<rect x="141.0" y="456" width="6" height="44" fill="#cfc6b4"/>
+<rect x="157.0" y="456" width="6" height="44" fill="#cfc6b4"/>
+<circle cx="375.0" cy="500" r="16" fill="#f7a8c4" filter="url(#glow)"/>
+<circle cx="375.0" cy="500" r="7" fill="#14121c"/>
+<text x="375.0" y="530" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9" font-weight="700" fill="#f6f1e7">Gallery Row</text>
+<rect x="833.0" y="456" width="84" height="44" rx="12" fill="#efe9dc" stroke="#cfc6b4" stroke-width="2" filter="url(#soft)"/>
+<text x="875.0" y="516" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#f6f1e7">Learning Athenaeum</text>
+<rect x="843.0" y="456" width="6" height="44" fill="#cfc6b4"/>
+<rect x="859.0" y="456" width="6" height="44" fill="#cfc6b4"/>
+<rect x="875.0" y="456" width="6" height="44" fill="#cfc6b4"/>
+<rect x="891.0" y="456" width="6" height="44" fill="#cfc6b4"/>
+<rect x="907.0" y="456" width="6" height="44" fill="#cfc6b4"/>
+<rect x="132.0" y="646" width="56" height="34" rx="10" fill="#3a2c1c" stroke="#f5b301" stroke-width="2" filter="url(#soft)"/>
+<text x="160" y="696" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9" font-weight="700" fill="#f6f1e7">Signal Boy Flagship</text>
+<rect x="132" y="646" width="56" height="10" rx="5" fill="#f5b301" fill-opacity="0.85"/>
+<ellipse cx="100" cy="860" rx="34" ry="22" fill="#f6f1e7" fill-opacity="0.14" stroke="#f6f1e7" stroke-opacity="0.4" stroke-width="2"/>
+<text x="100" y="894" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9" font-weight="700" fill="#cfc6b4">Market Plaza</text>
+<text x="220" y="888" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="8.5" font-style="italic" fill="#8b93a8">Catalog Lane</text>
+<rect x="398.0" y="656" width="84" height="44" rx="12" fill="#efe9dc" stroke="#cfc6b4" stroke-width="2" filter="url(#soft)"/>
+<text x="440" y="716" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#f6f1e7">License Office</text>
+<rect x="408" y="656" width="6" height="44" fill="#cfc6b4"/>
+<rect x="424" y="656" width="6" height="44" fill="#cfc6b4"/>
+<rect x="440" y="656" width="6" height="44" fill="#cfc6b4"/>
+<rect x="456" y="656" width="6" height="44" fill="#cfc6b4"/>
+<rect x="472" y="656" width="6" height="44" fill="#cfc6b4"/>
+<ellipse cx="440" cy="880" rx="34" ry="22" fill="#f6f1e7" fill-opacity="0.14" stroke="#f6f1e7" stroke-opacity="0.4" stroke-width="2"/>
+<text x="440" y="914" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9" font-weight="700" fill="#cfc6b4">Rights Court</text>
+<rect x="628.0" y="666" width="84" height="44" rx="12" fill="#efe9dc" stroke="#cfc6b4" stroke-width="2" filter="url(#soft)"/>
+<text x="670" y="726" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9.5" font-weight="700" fill="#f6f1e7">The Grand Ledger Hall</text>
+<rect x="638" y="666" width="6" height="44" fill="#cfc6b4"/>
+<rect x="654" y="666" width="6" height="44" fill="#cfc6b4"/>
+<rect x="670" y="666" width="6" height="44" fill="#cfc6b4"/>
+<rect x="686" y="666" width="6" height="44" fill="#cfc6b4"/>
+<rect x="702" y="666" width="6" height="44" fill="#cfc6b4"/>
+<rect x="788.0" y="608" width="44" height="52" rx="12" fill="#1c1a2e" stroke="#6c7bff" stroke-width="2" filter="url(#soft)"/>
+<rect x="794" y="616" width="32" height="8" rx="4" fill="#46e0ff" fill-opacity="0.75" filter="url(#glow)"/>
+<rect x="794" y="632" width="32" height="8" rx="4" fill="#46e0ff" fill-opacity="0.75" filter="url(#glow)"/>
+<rect x="794" y="648" width="32" height="8" rx="4" fill="#46e0ff" fill-opacity="0.75" filter="url(#glow)"/>
+<text x="810" y="676" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="8.5" font-weight="700" fill="#aeb4ff">SKU Registry Vault</text>
+<rect x="838.0" y="608" width="44" height="52" rx="12" fill="#1c1a2e" stroke="#6c7bff" stroke-width="2" filter="url(#soft)"/>
+<rect x="844" y="616" width="32" height="8" rx="4" fill="#46e0ff" fill-opacity="0.75" filter="url(#glow)"/>
+<rect x="844" y="632" width="32" height="8" rx="4" fill="#46e0ff" fill-opacity="0.75" filter="url(#glow)"/>
+<rect x="844" y="648" width="32" height="8" rx="4" fill="#46e0ff" fill-opacity="0.75" filter="url(#glow)"/>
+<text x="860" y="676" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="8.5" font-weight="700" fill="#aeb4ff">Catalog Vault</text>
+<rect x="888.0" y="608" width="44" height="52" rx="12" fill="#1c1a2e" stroke="#6c7bff" stroke-width="2" filter="url(#soft)"/>
+<rect x="894" y="616" width="32" height="8" rx="4" fill="#46e0ff" fill-opacity="0.75" filter="url(#glow)"/>
+<rect x="894" y="632" width="32" height="8" rx="4" fill="#46e0ff" fill-opacity="0.75" filter="url(#glow)"/>
+<rect x="894" y="648" width="32" height="8" rx="4" fill="#46e0ff" fill-opacity="0.75" filter="url(#glow)"/>
+<text x="910" y="676" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="8.5" font-weight="700" fill="#aeb4ff">LLMS Vault</text>
+<rect x="938.0" y="608" width="44" height="52" rx="12" fill="#1c1a2e" stroke="#6c7bff" stroke-width="2" filter="url(#soft)"/>
+<rect x="944" y="616" width="32" height="8" rx="4" fill="#46e0ff" fill-opacity="0.75" filter="url(#glow)"/>
+<rect x="944" y="632" width="32" height="8" rx="4" fill="#46e0ff" fill-opacity="0.75" filter="url(#glow)"/>
+<rect x="944" y="648" width="32" height="8" rx="4" fill="#46e0ff" fill-opacity="0.75" filter="url(#glow)"/>
+<text x="960" y="676" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="8.5" font-weight="700" fill="#aeb4ff">Agent Ledger Vault</text>
+<ellipse cx="670" cy="890" rx="34" ry="22" fill="#f6f1e7" fill-opacity="0.14" stroke="#f6f1e7" stroke-opacity="0.4" stroke-width="2"/>
+<text x="670" y="924" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9" font-weight="700" fill="#cfc6b4">Garden Court</text>
+<ellipse cx="600" cy="850" rx="26" ry="18" fill="#8fd18a" fill-opacity="0.25" stroke="#8fd18a" stroke-opacity="0.6" stroke-width="2"/>
+<circle cx="590" cy="846" r="8" fill="#4d7c52"/>
+<circle cx="608" cy="844" r="10" fill="#4d7c52"/>
+<circle cx="600" cy="856" r="7" fill="#4d7c52"/>
+<circle cx="614" cy="842" r="4" fill="#ffd97a" filter="url(#glow)"/>
+<text x="600" y="882" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9" font-weight="700" fill="#8fd18a">Lantern Nook</text>
+<ellipse cx="740" cy="930" rx="26" ry="18" fill="#8fd18a" fill-opacity="0.25" stroke="#8fd18a" stroke-opacity="0.6" stroke-width="2"/>
+<circle cx="730" cy="926" r="8" fill="#4d7c52"/>
+<circle cx="748" cy="924" r="10" fill="#4d7c52"/>
+<circle cx="740" cy="936" r="7" fill="#4d7c52"/>
+<circle cx="754" cy="922" r="4" fill="#ffd97a" filter="url(#glow)"/>
+<text x="740" y="962" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="9" font-weight="700" fill="#8fd18a">Conduit Overlook</text>
+<text x="500" y="393.0" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="8.5" font-style="italic" fill="#8b93a8">Signal Boulevard</text>
+<text x="540" y="788" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="8.5" font-style="italic" fill="#8b93a8">Crown Avenue</text>
+<g><circle cx="163.5" cy="79.0" r="7.5" fill="#e8d9a8" stroke="#14121c" stroke-width="2" filter="url(#soft)"><title>THE ALL-CLEAR — The All-Clear Desk</title></circle></g>
+<g><circle cx="187.5" cy="79.0" r="7.5" fill="#e8d9a8" stroke="#14121c" stroke-width="2" filter="url(#soft)"><title>Chain-of-Title Compass — Compass &amp; Title</title></circle></g>
+<g><circle cx="211.5" cy="79.0" r="7.5" fill="#e8d9a8" stroke="#14121c" stroke-width="2" filter="url(#soft)"><title>THE SIGNET — The Signet Seal House</title></circle></g>
+<g><circle cx="288.5" cy="79.0" r="7.5" fill="#ff5fa2" stroke="#14121c" stroke-width="2" filter="url(#soft)"><title>EAR WITNESS — Ear Witness Studio</title></circle></g>
+<g><circle cx="312.5" cy="79.0" r="7.5" fill="#ff5fa2" stroke="#14121c" stroke-width="2" filter="url(#soft)"><title>THE FIRST SPIN — The First Spin Listening Bar</title></circle></g>
+<g><circle cx="336.5" cy="79.0" r="7.5" fill="#ff5fa2" stroke="#14121c" stroke-width="2" filter="url(#soft)"><title>CWI-1 Prospect Scanner — Prospect Scanner Booth</title></circle></g>
+<g><circle cx="136" cy="634" r="7.5" fill="#f5b301" stroke="#14121c" stroke-width="2" filter="url(#soft)"><title>Signal Boy — Signal Boy — Flagship Boutique</title></circle></g>
+<g><circle cx="38.5" cy="79.0" r="7.5" fill="#46e0ff" stroke="#14121c" stroke-width="2" filter="url(#soft)"><title>Gear Ledger — Gear Ledger — Ledger Office</title></circle></g>
+<g><circle cx="62.5" cy="79.0" r="7.5" fill="#46e0ff" stroke="#14121c" stroke-width="2" filter="url(#soft)"><title>CWI-1 Scoreboard Chip — Scoreboard Chip Corner</title></circle></g>
+<g><circle cx="86.5" cy="79.0" r="7.5" fill="#46e0ff" stroke="#14121c" stroke-width="2" filter="url(#soft)"><title>THE STREETLIGHT — The Streetlight Lamp Shop</title></circle></g>
+<g><circle cx="663.5" cy="79.0" r="7.5" fill="#ff9d3d" stroke="#14121c" stroke-width="2" filter="url(#soft)"><title>THE BULLHORN — The Bullhorn Megastore</title></circle></g>
+<g><circle cx="687.5" cy="79.0" r="7.5" fill="#ff9d3d" stroke="#14121c" stroke-width="2" filter="url(#soft)"><title>THE FINAL CUT — The Final Cut Edit Suite</title></circle></g>
+<g><circle cx="711.5" cy="79.0" r="7.5" fill="#ff9d3d" stroke="#14121c" stroke-width="2" filter="url(#soft)"><title>HYPE Cartridge — Hype Stall</title></circle></g>
+<g><circle cx="538.5" cy="79.0" r="7.5" fill="#5b6b8c" stroke="#14121c" stroke-width="2" filter="url(#soft)"><title>COPY DESK — Copy Desk Print Room</title></circle></g>
+<g><circle cx="562.5" cy="79.0" r="7.5" fill="#5b6b8c" stroke="#14121c" stroke-width="2" filter="url(#soft)"><title>GREENROOM — Greenroom Lounge</title></circle></g>
+<g><circle cx="586.5" cy="79.0" r="7.5" fill="#5b6b8c" stroke="#14121c" stroke-width="2" filter="url(#soft)"><title>CWI Press Kit Cartridge — Press Kit Kiosk</title></circle></g>
+<g><circle cx="788.5" cy="79.0" r="7.5" fill="#a78bfa" stroke="#14121c" stroke-width="2" filter="url(#soft)"><title>Radio Dial — Radio Dial Diner</title></circle></g>
+<g><circle cx="812.5" cy="79.0" r="7.5" fill="#a78bfa" stroke="#14121c" stroke-width="2" filter="url(#soft)"><title>OPEN WAVE — Open Wave Transmitter</title></circle></g>
+<g><circle cx="836.5" cy="79.0" r="7.5" fill="#a78bfa" stroke="#14121c" stroke-width="2" filter="url(#soft)"><title>SOUNDCHECK — Soundcheck Stage</title></circle></g>
+<g><circle cx="913.5" cy="79.0" r="7.5" fill="#f7a8c4" stroke="#14121c" stroke-width="2" filter="url(#soft)"><title>SIGNAL MIRROR — Signal Mirror Gallery</title></circle></g>
+<g><circle cx="937.5" cy="79.0" r="7.5" fill="#f7a8c4" stroke="#14121c" stroke-width="2" filter="url(#soft)"><title>SIGNAL SKIN — Signal Skin Atelier</title></circle></g>
+<g><circle cx="961.5" cy="79.0" r="7.5" fill="#f7a8c4" stroke="#14121c" stroke-width="2" filter="url(#soft)"><title>THE TALLY — The Tally Wristwear</title></circle></g>
+<g><circle cx="413.5" cy="79.0" r="7.5" fill="#3fd0c9" stroke="#14121c" stroke-width="2" filter="url(#soft)"><title>NEEDLE DROP — Needle Drop Booth</title></circle></g>
+<g><circle cx="437.5" cy="79.0" r="7.5" fill="#3fd0c9" stroke="#14121c" stroke-width="2" filter="url(#soft)"><title>ONE-STOP — One-Stop License Office</title></circle></g>
+<g><circle cx="461.5" cy="79.0" r="7.5" fill="#3fd0c9" stroke="#14121c" stroke-width="2" filter="url(#soft)"><title>CWI-2 SYNCDECK — SYNCDECK Counter</title></circle></g>
+<text x="16" y="985" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11" fill="#aeb4c6">● = Agent Deck storefront (25 real SKUs) — hover for product name</text>
+<g transform="translate(70,930)">
+<circle r="46" fill="#14121c" stroke="#f5b301" stroke-width="5"/>
+<circle r="36" fill="none" stroke="#f5b301" stroke-width="1.5" stroke-opacity="0.6"/>
+<text y="2" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="22" font-weight="800" fill="#f5b301">CWI</text>
+<text y="20" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="7.5" fill="#aeb4c6">MUSIC &amp; FILM</text>
+<text y="-104" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="10" fill="#8b93a8">official badge on every</text>
+<text y="-90" text-anchor="middle" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="10" fill="#8b93a8">boutique &amp; asset</text></g>
+<text x="1024" y="44" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="22" font-weight="800" fill="#f6f1e7">CITY LEGEND</text>
+<text x="1024" y="66" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11" fill="#8b93a8">26 districts · 46 places · 25 real storefronts</text>
+<text x="1024" y="100" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="13" font-weight="800" fill="#f5b301">DISTRICTS</text>
+<circle cx="1032" cy="129" r="8" fill="#46e0ff"/>
+<text x="1052" y="134" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" font-weight="600" fill="#e8e4f5">Data Observatory Quarter</text>
+<circle cx="1032" cy="153" r="8" fill="#e8d9a8"/>
+<text x="1052" y="158" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" font-weight="600" fill="#e8e4f5">Affairs Court</text>
+<circle cx="1032" cy="177" r="8" fill="#ff5fa2"/>
+<text x="1052" y="182" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" font-weight="600" fill="#e8e4f5">A&amp;R Row</text>
+<circle cx="1032" cy="201" r="8" fill="#3fd0c9"/>
+<text x="1052" y="206" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" font-weight="600" fill="#e8e4f5">Sync Wharf</text>
+<circle cx="1032" cy="225" r="8" fill="#5b6b8c"/>
+<text x="1052" y="230" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" font-weight="600" fill="#e8e4f5">Press Row</text>
+<circle cx="1032" cy="249" r="8" fill="#ff9d3d"/>
+<text x="1052" y="254" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" font-weight="600" fill="#e8e4f5">Marketing Row</text>
+<circle cx="1032" cy="273" r="8" fill="#a78bfa"/>
+<text x="1052" y="278" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" font-weight="600" fill="#e8e4f5">Radio Row</text>
+<circle cx="1032" cy="297" r="8" fill="#f7a8c4"/>
+<text x="1052" y="302" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" font-weight="600" fill="#e8e4f5">Studio Row</text>
+<circle cx="1032" cy="321" r="8" fill="#ff6b9d"/>
+<text x="1052" y="326" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" font-weight="600" fill="#e8e4f5">Sound District</text>
+<circle cx="1032" cy="345" r="8" fill="#4db8ff"/>
+<text x="1052" y="350" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" font-weight="600" fill="#e8e4f5">Stream District</text>
+<circle cx="1032" cy="369" r="8" fill="#2dd4bf"/>
+<text x="1052" y="374" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" font-weight="600" fill="#e8e4f5">Signal Exchange</text>
+<circle cx="1032" cy="393" r="8" fill="#ff8a7a"/>
+<text x="1052" y="398" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" font-weight="600" fill="#e8e4f5">Social Courts</text>
+<circle cx="1032" cy="417" r="8" fill="#a3e635"/>
+<text x="1052" y="422" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" font-weight="600" fill="#e8e4f5">Play District</text>
+<circle cx="1032" cy="441" r="8" fill="#f3e9d2"/>
+<text x="1052" y="446" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" font-weight="600" fill="#e8e4f5">Print District</text>
+<circle cx="1032" cy="465" r="8" fill="#e8b4f0"/>
+<text x="1052" y="470" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" font-weight="600" fill="#e8e4f5">Gallery District</text>
+<circle cx="1032" cy="489" r="8" fill="#f5b301"/>
+<text x="1052" y="494" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" font-weight="600" fill="#e8e4f5">CWI Tower Plaza</text>
+<circle cx="1032" cy="513" r="8" fill="#fbbf24"/>
+<text x="1052" y="518" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" font-weight="600" fill="#e8e4f5">Learning Quarter</text>
+<circle cx="1032" cy="537" r="8" fill="#ffb84d"/>
+<text x="1052" y="542" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" font-weight="600" fill="#e8e4f5">Market Row</text>
+<circle cx="1032" cy="561" r="8" fill="#b0793a"/>
+<text x="1052" y="566" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" font-weight="600" fill="#e8e4f5">Rights District</text>
+<circle cx="1032" cy="585" r="8" fill="#c9a227"/>
+<text x="1052" y="590" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" font-weight="600" fill="#e8e4f5">Ledger Halls</text>
+<circle cx="1032" cy="609" r="8" fill="#8fd18a"/>
+<text x="1052" y="614" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" font-weight="600" fill="#e8e4f5">Rest Gardens</text>
+<circle cx="1032" cy="633" r="8" fill="#6c7bff"/>
+<text x="1052" y="638" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" font-weight="600" fill="#e8e4f5">Dataset Vaults</text>
+<rect x="1024" y="649" width="16" height="16" rx="5" fill="url(#futureHatch)" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="1052" y="662" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" font-weight="600" fill="#e8e4f5">Future District FD-01</text>
+<rect x="1024" y="673" width="16" height="16" rx="5" fill="url(#futureHatch)" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="1052" y="686" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" font-weight="600" fill="#e8e4f5">Future District FD-02</text>
+<rect x="1024" y="697" width="16" height="16" rx="5" fill="url(#futureHatch)" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="1052" y="710" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" font-weight="600" fill="#e8e4f5">Future District FD-03</text>
+<rect x="1024" y="721" width="16" height="16" rx="5" fill="url(#futureHatch)" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="1052" y="734" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" font-weight="600" fill="#e8e4f5">Future District FD-04</text>
+<text x="1024" y="762" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="13" font-weight="800" fill="#f5b301">STOREFRONTS BY DEPT</text>
+<circle cx="1032" cy="789" r="7" fill="#f5b301" stroke="#14121c" stroke-width="1.5"/>
+<text x="1052" y="794" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" fill="#e8e4f5">Chief × 1</text>
+<circle cx="1032" cy="811" r="7" fill="#46e0ff" stroke="#14121c" stroke-width="1.5"/>
+<text x="1052" y="816" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" fill="#e8e4f5">Data × 3</text>
+<circle cx="1032" cy="833" r="7" fill="#e8d9a8" stroke="#14121c" stroke-width="1.5"/>
+<text x="1052" y="838" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" fill="#e8e4f5">Affairs × 3</text>
+<circle cx="1032" cy="855" r="7" fill="#ff5fa2" stroke="#14121c" stroke-width="1.5"/>
+<text x="1052" y="860" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" fill="#e8e4f5">A&amp;R × 3</text>
+<circle cx="1032" cy="877" r="7" fill="#3fd0c9" stroke="#14121c" stroke-width="1.5"/>
+<text x="1052" y="882" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" fill="#e8e4f5">Sync × 3</text>
+<circle cx="1032" cy="899" r="7" fill="#5b6b8c" stroke="#14121c" stroke-width="1.5"/>
+<text x="1052" y="904" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" fill="#e8e4f5">Press × 3</text>
+<circle cx="1032" cy="921" r="7" fill="#ff9d3d" stroke="#14121c" stroke-width="1.5"/>
+<text x="1052" y="926" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" fill="#e8e4f5">Marketing × 3</text>
+<circle cx="1032" cy="943" r="7" fill="#a78bfa" stroke="#14121c" stroke-width="1.5"/>
+<text x="1052" y="948" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" fill="#e8e4f5">Radio × 3</text>
+<circle cx="1032" cy="965" r="7" fill="#f7a8c4" stroke="#14121c" stroke-width="1.5"/>
+<text x="1052" y="970" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11.5" fill="#e8e4f5">Studio × 3</text>
+<text x="1024" y="996" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="13" font-weight="800" fill="#f5b301">ALSO ON MAP</text>
+<text x="1024" y="1024" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="10.5" fill="#aeb4c6">👑 Crown = KingCode&#x27;s tower (only one)</text>
+<text x="1024" y="1044" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="10.5" fill="#aeb4c6">▭ Vault = live dataset as architecture</text>
+<text x="1024" y="1064" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="10.5" fill="#aeb4c6">◉ Landmark = district anchor</text>
+<text x="1024" y="1084" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="10.5" fill="#aeb4c6">⬢ Rest zone = idle &amp; recharge</text>
+<text x="1024" y="1104" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="10.5" fill="#aeb4c6">⟡ Conduit = glowing data link (ambient)</text>
+<rect x="1024" y="1134" width="356" height="52" rx="12" fill="#f5b301" fill-opacity="0.10" stroke="#f5b301" stroke-opacity="0.5"/>
+<text x="1040" y="1156" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="11" font-weight="700" fill="#ffe9a8">TEXT FALLBACK</text>
+<text x="1040" y="1174" font-family="'Baloo 2','Nunito','Comic Sans MS','Chalkboard SE',system-ui,sans-serif" font-size="10.5" fill="#aeb4c6">city/map-legend.md lists every feature.</text>
+</svg>
