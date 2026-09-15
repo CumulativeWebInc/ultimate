@@ -4,8 +4,8 @@
   "name": "Marquee",
   "department": "Marketing & Social",
   "role": "Amplification and campaign lead",
-  "x": 23,
-  "y": 44,
+  "x": 68.75,
+  "y": 7.0,
   "expression": "celebrating",
   "current_action": "still glowing from today's presskit/ launch",
   "last_win": "presskit/ endpoint live",
@@ -31,5 +31,6 @@
       ]
     },
     "last_checkin": null
-  }
+  },
+  "place_id": "marketing-hq"
 }
