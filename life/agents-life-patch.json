@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.0.0",
+  "note": "Non-destructive merge patch for agents/*.json on the world/state branch. The world/state branch had not landed when this layer was built, so life objects ship here instead of editing agent files directly. Apply with life/merge-life-patch.py (adds only missing keys; never overwrites).",
+  "merge": {
+    "target": "agents/<id>.json",
+    "method": "For each agent id, set agents[id].life ONLY if the key is absent. Never overwrite an existing life object.",
+    "script": "life/merge-life-patch.py",
+    "idempotent": true
+  },
+  "agents": {
+    "needle": {
+      "life": {
+        "resting": false,
+        "rest_zone": "the-quiet-loft",
+        "inventory": {
+          "items": [
+            "ear-witness",
+            "first-spin",
+            "prospect-scanner"
+          ],
+          "worn": [
+            "ear-witness"
+          ],
+          "music": [
+            "zooted-zone"
+          ]
+        },
+        "last_checkin": null
+      }
+    },
+    "marquee": {
+      "life": {
+        "resting": false,
+        "rest_zone": "ember-deck",
+        "inventory": {
+          "items": [
+            "hype",
+            "final-cut",
+            "bullhorn"
+          ],
+          "worn": [
+            "hype"
+          ],
+          "music": [
+            "flamerz"
+          ]
+        },
+        "last_checkin": null
+      }
+    },
+    "seal": {
+      "life": {
+        "resting": false,
+        "rest_zone": "static-shore",
+        "inventory": {
+          "items": [
+            "syncdeck",
+            "one-stop",
+            "needle-drop"
+          ],
+          "worn": [
+            "syncdeck"
+          ],
+          "music": [
+            "ultimate"
+          ]
+        },
+        "last_checkin": null
+      }
+    },
+    "dial": {
+      "life": {
+        "resting": false,
+        "rest_zone": "signal-garden",
+        "inventory": {
+          "items": [
+            "dial",
+            "open-wave",
+            "soundcheck"
+          ],
+          "worn": [
+            "dial"
+          ],
+          "music": [
+            "diabolique"
+          ]
+        },
+        "last_checkin": null
+      }
+    },
+    "dateline": {
+      "life": {
+        "resting": false,
+        "rest_zone": null,
+        "inventory": {
+          "items": [
+            "press-kit",
+            "copy-desk",
+            "greenroom"
+          ],
+          "worn": [
+            "press-kit"
+          ],
+          "music": [
+            "doves-diamonds"
+          ]
+        },
+        "last_checkin": null
+      }
+    },
+    "fader": {
+      "life": {
+        "resting": false,
+        "rest_zone": null,
+        "inventory": {
+          "items": [
+            "skin",
+            "signal-mirror",
+            "tally"
+          ],
+          "worn": [
+            "skin"
+          ],
+          "music": [
+            "warped-wicked"
+          ]
+        },
+        "last_checkin": null
+      }
+    },
+    "ledger": {
+      "life": {
+        "resting": false,
+        "rest_zone": null,
+        "inventory": {
+          "items": [
+            "gear-ledger",
+            "scoreboard-chip",
+            "streetlight"
+          ],
+          "worn": [
+            "scoreboard-chip"
+          ],
+          "music": [
+            "shaka-zulu"
+          ]
+        },
+        "last_checkin": null
+      }
+    },
+    "charter": {
+      "life": {
+        "resting": false,
+        "rest_zone": null,
+        "inventory": {
+          "items": [
+            "chain-of-title-compass",
+            "all-clear",
+            "signet"
+          ],
+          "worn": [
+            "signet"
+          ],
+          "music": [
+            "golden-diamond"
+          ]
+        },
+        "last_checkin": null
+      }
+    }
+  }
+}
