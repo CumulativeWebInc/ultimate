@@ -13,5 +13,23 @@
   "avatar": "avatars/fader-avatar.mp4",
   "poster": "avatars/fader-avatar.png",
   "persona_line": "Every stem tells on the mix.",
-  "_last_seen_commit_ts": "2026-09-15T23:12:36Z"
+  "_last_seen_commit_ts": "2026-09-15T23:12:36Z",
+  "life": {
+    "resting": false,
+    "rest_zone": null,
+    "inventory": {
+      "items": [
+        "skin",
+        "signal-mirror",
+        "tally"
+      ],
+      "worn": [
+        "skin"
+      ],
+      "music": [
+        "warped-wicked"
+      ]
+    },
+    "last_checkin": null
+  }
 }
