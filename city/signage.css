@@ -1,0 +1,118 @@
+/* Project Ultimate — signage.css v1.0.0
+ * Styles for the city fabric rendered by city-render.js and the ambient layer.
+ * Tokens mirror city/tokens.json. KingCode's rounded toy-like language:
+ * big radii, chunky shapes, soft offset shadows, glowing signage.
+ */
+
+.uc-city {
+  position: relative;
+  width: 100%; height: 100%;
+  min-height: 480px;
+  background: #14121c;
+  border-radius: 24px;
+  overflow: hidden;
+  font-family: "Baloo 2","Nunito","Comic Sans MS","Chalkboard SE",system-ui,sans-serif;
+}
+.uc-sky { position: absolute; inset: 0; transition: background 1.2s ease; }
+.uc-layer { position: absolute; inset: 0; pointer-events: none; }
+
+/* ---------- districts ---------- */
+.uc-district {
+  position: absolute;
+  border: 2px solid var(--uc-accent, #8b93a8);
+  border-color: color-mix(in srgb, var(--uc-accent, #8b93a8) 55%, transparent);
+  background: color-mix(in srgb, var(--uc-accent, #8b93a8) 16%, transparent);
+  border-radius: 18px;
+  box-shadow: 0 6px 0 rgba(20,18,28,.25);
+  padding: 8px 10px;
+  overflow: hidden;
+}
+.uc-district__label { font-weight: 800; font-size: 13px; color: var(--uc-accent, #aeb4c6); line-height: 1.1; }
+.uc-district__sys { font-size: 10px; color: #aeb4c6; margin-top: 2px; }
+.uc-district--future {
+  border: 2.5px dashed #6b7280;
+  background: repeating-linear-gradient(45deg, rgba(107,114,128,.12) 0 10px, transparent 10px 20px);
+  box-shadow: none;
+}
+.uc-district--future .uc-district__label { color: #aeb4c6; }
+.uc-district__future { font-size: 10px; font-weight: 700; color: #8b93a8; margin-top: 4px; letter-spacing: .06em; }
+
+/* ---------- places ---------- */
+.uc-place {
+  position: absolute; transform: translate(-50%,-50%);
+  display: flex; align-items: center; gap: 6px;
+  pointer-events: auto;
+}
+.uc-place__glyph {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 30px; height: 30px; border-radius: 999px;
+  background: #2b2836; color: #f6f1e7; font-size: 15px;
+  box-shadow: 0 4px 0 rgba(20,18,28,.25);
+}
+.uc-place__name {
+  font-size: 10.5px; font-weight: 700; color: #f6f1e7;
+  background: rgba(20,18,28,.72); padding: 3px 9px; border-radius: 999px;
+  white-space: nowrap;
+}
+.uc-place--crown .uc-place__glyph { background: #f5b301; color: #14121c; box-shadow: 0 0 14px rgba(245,179,1,.8); }
+.uc-place--rest .uc-place__glyph { background: #4d7c52; }
+.uc-place--vault .uc-place__glyph { background: #1c1a2e; color: #46e0ff; border: 1.5px solid #6c7bff; }
+.uc-place--future .uc-place__glyph { background: transparent; border: 2px dashed #6b7280; color: #8b93a8; }
+.uc-windows-lit .uc-place__glyph { box-shadow: 0 0 12px rgba(255,233,168,.9); }
+
+/* ---------- storefronts & lit signage ---------- */
+.uc-store { position: absolute; transform: translate(-50%,-50%); pointer-events: auto; }
+.uc-sign {
+  display: inline-block;
+  font-size: 13px; font-weight: 800; letter-spacing: .04em;
+  color: #ffe9a8;
+  background: #14121c;
+  border: 1.5px solid rgba(255,233,168,.85);
+  border-radius: 10px; padding: 4px 12px;
+  text-shadow: 0 0 8px rgba(255,233,168,.9);
+  box-shadow: 0 0 calc(18px * var(--uc-glow, .25)) rgba(255,233,168,.55), 0 4px 0 rgba(20,18,28,.3);
+  white-space: nowrap;
+}
+.uc-city[data-time-of-day="day"] .uc-sign { box-shadow: 0 4px 0 rgba(20,18,28,.3); }
+
+/* ---------- ambient layer (badged, decorative) ---------- */
+.uc-ambient-badge {
+  position: absolute; right: 12px; bottom: 12px; z-index: 50;
+  font-size: 10px; font-weight: 800; letter-spacing: .08em;
+  color: #14121c; background: #ffd97a;
+  border-radius: 999px; padding: 5px 12px;
+  box-shadow: 0 3px 0 rgba(20,18,28,.25);
+}
+.uc-ambient-layer { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.uc-mote {
+  position: absolute; width: 5px; height: 5px; border-radius: 999px;
+  background: #8fd6ff; opacity: .55;
+  animation: uc-drift 12s ease-in-out infinite alternate;
+}
+@keyframes uc-drift {
+  from { transform: translate(0,0); opacity: .15; }
+  to { transform: translate(24px,-30px); opacity: .6; }
+}
+.uc-traffic-dot {
+  position: absolute; width: 7px; height: 7px; border-radius: 999px;
+  background: #ffe9a8; opacity: .8; filter: blur(.4px);
+  left: var(--ax); top: var(--ay);
+  animation: uc-traffic 20s linear infinite;
+}
+@keyframes uc-traffic {
+  from { left: var(--ax); top: var(--ay); opacity: 0; }
+  10% { opacity: .85; } 90% { opacity: .85; }
+  to { left: var(--bx); top: var(--by); opacity: 0; }
+}
+
+/* ---------- empty/degraded shell ---------- */
+.uc-city__empty {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 8px; color: #f6f1e7;
+}
+.uc-city__empty-title { font-size: 24px; font-weight: 800; color: #f5b301; }
+.uc-city__empty-msg { font-size: 13px; color: #aeb4c6; }
+
+@media (prefers-reduced-motion: reduce) {
+  .uc-mote, .uc-traffic-dot { animation: none; }
+}

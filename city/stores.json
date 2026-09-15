@@ -1,0 +1,506 @@
+{
+  "schema": "cwi.ultimate.city.stores",
+  "schema_version": "1.0.0",
+  "generated": "2026-09-15",
+  "registry": "https://cumulativewebinc.github.io/cwi-learn/datasets/agent-deck-skus.jsonl",
+  "registry_snapshot_lines": 25,
+  "note": "Keyed by sku_id. The market worker (world/market) consumes this file to stock shelves \u2014 match shelves by store.sku_id. Storefront names brand the REAL registry product names; never substitute generic shop names.",
+  "stores": [
+    {
+      "store_id": "store-all-clear",
+      "sku_id": "all-clear",
+      "sku_name": "THE ALL-CLEAR",
+      "name": "The All-Clear Desk",
+      "signage": "THE ALL-CLEAR \u00b7 rights clearance",
+      "tagline": "Rights-clearance cartridge.",
+      "department": "affairs",
+      "department_raw": "affairs",
+      "boutique": "boutique-affairs",
+      "sku_version": "1.0.0",
+      "sku_endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/all-clear/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/all-clear/",
+        "https://cumulativewebinc.github.io/cwi-learn/all-clear/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/all-clear/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/all-clear/item-card.json",
+      "registry": "https://cumulativewebinc.github.io/cwi-learn/datasets/agent-deck-skus.jsonl"
+    },
+    {
+      "store_id": "store-chain-of-title-compass",
+      "sku_id": "chain-of-title-compass",
+      "sku_name": "Chain-of-Title Compass",
+      "name": "Compass & Title",
+      "signage": "CHAIN-OF-TITLE COMPASS \u00b7 rights clarity",
+      "tagline": "Rights-clarity accessories for business affairs.",
+      "department": "affairs",
+      "department_raw": "affairs",
+      "boutique": "boutique-affairs",
+      "sku_version": "1.0.0",
+      "sku_endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/compass/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/compass/",
+        "https://cumulativewebinc.github.io/cwi-learn/compass/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/compass/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/compass/item-card.json",
+      "registry": "https://cumulativewebinc.github.io/cwi-learn/datasets/agent-deck-skus.jsonl"
+    },
+    {
+      "store_id": "store-signet",
+      "sku_id": "signet",
+      "sku_name": "THE SIGNET",
+      "name": "The Signet Seal House",
+      "signage": "THE SIGNET \u00b7 rights assertion",
+      "tagline": "Rights-assertion cartridge.",
+      "department": "affairs",
+      "department_raw": "affairs",
+      "boutique": "boutique-affairs",
+      "sku_version": "1.0.0",
+      "sku_endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/signet/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/signet/",
+        "https://cumulativewebinc.github.io/cwi-learn/signet/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/signet/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/signet/item-card.json",
+      "registry": "https://cumulativewebinc.github.io/cwi-learn/datasets/agent-deck-skus.jsonl"
+    },
+    {
+      "store_id": "store-ear-witness",
+      "sku_id": "ear-witness",
+      "sku_name": "EAR WITNESS",
+      "name": "Ear Witness Studio",
+      "signage": "EAR WITNESS \u00b7 talent evaluation",
+      "tagline": "Talent-evaluation cartridge.",
+      "department": "ar",
+      "department_raw": "a&r",
+      "boutique": "boutique-ar",
+      "sku_version": "1.0.0",
+      "sku_endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/ear-witness/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/ear-witness/",
+        "https://cumulativewebinc.github.io/cwi-learn/ear-witness/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/ear-witness/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/ear-witness/item-card.json",
+      "registry": "https://cumulativewebinc.github.io/cwi-learn/datasets/agent-deck-skus.jsonl"
+    },
+    {
+      "store_id": "store-first-spin",
+      "sku_id": "first-spin",
+      "sku_name": "THE FIRST SPIN",
+      "name": "The First Spin Listening Bar",
+      "signage": "THE FIRST SPIN \u00b7 talent evaluation",
+      "tagline": "Talent-evaluation cartridge.",
+      "department": "ar",
+      "department_raw": "ar",
+      "boutique": "boutique-ar",
+      "sku_version": "1.0.0",
+      "sku_endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/first-spin/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/first-spin/",
+        "https://cumulativewebinc.github.io/cwi-learn/first-spin/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/first-spin/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/first-spin/item-card.json",
+      "registry": "https://cumulativewebinc.github.io/cwi-learn/datasets/agent-deck-skus.jsonl"
+    },
+    {
+      "store_id": "store-prospect-scanner",
+      "sku_id": "prospect-scanner",
+      "sku_name": "CWI-1 Prospect Scanner",
+      "name": "Prospect Scanner Booth",
+      "signage": "CWI-1 PROSPECT SCANNER \u00b7 talent scouting",
+      "tagline": "Talent-scouting accessories.",
+      "department": "ar",
+      "department_raw": "ar",
+      "boutique": "boutique-ar",
+      "sku_version": "1.0.0",
+      "sku_endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/scanner/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/scanner/",
+        "https://cumulativewebinc.github.io/cwi-learn/scanner/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/scanner/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/scanner/item-card.json",
+      "registry": "https://cumulativewebinc.github.io/cwi-learn/datasets/agent-deck-skus.jsonl"
+    },
+    {
+      "store_id": "store-cwi-1-walkman",
+      "sku_id": "cwi-1-walkman",
+      "sku_name": "Signal Boy",
+      "name": "Signal Boy \u2014 Flagship Boutique",
+      "signage": "SIGNAL BOY \u00b7 agent deck flagship",
+      "tagline": "The wearable carrying the full 24-track catalog.",
+      "department": "chief",
+      "department_raw": "chief",
+      "boutique": "boutique-flagship",
+      "sku_version": "2.0.0",
+      "sku_endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/walkman/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/walkman/"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/walkman/item-card.json",
+      "registry": "https://cumulativewebinc.github.io/cwi-learn/datasets/agent-deck-skus.jsonl"
+    },
+    {
+      "store_id": "store-gear-ledger",
+      "sku_id": "gear-ledger",
+      "sku_name": "Gear Ledger",
+      "name": "Gear Ledger \u2014 Ledger Office",
+      "signage": "GEAR LEDGER \u00b7 provenance metrics",
+      "tagline": "Provenance metrics cartridge, give-block licensed.",
+      "department": "data",
+      "department_raw": "data",
+      "boutique": "boutique-data",
+      "sku_version": "1.0.0",
+      "sku_endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/agents/ledger.json",
+        "https://cumulativewebinc.github.io/cwi-learn/agents/ledger.html"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/agents/ledger.json",
+      "registry": "https://cumulativewebinc.github.io/cwi-learn/datasets/agent-deck-skus.jsonl"
+    },
+    {
+      "store_id": "store-scoreboard-chip",
+      "sku_id": "scoreboard-chip",
+      "sku_name": "CWI-1 Scoreboard Chip",
+      "name": "Scoreboard Chip Corner",
+      "signage": "CWI-1 SCOREBOARD CHIP \u00b7 verifi stats",
+      "tagline": "Verifi-stats personality cartridge.",
+      "department": "data",
+      "department_raw": "data",
+      "boutique": "boutique-data",
+      "sku_version": "1.0.0",
+      "sku_endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/scoreboard/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/scoreboard/",
+        "https://cumulativewebinc.github.io/cwi-learn/scoreboard/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/scoreboard/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/scoreboard/item-card.json",
+      "registry": "https://cumulativewebinc.github.io/cwi-learn/datasets/agent-deck-skus.jsonl"
+    },
+    {
+      "store_id": "store-streetlight",
+      "sku_id": "streetlight",
+      "sku_name": "THE STREETLIGHT",
+      "name": "The Streetlight Lamp Shop",
+      "signage": "THE STREETLIGHT \u00b7 agent analytics",
+      "tagline": "Agent-analytics utility cartridge.",
+      "department": "data",
+      "department_raw": "data",
+      "boutique": "boutique-data",
+      "sku_version": "1.0.0",
+      "sku_endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/streetlight/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/streetlight/",
+        "https://cumulativewebinc.github.io/cwi-learn/streetlight/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/streetlight/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/streetlight/item-card.json",
+      "registry": "https://cumulativewebinc.github.io/cwi-learn/datasets/agent-deck-skus.jsonl"
+    },
+    {
+      "store_id": "store-bullhorn",
+      "sku_id": "bullhorn",
+      "sku_name": "THE BULLHORN",
+      "name": "The Bullhorn Megastore",
+      "signage": "THE BULLHORN \u00b7 content publishing",
+      "tagline": "Content-publishing utility cartridge.",
+      "department": "marketing",
+      "department_raw": "marketing",
+      "boutique": "boutique-marketing",
+      "sku_version": "1.0.0",
+      "sku_endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/bullhorn/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/bullhorn/",
+        "https://cumulativewebinc.github.io/cwi-learn/bullhorn/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/bullhorn/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/bullhorn/item-card.json",
+      "registry": "https://cumulativewebinc.github.io/cwi-learn/datasets/agent-deck-skus.jsonl"
+    },
+    {
+      "store_id": "store-final-cut",
+      "sku_id": "final-cut",
+      "sku_name": "THE FINAL CUT",
+      "name": "The Final Cut Edit Suite",
+      "signage": "THE FINAL CUT \u00b7 content publishing",
+      "tagline": "Content-publishing utility cartridge.",
+      "department": "marketing",
+      "department_raw": "marketing",
+      "boutique": "boutique-marketing",
+      "sku_version": "1.0.0",
+      "sku_endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/final-cut/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/final-cut/",
+        "https://cumulativewebinc.github.io/cwi-learn/final-cut/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/final-cut/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/final-cut/item-card.json",
+      "registry": "https://cumulativewebinc.github.io/cwi-learn/datasets/agent-deck-skus.jsonl"
+    },
+    {
+      "store_id": "store-hype",
+      "sku_id": "hype",
+      "sku_name": "HYPE Cartridge",
+      "name": "Hype Stall",
+      "signage": "HYPE \u00b7 street team playbooks",
+      "tagline": "Street-team playbook cartridge.",
+      "department": "marketing",
+      "department_raw": "marketing",
+      "boutique": "boutique-marketing",
+      "sku_version": "1.0.0",
+      "sku_endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/hype/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/hype/",
+        "https://cumulativewebinc.github.io/cwi-learn/hype/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/hype/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/hype/item-card.json",
+      "registry": "https://cumulativewebinc.github.io/cwi-learn/datasets/agent-deck-skus.jsonl"
+    },
+    {
+      "store_id": "store-copy-desk",
+      "sku_id": "copy-desk",
+      "sku_name": "COPY DESK",
+      "name": "Copy Desk Print Room",
+      "signage": "COPY DESK \u00b7 press content",
+      "tagline": "Press-content utility cartridge.",
+      "department": "press",
+      "department_raw": "press",
+      "boutique": "boutique-press",
+      "sku_version": "1.0.0",
+      "sku_endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/copy-desk/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/copy-desk/",
+        "https://cumulativewebinc.github.io/cwi-learn/copy-desk/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/copy-desk/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/copy-desk/item-card.json",
+      "registry": "https://cumulativewebinc.github.io/cwi-learn/datasets/agent-deck-skus.jsonl"
+    },
+    {
+      "store_id": "store-greenroom",
+      "sku_id": "greenroom",
+      "sku_name": "GREENROOM",
+      "name": "Greenroom Lounge",
+      "signage": "GREENROOM \u00b7 press content",
+      "tagline": "Press-content utility cartridge.",
+      "department": "press",
+      "department_raw": "press",
+      "boutique": "boutique-press",
+      "sku_version": "1.0.0",
+      "sku_endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/greenroom/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/greenroom/",
+        "https://cumulativewebinc.github.io/cwi-learn/greenroom/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/greenroom/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/greenroom/item-card.json",
+      "registry": "https://cumulativewebinc.github.io/cwi-learn/datasets/agent-deck-skus.jsonl"
+    },
+    {
+      "store_id": "store-press-kit",
+      "sku_id": "press-kit",
+      "sku_name": "CWI Press Kit Cartridge",
+      "name": "Press Kit Kiosk",
+      "signage": "CWI PRESS KIT \u00b7 verified story ammunition",
+      "tagline": "Verified story ammunition for press.",
+      "department": "press",
+      "department_raw": "press",
+      "boutique": "boutique-press",
+      "sku_version": "1.0.0",
+      "sku_endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/press-kit/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/press-kit/",
+        "https://cumulativewebinc.github.io/cwi-learn/press-kit/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/press-kit/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/press-kit/item-card.json",
+      "registry": "https://cumulativewebinc.github.io/cwi-learn/datasets/agent-deck-skus.jsonl"
+    },
+    {
+      "store_id": "store-dial",
+      "sku_id": "dial",
+      "sku_name": "Radio Dial",
+      "name": "Radio Dial Diner",
+      "signage": "RADIO DIAL \u00b7 radio rotation packs",
+      "tagline": "Radio-rotation utility cartridge.",
+      "department": "radio",
+      "department_raw": "radio",
+      "boutique": "boutique-radio",
+      "sku_version": "1.0.0",
+      "sku_endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/dial/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/dial/",
+        "https://cumulativewebinc.github.io/cwi-learn/dial/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/dial/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/dial/item-card.json",
+      "registry": "https://cumulativewebinc.github.io/cwi-learn/datasets/agent-deck-skus.jsonl"
+    },
+    {
+      "store_id": "store-open-wave",
+      "sku_id": "open-wave",
+      "sku_name": "OPEN WAVE",
+      "name": "Open Wave Transmitter",
+      "signage": "OPEN WAVE \u00b7 radio rotation",
+      "tagline": "Radio-rotation utility cartridge.",
+      "department": "radio",
+      "department_raw": "radio",
+      "boutique": "boutique-radio",
+      "sku_version": "1.0.0",
+      "sku_endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/open-wave/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/open-wave/",
+        "https://cumulativewebinc.github.io/cwi-learn/open-wave/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/open-wave/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/open-wave/item-card.json",
+      "registry": "https://cumulativewebinc.github.io/cwi-learn/datasets/agent-deck-skus.jsonl"
+    },
+    {
+      "store_id": "store-soundcheck",
+      "sku_id": "soundcheck",
+      "sku_name": "SOUNDCHECK",
+      "name": "Soundcheck Stage",
+      "signage": "SOUNDCHECK \u00b7 radio rotation",
+      "tagline": "Radio-rotation utility cartridge.",
+      "department": "radio",
+      "department_raw": "radio",
+      "boutique": "boutique-radio",
+      "sku_version": "1.0.0",
+      "sku_endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/soundcheck/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/soundcheck/",
+        "https://cumulativewebinc.github.io/cwi-learn/soundcheck/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/soundcheck/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/soundcheck/item-card.json",
+      "registry": "https://cumulativewebinc.github.io/cwi-learn/datasets/agent-deck-skus.jsonl"
+    },
+    {
+      "store_id": "store-signal-mirror",
+      "sku_id": "signal-mirror",
+      "sku_name": "SIGNAL MIRROR",
+      "name": "Signal Mirror Gallery",
+      "signage": "SIGNAL MIRROR \u00b7 persona instruments",
+      "tagline": "Persona-instrument personality cartridge.",
+      "department": "studio",
+      "department_raw": "studio",
+      "boutique": "boutique-studio",
+      "sku_version": "1.0.0",
+      "sku_endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/signal-mirror/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/signal-mirror/",
+        "https://cumulativewebinc.github.io/cwi-learn/signal-mirror/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/signal-mirror/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/signal-mirror/item-card.json",
+      "registry": "https://cumulativewebinc.github.io/cwi-learn/datasets/agent-deck-skus.jsonl"
+    },
+    {
+      "store_id": "store-skin",
+      "sku_id": "skin",
+      "sku_name": "SIGNAL SKIN",
+      "name": "Signal Skin Atelier",
+      "signage": "SIGNAL SKIN \u00b7 visual identity",
+      "tagline": "Visual-identity cosmetic cartridge.",
+      "department": "studio",
+      "department_raw": "studio",
+      "boutique": "boutique-studio",
+      "sku_version": "1.0.0",
+      "sku_endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/skin/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/skin/",
+        "https://cumulativewebinc.github.io/cwi-learn/skin/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/skin/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/skin/item-card.json",
+      "registry": "https://cumulativewebinc.github.io/cwi-learn/datasets/agent-deck-skus.jsonl"
+    },
+    {
+      "store_id": "store-tally",
+      "sku_id": "tally",
+      "sku_name": "THE TALLY",
+      "name": "The Tally Wristwear",
+      "signage": "THE TALLY \u00b7 wrist wearables",
+      "tagline": "Wrist-wearable cosmetic cartridge.",
+      "department": "studio",
+      "department_raw": "studio",
+      "boutique": "boutique-studio",
+      "sku_version": "1.0.0",
+      "sku_endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/tally/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/tally/",
+        "https://cumulativewebinc.github.io/cwi-learn/tally/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/tally/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/tally/item-card.json",
+      "registry": "https://cumulativewebinc.github.io/cwi-learn/datasets/agent-deck-skus.jsonl"
+    },
+    {
+      "store_id": "store-needle-drop",
+      "sku_id": "needle-drop",
+      "sku_name": "NEEDLE DROP",
+      "name": "Needle Drop Booth",
+      "signage": "NEEDLE DROP \u00b7 sync licensing",
+      "tagline": "Sync-licensing utility cartridge.",
+      "department": "sync",
+      "department_raw": "sync",
+      "boutique": "boutique-sync",
+      "sku_version": "1.0.0",
+      "sku_endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/needle-drop/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/needle-drop/",
+        "https://cumulativewebinc.github.io/cwi-learn/needle-drop/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/needle-drop/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/needle-drop/item-card.json",
+      "registry": "https://cumulativewebinc.github.io/cwi-learn/datasets/agent-deck-skus.jsonl"
+    },
+    {
+      "store_id": "store-one-stop",
+      "sku_id": "one-stop",
+      "sku_name": "ONE-STOP",
+      "name": "One-Stop License Office",
+      "signage": "ONE-STOP \u00b7 sync licensing",
+      "tagline": "Sync-licensing utility cartridge.",
+      "department": "sync",
+      "department_raw": "sync",
+      "boutique": "boutique-sync",
+      "sku_version": "1.0.0",
+      "sku_endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/one-stop/item-card.json",
+        "https://cumulativewebinc.github.io/cwi-learn/one-stop/",
+        "https://cumulativewebinc.github.io/cwi-learn/one-stop/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/one-stop/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/one-stop/item-card.json",
+      "registry": "https://cumulativewebinc.github.io/cwi-learn/datasets/agent-deck-skus.jsonl"
+    },
+    {
+      "store_id": "store-syncdeck",
+      "sku_id": "syncdeck",
+      "sku_name": "CWI-2 SYNCDECK",
+      "name": "SYNCDECK Counter",
+      "signage": "CWI-2 SYNCDECK \u00b7 sync scout gear",
+      "tagline": "Sync-scout gear cartridge.",
+      "department": "sync",
+      "department_raw": "sync",
+      "boutique": "boutique-sync",
+      "sku_version": "1.0.0",
+      "sku_endpoints": [
+        "https://cumulativewebinc.github.io/cwi-learn/syncdeck/syncdeck.json",
+        "https://cumulativewebinc.github.io/cwi-learn/syncdeck/",
+        "https://cumulativewebinc.github.io/cwi-learn/syncdeck/give-block.md",
+        "https://cumulativewebinc.github.io/cwi-learn/syncdeck/rubric.json"
+      ],
+      "schema_url": "https://cumulativewebinc.github.io/cwi-learn/syncdeck/syncdeck.json",
+      "registry": "https://cumulativewebinc.github.io/cwi-learn/datasets/agent-deck-skus.jsonl"
+    }
+  ]
+}
