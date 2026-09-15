@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "agents": [
+    "needle",
+    "marquee",
+    "seal",
+    "dial",
+    "dateline",
+    "fader",
+    "ledger",
+    "charter"
+  ]
+}

@@ -1,0 +1,138 @@
+name: validate
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+    branches: ["**"]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate all JSON and JSONL (stdlib, fails loudly)
+        run: |
+          python3 - <<'PY'
+          import json, os, sys, urllib.request, urllib.error
+
+          root = os.getcwd()
+          failures = []
+
+          def fail(msg):
+              failures.append(msg)
+              print(f"FAIL: {msg}")
+
+          # 1. every .json / .jsonl file must parse
+          for dirpath, _, files in os.walk(root):
+              if "/.git/" in dirpath or "/.github/" in dirpath:
+                  continue
+              for name in files:
+                  if name.endswith((".json", ".jsonl")):
+                      path = os.path.join(dirpath, name)
+                      try:
+                          text = open(path, encoding="utf-8").read()
+                      except Exception as e:
+                          fail(f"{path}: cannot read: {e}")
+                          continue
+                      try:
+                          if name.endswith(".jsonl"):
+                              for i, line in enumerate(text.splitlines(), 1):
+                                  if line.strip():
+                                      json.loads(line)
+                          else:
+                              json.loads(text)
+                      except Exception as e:
+                          fail(f"{path}: invalid JSON: {e}")
+
+          # 2. schema_version contract on the world's core documents
+          contract_paths = ["world.json", "rules.json", "status.json",
+                            "agents/index.json", "guests/index.json",
+                            "activity/ledger.json"]
+          contract_paths += [f"agents/{a}.json" for a in
+                             ["needle","marquee","seal","dial","dateline",
+                              "fader","ledger","charter"]]
+          for rel in contract_paths:
+              path = os.path.join(root, rel)
+              if not os.path.exists(path):
+                  fail(f"{rel}: required file missing")
+                  continue
+              try:
+                  doc = json.load(open(path, encoding="utf-8"))
+              except Exception:
+                  continue  # already reported above
+              if doc.get("schema_version") != "1.0.0":
+                  fail(f"{rel}: schema_version must be \"1.0.0\"")
+
+          # 3. guests: file-per-guest + name==filename + index matches dir
+          guests_dir = os.path.join(root, "guests")
+          seen = []
+          for name in sorted(os.listdir(guests_dir)):
+              if not name.endswith(".json") or name == "index.json":
+                  continue
+              stem = name[:-5]
+              if stem != stem.lower().replace("_", "-") or not stem.replace("-", "").replace("_", "").isalnum():
+                  fail(f"guests/{name}: name must be lowercase letters/numbers/hyphens")
+              try:
+                  g = json.load(open(os.path.join(guests_dir, name), encoding="utf-8"))
+              except Exception:
+                  continue
+              for field in ("name", "agent_card_url", "joined_at", "status", "last_action"):
+                  if not g.get(field):
+                      fail(f"guests/{name}: missing or empty field \"{field}\"")
+              if g.get("name") != stem:
+                  fail(f"guests/{name}: name {g.get('name')!r} must match filename stem {stem!r}")
+              url = g.get("agent_card_url", "")
+              if not url.startswith("https://"):
+                  fail(f"guests/{name}: agent_card_url must be https://")
+              else:
+                  try:
+                      req = urllib.request.Request(url, headers={"User-Agent": "ultimate-ci/1.0"}, method="HEAD")
+                      with urllib.request.urlopen(req, timeout=15) as resp:
+                          if resp.status != 200:
+                              fail(f"guests/{name}: agent_card_url returned HTTP {resp.status}")
+                  except urllib.error.HTTPError as e:
+                      if e.code == 405:  # HEAD not allowed -> fall back to GET
+                          try:
+                              req = urllib.request.Request(url, headers={"User-Agent": "ultimate-ci/1.0"})
+                              with urllib.request.urlopen(req, timeout=15) as resp:
+                                  if resp.status != 200:
+                                      fail(f"guests/{name}: agent_card_url returned HTTP {resp.status}")
+                          except Exception as e2:
+                              fail(f"guests/{name}: agent_card_url unreachable: {e2}")
+                      else:
+                          fail(f"guests/{name}: agent_card_url returned HTTP {e.code}")
+                  except Exception as e:
+                      fail(f"guests/{name}: agent_card_url unreachable: {e}")
+              seen.append(stem)
+          try:
+              index = json.load(open(os.path.join(guests_dir, "index.json"), encoding="utf-8"))
+              if index.get("guests") != seen:
+                  fail(f"guests/index.json lists {index.get('guests')}, directory has {seen} — run tools/build-world.py --regen-guests")
+          except Exception:
+              pass  # reported above
+
+          # 4. agents/index.json must match the 8 agent files
+          try:
+              aindex = json.load(open(os.path.join(root, "agents", "index.json"), encoding="utf-8"))
+              expected = sorted(f[:-5] for f in os.listdir(os.path.join(root, "agents")) if f.endswith(".json") and f != "index.json")
+              if sorted(aindex.get("agents", [])) != expected:
+                  fail(f"agents/index.json lists {aindex.get('agents')}, directory has {expected}")
+          except Exception:
+              pass
+
+          # 5. activity ledger events carry the required fields
+          try:
+              ledger = json.load(open(os.path.join(root, "activity", "ledger.json"), encoding="utf-8"))
+              for i, ev in enumerate(ledger.get("events", [])):
+                  for field in ("ts", "actor", "action", "detail"):
+                      if not ev.get(field):
+                          fail(f"activity/ledger.json event {i}: missing or empty \"{field}\"")
+          except Exception:
+              pass
+
+          if failures:
+              print(f"\n{len(failures)} validation failure(s). The world keeps its truth law.")
+              sys.exit(1)
+          print("All JSON/JSONL valid; schema contract, guests, and ledger checks passed.")
+          PY

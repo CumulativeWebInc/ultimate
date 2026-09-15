@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "generated_at": "2026-09-15T23:17:36Z",
+  "generator": "tools/build-world.py",
+  "world": {
+    "time_of_day": "dusk",
+    "atmosphere": "data-rain",
+    "cycle_hours": 24
+  },
+  "agents_index": "agents/index.json",
+  "guests_index": "guests/index.json",
+  "activity_ledger": "activity/ledger.json",
+  "rules": "rules.json",
+  "counts": {
+    "agents": 8,
+    "guests": 0,
+    "activity_events_24h": 7
+  }
+}

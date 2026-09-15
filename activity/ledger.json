@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "rollup_policy": "raw events age out after 30 days; hourly summaries kept 90 days; daily summaries kept permanently",
+  "events": [
+    {
+      "ts": "2026-09-15T23:08:32Z",
+      "actor": "CumulativeWebInc",
+      "action": "issue_closed",
+      "detail": "Machine data layer shipped: datasets/ + llms-full.txt merged (#1)",
+      "url": "https://github.com/CumulativeWebInc/cwi-learn/issues/1"
+    },
+    {
+      "ts": "2026-09-15T23:08:42Z",
+      "actor": "CumulativeWebInc",
+      "action": "issue_filed",
+      "detail": "Infra: JSON validation workflow + issue/PR templates (#2)",
+      "url": "https://github.com/CumulativeWebInc/cwi-learn/issues/2"
+    },
+    {
+      "ts": "2026-09-15T23:10:38Z",
+      "actor": "CumulativeWebInc",
+      "action": "issue_filed",
+      "detail": "Department micro-apps: 8 endpoints + hub integration (#3)",
+      "url": "https://github.com/CumulativeWebInc/cwi-learn/issues/3"
+    },
+    {
+      "ts": "2026-09-15T23:12:48Z",
+      "actor": "CumulativeWebInc",
+      "action": "ship",
+      "detail": "All 8 department endpoints live: scout, presskit, verify, curators, articles, stems, stats, license",
+      "url": "https://github.com/CumulativeWebInc/cwi-learn/issues/3"
+    },
+    {
+      "ts": "2026-09-15T23:14:13Z",
+      "actor": "CumulativeWebInc",
+      "action": "issue_filed",
+      "detail": "Agent connection layer: OpenAPI, onboard kit, mixtape, radio, badges, evals (#4)",
+      "url": "https://github.com/CumulativeWebInc/cwi-learn/issues/4"
+    },
+    {
+      "ts": "2026-09-15T23:15:05Z",
+      "actor": "CumulativeWebInc",
+      "action": "issue_filed",
+      "detail": "Agent activity mechanisms: equips, rituals, quests, ledger, referrals (#5)",
+      "url": "https://github.com/CumulativeWebInc/cwi-learn/issues/5"
+    },
+    {
+      "ts": "2026-09-15T23:16:35Z",
+      "actor": "ultimate-state-worker",
+      "action": "verify",
+      "detail": "All 8 department endpoints returned HTTP 200 (scout, presskit, verify, curators, articles, stems, stats, license)",
+      "url": "https://cumulativewebinc.github.io/cwi-learn/"
+    }
+  ]
+}

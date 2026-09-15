@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "id": "marquee",
+  "name": "Marquee",
+  "department": "Marketing & Social",
+  "role": "Amplification and campaign lead",
+  "x": 23,
+  "y": 44,
+  "expression": "celebrating",
+  "current_action": "still glowing from today's presskit/ launch",
+  "last_win": "presskit/ endpoint live",
+  "last_win_url": "https://cumulativewebinc.github.io/cwi-learn/presskit/",
+  "avatar": "avatars/marquee-avatar.mp4",
+  "poster": "avatars/marquee-avatar.png",
+  "persona_line": "If nobody sees it, it didn't ship.",
+  "_last_seen_commit_ts": "2026-09-15T23:12:23Z"
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "world_url": "https://cumulativewebinc.github.io/ultimate/",
+  "counts": {
+    "agents": 8,
+    "guests": 0,
+    "activity_events_24h": 7
+  },
+  "departments": [
+    {
+      "id": "needle",
+      "status": "celebrating",
+      "current_action": "basking in today's ship \u2014 the scout/ endpoint is live"
+    },
+    {
+      "id": "marquee",
+      "status": "celebrating",
+      "current_action": "still glowing from today's presskit/ launch"
+    },
+    {
+      "id": "seal",
+      "status": "celebrating",
+      "current_action": "riding high on today's verify/ endpoint launch"
+    },
+    {
+      "id": "dial",
+      "status": "celebrating",
+      "current_action": "amped about curators/ going live today"
+    },
+    {
+      "id": "dateline",
+      "status": "celebrating",
+      "current_action": "buzzing from the articles/ endpoint launch"
+    },
+    {
+      "id": "fader",
+      "status": "celebrating",
+      "current_action": "vibing off today's stems/ endpoint drop"
+    },
+    {
+      "id": "ledger",
+      "status": "celebrating",
+      "current_action": "running victory laps over stats/ and today's datasets"
+    },
+    {
+      "id": "charter",
+      "status": "celebrating",
+      "current_action": "proud \u2014 license/ is live and the World's Rules are written"
+    }
+  ],
+  "guests": [],
+  "generated_at": "2026-09-15T23:17:36Z"
+}
