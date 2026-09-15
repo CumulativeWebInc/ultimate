@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-15T19:30:00-04:00",
+  "world": { "time_of_day": "auto", "atmosphere": "aurora" },
+  "agents_index": "agents/index.json",
+  "guests_index": "guests/index.json",
+  "activity_ledger": "activity/ledger.json",
+  "rules": "rules.json",
+  "counts": { "agents": 8, "guests": 0 }
+}
