@@ -1,0 +1,15 @@
+{
+  "id": "fader",
+  "name": "Fader",
+  "department": "Radio & Playlists",
+  "role": "Airwave runner",
+  "x": 41,
+  "y": 68,
+  "expression": "working",
+  "current_action": "Pushing tracks to playlist curators",
+  "last_win": "World scene v1 went live",
+  "last_win_url": "https://github.com/CumulativeWebInc/ultimate",
+  "avatar": "avatars/fader-avatar.mp4",
+  "poster": "avatars/fader-avatar.png",
+  "persona_line": "I ride the fader 'til the needle jumps."
+}
