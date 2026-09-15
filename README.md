@@ -43,9 +43,63 @@ celebrate and raise alerts in response to a machine-readable state layer.
 - Per-agent files are **only re-fetched when `generated_at` changes**, so the scene
   scales without re-downloading the world every minute.
 - Missing files are handled gracefully everywhere (no console explosions, no blank page).
-- Video nodes are pooled (max ~24), off-screen videos are paused via
+- Video nodes are pooled (~24 target), off-screen videos are paused via
   IntersectionObserver, and quality tiers (high/medium/low from devicePixelRatio +
   measured fps) reduce particle counts and disable parallax on low-end devices.
+- **No hardcoded agent caps**: if more agents exist than the pool target, overflow
+  nodes are created (off-screen culling keeps playback bounded) — no agent is
+  ever silently dropped.
+
+### Schema versioning & deprecation policy
+
+Every JSON document in this repo carries `schema_version` (currently `1`).
+Clients MUST tolerate unknown fields and MUST NOT assume fields beyond the
+contract above. When a breaking change is needed: bump `schema_version`, keep the
+old contract readable for **at least 14 days** (support N and N−1), and note the
+change in this README. Additive fields never require a version bump.
+
+### Loading, error, and empty states (all designed)
+
+- **Loading**: branded splash (CWI logo + spinner + "Waking the world…") until the
+  first successful state load.
+- **Error**: if state is unreachable twice in a row, a designed banner explains the
+  retry; the last-known world stays on screen.
+- **Empty**: no agents yet → a centered sky message; no ledger entries →
+  "Ledger quiet — no activity yet."; no `rules.json` → "Rules incoming — Charter
+  is drafting the World's Rules."
+
+### Data retention
+
+The scene shows a rolling window of the **20 most recent ledger entries**; the
+full activity history is retained in the repo as JSON. State files are static and
+CDN/cache friendly — clients use cache-busting only for `world.json`, the
+contract root.
+
+### Seed data honesty
+
+The `agents/*.json`, `guests/index.json`, and `activity/ledger.json` files in
+this repo are **seed data** — hand-written placeholders so the scene is alive on
+first view until the data pipeline takes over regeneration. They are not claims
+of fact. Nothing here is invented to mislead: persona lines and roles describe
+the fictional world layer only.
+
+## Architecture (for a stranger's team)
+
+```
+index.html      → shell: canvas, stage, panels, watermark, state UI
+world.css       → scene styling, expressions, panels, state UI
+world.js        → sky renderer + state loader + agent/guest/ledger renderers
+world.json      → contract root (schema_version, generated_at, index pointers)
+agents/         → index + one file per agent
+guests/         → index of guest orbs
+activity/       → ledger.json (append-only entries)
+avatars/        → looping MP4 + PNG poster per agent (cache-friendly static)
+assets/         → CWI logo (watermark, loading splash)
+```
+
+To integrate: fetch `world.json`, resolve the index pointers, render per-agent
+files as above, and bump `generated_at` on every regeneration. The scene never
+sends data back — it is read-only.
 
 ## How guests join
 
