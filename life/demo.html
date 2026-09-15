@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ultimate LIFE layer — verification harness</title>
+<link rel="stylesheet" href="layers.css">
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; background: #0b0b12; color: #e2e8f0; font: 400 14px/1.5 system-ui, sans-serif; }
+  header { padding: 20px 24px; border-bottom: 1px solid #1e293b; }
+  header h1 { margin: 0 0 4px; font-size: 18px; }
+  header p { margin: 0; color: #94a3b8; font-size: 13px; }
+  main { display: grid; grid-template-columns: minmax(280px, 380px) 1fr; gap: 24px; padding: 24px; max-width: 1100px; margin: 0 auto; }
+  @media (max-width: 760px) { main { grid-template-columns: 1fr; } }
+  .panel { background: #111827; border: 1px solid #1e293b; border-radius: 14px; padding: 16px; }
+  .panel h2 { margin: 0 0 12px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #94a3b8; }
+  .controls label { display: block; margin: 10px 0 4px; font-size: 12px; color: #94a3b8; }
+  .controls select { width: 100%; background: #0b0b12; color: #e2e8f0; border: 1px solid #334155; border-radius: 8px; padding: 8px; }
+  .btnrow { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  button.ctl { font: 600 13px system-ui, sans-serif; background: #1e293b; color: #e2e8f0; border: 1px solid #334155; border-radius: 8px; padding: 8px 12px; cursor: pointer; }
+  button.ctl[aria-pressed="true"] { background: #ffc53d; color: #0b0b12; border-color: #ffc53d; }
+  button.ctl.danger { border-color: #7f1d1d; }
+  .wear-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 6px; }
+  .wear-grid label { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #cbd5e1; margin: 0; }
+  #audit { margin-top: 12px; font-size: 12px; }
+  #audit.ok { color: #a3e635; }
+  #audit.bad { color: #fbbf24; }
+  #log { margin-top: 12px; font: 400 12px/1.6 ui-monospace, monospace; color: #94a3b8; max-height: 180px; overflow: auto; }
+  #log .err { color: #fca5a5; }
+  #log .ok { color: #a3e635; }
+  .hidden { display: none !important; }
+  noscript .life-error { margin: 24px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Ultimate LIFE layer — verification harness</h1>
+  <p>Exercises rendering, resting, now-playing, ambient rhythm, collections, and the honesty guards — without the full scene. Serve over HTTP: <code>python3 -m http.server</code></p>
+</header>
+<noscript><div class="life-error"><strong>JavaScript is required</strong> for this verification harness.</div></noscript>
+
+<main id="app" class="hidden">
+  <section class="panel">
+    <h2>Avatar</h2>
+    <div id="stage"><div class="life-skeleton" role="status" aria-label="Loading avatar"></div></div>
+    <div id="stageError"></div>
+  </section>
+
+  <section class="panel controls">
+    <h2>Controls</h2>
+    <label for="agentSel">Agent (life data)</label>
+    <select id="agentSel"></select>
+
+    <div class="btnrow">
+      <button class="ctl" id="restBtn" aria-pressed="false">Rest (manual)</button>
+      <button class="ctl" id="rhythmBtn" aria-pressed="false">Ambient rhythm (simulated)</button>
+    </div>
+
+    <label for="trackSel">Now playing</label>
+    <select id="trackSel"><option value="">— none —</option></select>
+
+    <label>Wear (subset of registry)</label>
+    <div class="wear-grid" id="wearGrid"></div>
+
+    <div class="btnrow">
+      <button class="ctl" id="checkinBtn">Simulate real check-in</button>
+      <button class="ctl danger" id="attackBtn">Try to ledger an ambient state</button>
+    </div>
+
+    <div id="audit" role="status"></div>
+    <div id="log" aria-live="polite"></div>
+  </section>
+
+  <section class="panel" style="grid-column: 1 / -1;">
+    <h2>Collection</h2>
+    <div id="collection"><div class="life-skeleton" style="aspect-ratio: 4/1;" role="status" aria-label="Loading collection"></div></div>
+  </section>
+</main>
+
+<div id="fatal" class="hidden" style="max-width: 640px; margin: 48px auto; padding: 0 24px;"></div>
+
+<script src="honesty.js"></script>
+<script src="render-life.js"></script>
+<script src="rhythm.js"></script>
+<script src="collection-view.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  var AVATARS = {
+    needle: "demo-assets/needle-avatar.png", marquee: "demo-assets/marquee-avatar.png",
+    seal: "demo-assets/seal-avatar.png", dial: "demo-assets/dial-avatar.png",
+    dateline: "demo-assets/dateline-avatar.png", fader: "demo-assets/fader-avatar.png",
+    ledger: "demo-assets/ledger-avatar.png", charter: "demo-assets/charter-avatar.png"
+  };
+  var PLACEHOLDER_SVG = "data:image/svg+xml," + encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">' +
+    '<rect width="200" height="200" rx="24" fill="#1e293b"/>' +
+    '<circle cx="100" cy="80" r="34" fill="#334155"/><rect x="55" y="125" width="90" height="44" rx="20" fill="#334155"/>' +
+    '<text x="100" y="190" text-anchor="middle" font-size="11" fill="#64748b">avatar missing</text></svg>');
+
+  var S = { items: null, tracks: null, zones: null, patch: null, agentId: "fader", life: null, manualRest: false };
+
+  function log(msg, cls) {
+    var el = document.createElement("div");
+    if (cls) el.className = cls;
+    el.textContent = msg;
+    document.getElementById("log").appendChild(el);
+  }
+
+  function fatal(message, err) {
+    document.getElementById("app").classList.add("hidden");
+    var box = document.getElementById("fatal");
+    box.classList.remove("hidden");
+    box.innerHTML = "";
+    var div = document.createElement("div");
+    div.className = "life-error";
+    var strong = document.createElement("strong");
+    strong.textContent = "Couldn't load life data. ";
+    div.appendChild(strong);
+    div.appendChild(document.createTextNode(message));
+    if (err) {
+      var pre = document.createElement("div");
+      pre.style.cssText = "margin-top:8px;font-family:ui-monospace,monospace;font-size:12px;opacity:.8";
+      pre.textContent = String((err && err.message) || err);
+      div.appendChild(pre);
+    }
+    var btn = document.createElement("button");
+    btn.textContent = "Retry";
+    btn.onclick = function () { box.classList.add("hidden"); init(); };
+    div.appendChild(btn);
+    var hint = document.createElement("div");
+    hint.style.cssText = "margin-top:10px;font-size:12px;opacity:.75";
+    hint.textContent = "Tip: serve this directory over HTTP (python3 -m http.server) — fetch() of local JSON is blocked on file://.";
+    div.appendChild(hint);
+    box.appendChild(div);
+  }
+
+  function fetchJson(name) {
+    return fetch(name).then(function (r) {
+      if (!r.ok) throw new Error(name + ": HTTP " + r.status);
+      return r.json().catch(function () { throw new Error(name + ": invalid JSON"); });
+    });
+  }
+
+  function init() {
+    document.getElementById("fatal").classList.add("hidden");
+    log("loading life data…");
+    Promise.all([
+      fetchJson("items.json"), fetchJson("music.json"),
+      fetchJson("zones.json"), fetchJson("agents-life-patch.json")
+    ]).then(function (res) {
+      S.items = indexBy(res[0].items, "item_id");
+      S.tracks = indexBy(res[1].tracks, "track_id");
+      S.zones = indexBy(res[2].zones, "id");
+      S.patch = res[3];
+      if (S.patch.schema_version !== "1.0.0") throw new Error("agents-life-patch.json: unsupported schema_version");
+      document.getElementById("app").classList.remove("hidden");
+      log("loaded " + Object.keys(S.items).length + " items, " +
+          Object.keys(S.tracks).length + " tracks, " +
+          Object.keys(S.zones).length + " zones.", "ok");
+      buildControls();
+      selectAgent(S.agentId);
+    }).catch(function (err) {
+      fatal("The demo needs items.json, music.json, zones.json and agents-life-patch.json next to this file.", err);
+    });
+  }
+
+  function indexBy(arr, key) {
+    var m = {};
+    (arr || []).forEach(function (o) { m[o[key]] = o; });
+    return m;
+  }
+
+  function getLife(agentId) {
+    var entry = S.patch.agents && S.patch.agents[agentId];
+    if (!entry || !entry.life) throw new Error("life data missing for agent '" + agentId + "'");
+    // deep copy so demo toggles never mutate the patch payload
+    return JSON.parse(JSON.stringify(entry.life));
+  }
+
+  function buildControls() {
+    var agentSel = document.getElementById("agentSel");
+    agentSel.innerHTML = "";
+    Object.keys(S.patch.agents).sort().forEach(function (id) {
+      var o = document.createElement("option");
+      o.value = id; o.textContent = id;
+      agentSel.appendChild(o);
+    });
+    agentSel.value = S.agentId;
+    agentSel.onchange = function () { selectAgent(agentSel.value); };
+
+    var trackSel = document.getElementById("trackSel");
+    Object.keys(S.tracks).sort().forEach(function (id) {
+      var o = document.createElement("option");
+      o.value = id; o.textContent = S.tracks[id].title;
+      trackSel.appendChild(o);
+    });
+    trackSel.onchange = function () {
+      var t = trackSel.value ? S.tracks[trackSel.value] : null;
+      LifeRender.renderNowPlaying(avatarEl(), t ? { title: t.title, artist: "That Boy Hi Hat" } : null);
+      log(t ? "now playing: " + t.title : "now playing cleared");
+    };
+
+    var grid = document.getElementById("wearGrid");
+    grid.innerHTML = "";
+    // one sample item per layer so every overlay class is exercisable
+    ["ear-witness", "scoreboard-chip", "syncdeck", "skin", "signet"].forEach(function (id) {
+      var item = S.items[id];
+      if (!item) return;
+      var lab = document.createElement("label");
+      var cb = document.createElement("input");
+      cb.type = "checkbox"; cb.value = id;
+      cb.onchange = function () {
+        var worn = S.life.inventory.worn;
+        var i = worn.indexOf(id);
+        if (cb.checked && i === -1) worn.push(id);
+        if (!cb.checked && i !== -1) worn.splice(i, 1);
+        if (S.life.inventory.items.indexOf(id) === -1) S.life.inventory.items.push(id);
+        renderAll();
+        log((cb.checked ? "wore " : "removed ") + item.name);
+      };
+      lab.appendChild(cb);
+      lab.appendChild(document.createTextNode(item.name + " (" + item.layer + ")"));
+      grid.appendChild(lab);
+    });
+
+    document.getElementById("restBtn").onclick = function () {
+      S.manualRest = !S.manualRest;
+      S.life.resting = S.manualRest;
+      if (S.manualRest && !S.life.rest_zone) S.life.rest_zone = "the-quiet-loft";
+      LifeRhythm.stop(avatarEl());
+      rhythmOff();
+      LifeRender.setAmbientBadge(avatarEl(), false);
+      LifeRender.setResting(avatarEl(), S.manualRest);
+      this.setAttribute("aria-pressed", String(S.manualRest));
+      log("manual rest " + (S.manualRest ? "on (you, not ambient)" : "off"));
+      renderAudit();
+    };
+
+    document.getElementById("rhythmBtn").onclick = function () {
+      var el = avatarEl();
+      if (LifeRhythm.isRunning(el)) { LifeRhythm.stop(el); rhythmOff(); LifeRender.setAmbientBadge(el, false); log("ambient rhythm stopped"); }
+      else {
+        if (!S.life.rest_zone) S.life.rest_zone = "signal-garden";
+        LifeRhythm.start(el, S.life, { activeMs: 6000, restMs: 4000 });
+        this.setAttribute("aria-pressed", "true");
+        log("ambient rhythm started — states are SIMULATED and badged (never ledgered).", "ok");
+      }
+    };
+
+    document.getElementById("checkinBtn").onclick = function () {
+      var entry = { agent: S.agentId, at: new Date().toISOString(), kind: "check-in" };
+      try {
+        LifeHonesty.assertNotAmbientForLedger(entry, "activity/ledger.json");
+        LifeRhythm.overrideWithReal(avatarEl(), S.life);
+        rhythmOff();
+        S.life.last_checkin = entry.at;
+        log("real check-in accepted by the honesty gate; ambient state overridden.", "ok");
+      } catch (e) { log("honesty gate rejected real check-in?! " + e.message, "err"); }
+      renderAudit();
+    };
+
+    document.getElementById("attackBtn").onclick = function () {
+      var ambient = LifeHonesty.tagAmbient({ resting: true, rest_zone: "ember-deck" });
+      try {
+        LifeHonesty.assertNotAmbientForLedger(ambient, "activity/ledger.json");
+        log("BUG: ambient state reached the ledger gate without throwing", "err");
+      } catch (e) {
+        log("honesty gate held: " + e.name + " — " + e.message, "ok");
+      }
+    };
+  }
+
+  function rhythmOff() {
+    var b = document.getElementById("rhythmBtn");
+    b.setAttribute("aria-pressed", "false");
+  }
+
+  function avatarEl() { return document.getElementById("avatarBox"); }
+
+  function selectAgent(agentId) {
+    S.agentId = agentId;
+    try { S.life = getLife(agentId); }
+    catch (e) { fatal(e.message, e); return; }
+    S.manualRest = false;
+    document.getElementById("restBtn").setAttribute("aria-pressed", "false");
+    document.getElementById("trackSel").value = "";
+
+    var stage = document.getElementById("stage");
+    stage.innerHTML = "";
+    var box = document.createElement("div");
+    box.className = "life-avatar";
+    box.id = "avatarBox";
+    box.setAttribute("data-agent", agentId);
+    var img = document.createElement("img");
+    img.className = "life-base";
+    img.alt = agentId + " avatar";
+    img.src = AVATARS[agentId] || PLACEHOLDER_SVG;
+    img.onerror = function () {
+      img.onerror = null;
+      img.src = PLACEHOLDER_SVG;
+      var w = document.createElement("div");
+      w.className = "life-error";
+      w.style.marginTop = "10px";
+      w.textContent = "Avatar image missing for '" + agentId + "' — showing placeholder. (Not fatal: overlays still render.)";
+      document.getElementById("stageError").appendChild(w);
+      log("avatar missing for " + agentId + "; placeholder used", "err");
+    };
+    box.appendChild(img);
+    var rest = document.createElement("span");
+    rest.className = "rest-tag"; rest.textContent = "resting";
+    box.appendChild(rest);
+    var amb = document.createElement("span");
+    amb.className = "ambient-tag";
+    amb.innerHTML = '<svg viewBox="0 0 16 16" aria-hidden="true"><use href="gear-overlays.svg#life-ambient-dot"></use></svg>ambient';
+    box.appendChild(amb);
+    stage.appendChild(box);
+
+    // sync wear checkboxes with the agent's worn list
+    Array.prototype.forEach.call(document.querySelectorAll("#wearGrid input"), function (cb) {
+      cb.checked = S.life.inventory.worn.indexOf(cb.value) !== -1;
+    });
+    renderAll();
+    log("agent: " + agentId);
+  }
+
+  function renderAll() {
+    var el = avatarEl();
+    var rendered = LifeRender.renderLifeLayers(el, S.life, S.items);
+    LifeRender.setResting(el, S.life.resting);
+    LifeCollection.renderCollection(
+      document.getElementById("collection"),
+      S.life, { items: S.items, tracks: S.tracks });
+    renderAudit();
+    return rendered;
+  }
+
+  function renderAudit() {
+    var problems = LifeHonesty.auditLife(S.life, { items: S.items, tracks: S.tracks, zones: S.zones });
+    var el = document.getElementById("audit");
+    if (!problems.length) { el.className = "ok"; el.textContent = "honesty audit: clean ✓"; }
+    else { el.className = "bad"; el.textContent = "honesty audit: " + problems.join("; "); }
+  }
+
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+  else init();
+})();
+</script>
+</body>
+</html>
