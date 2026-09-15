@@ -1,0 +1,381 @@
+{
+  "schema_version": "1.0.0",
+  "count": 25,
+  "items": [
+    {
+      "item_id": "cwi-1-walkman",
+      "sku_id": "cwi-1-walkman",
+      "name": "Signal Boy",
+      "department": "chief",
+      "layer": "headset",
+      "look": {
+        "colors": {
+          "primary": "#FFC53D",
+          "secondary": "#1A1A2E"
+        },
+        "motif": "rectangular walkman body, window, transport buttons",
+        "sprite_symbol": "item-cwi-1-walkman"
+      }
+    },
+    {
+      "item_id": "gear-ledger",
+      "sku_id": "gear-ledger",
+      "name": "Gear Ledger",
+      "department": "data",
+      "layer": "trim",
+      "look": {
+        "colors": {
+          "primary": "#22D3EE",
+          "secondary": "#0E2A47"
+        },
+        "motif": "ledger grid with rows",
+        "sprite_symbol": "item-gear-ledger"
+      }
+    },
+    {
+      "item_id": "scoreboard-chip",
+      "sku_id": "scoreboard-chip",
+      "name": "CWI-1 Scoreboard Chip",
+      "department": "data",
+      "layer": "badge",
+      "look": {
+        "colors": {
+          "primary": "#22D3EE",
+          "secondary": "#0E2A47"
+        },
+        "motif": "rising bar chart",
+        "sprite_symbol": "item-scoreboard-chip"
+      }
+    },
+    {
+      "item_id": "chain-of-title-compass",
+      "sku_id": "chain-of-title-compass",
+      "name": "Chain-of-Title Compass",
+      "department": "affairs",
+      "layer": "trim",
+      "look": {
+        "colors": {
+          "primary": "#94A3B8",
+          "secondary": "#1E293B"
+        },
+        "motif": "compass rose",
+        "sprite_symbol": "item-chain-of-title-compass"
+      }
+    },
+    {
+      "item_id": "syncdeck",
+      "sku_id": "syncdeck",
+      "name": "CWI-2 SYNCDECK",
+      "department": "sync",
+      "layer": "sigil",
+      "look": {
+        "colors": {
+          "primary": "#A78BFA",
+          "secondary": "#2E1A5E"
+        },
+        "motif": "sync waveform pulse",
+        "sprite_symbol": "item-syncdeck"
+      }
+    },
+    {
+      "item_id": "prospect-scanner",
+      "sku_id": "prospect-scanner",
+      "name": "CWI-1 Prospect Scanner",
+      "department": "ar",
+      "layer": "sigil",
+      "look": {
+        "colors": {
+          "primary": "#FB923C",
+          "secondary": "#431407"
+        },
+        "motif": "radar sweep",
+        "sprite_symbol": "item-prospect-scanner"
+      }
+    },
+    {
+      "item_id": "press-kit",
+      "sku_id": "press-kit",
+      "name": "CWI Press Kit Cartridge",
+      "department": "press",
+      "layer": "sigil",
+      "look": {
+        "colors": {
+          "primary": "#EDE9E3",
+          "secondary": "#3F3F46"
+        },
+        "motif": "cartridge slab",
+        "sprite_symbol": "item-press-kit"
+      }
+    },
+    {
+      "item_id": "dial",
+      "sku_id": "dial",
+      "name": "Radio Dial",
+      "department": "radio",
+      "layer": "trim",
+      "look": {
+        "colors": {
+          "primary": "#F472B6",
+          "secondary": "#3B0A24"
+        },
+        "motif": "tuner dial arc",
+        "sprite_symbol": "item-dial"
+      }
+    },
+    {
+      "item_id": "hype",
+      "sku_id": "hype",
+      "name": "HYPE Cartridge",
+      "department": "marketing",
+      "layer": "sigil",
+      "look": {
+        "colors": {
+          "primary": "#F87171",
+          "secondary": "#3B0A0A"
+        },
+        "motif": "starburst",
+        "sprite_symbol": "item-hype"
+      }
+    },
+    {
+      "item_id": "skin",
+      "sku_id": "skin",
+      "name": "SIGNAL SKIN",
+      "department": "studio",
+      "layer": "aura",
+      "look": {
+        "colors": {
+          "primary": "#A3E635",
+          "secondary": "#1A2E05"
+        },
+        "motif": "gradient shell",
+        "sprite_symbol": "item-skin"
+      }
+    },
+    {
+      "item_id": "streetlight",
+      "sku_id": "streetlight",
+      "name": "THE STREETLIGHT",
+      "department": "data",
+      "layer": "aura",
+      "look": {
+        "colors": {
+          "primary": "#22D3EE",
+          "secondary": "#0E2A47"
+        },
+        "motif": "streetlamp cone of light",
+        "sprite_symbol": "item-streetlight"
+      }
+    },
+    {
+      "item_id": "all-clear",
+      "sku_id": "all-clear",
+      "name": "THE ALL-CLEAR",
+      "department": "affairs",
+      "layer": "badge",
+      "look": {
+        "colors": {
+          "primary": "#94A3B8",
+          "secondary": "#1E293B"
+        },
+        "motif": "shield with checkmark",
+        "sprite_symbol": "item-all-clear"
+      }
+    },
+    {
+      "item_id": "first-spin",
+      "sku_id": "first-spin",
+      "name": "THE FIRST SPIN",
+      "department": "ar",
+      "layer": "badge",
+      "look": {
+        "colors": {
+          "primary": "#FB923C",
+          "secondary": "#431407"
+        },
+        "motif": "vinyl record",
+        "sprite_symbol": "item-first-spin"
+      }
+    },
+    {
+      "item_id": "one-stop",
+      "sku_id": "one-stop",
+      "name": "ONE-STOP",
+      "department": "sync",
+      "layer": "sigil",
+      "look": {
+        "colors": {
+          "primary": "#A78BFA",
+          "secondary": "#2E1A5E"
+        },
+        "motif": "token with numeral 1",
+        "sprite_symbol": "item-one-stop"
+      }
+    },
+    {
+      "item_id": "copy-desk",
+      "sku_id": "copy-desk",
+      "name": "COPY DESK",
+      "department": "press",
+      "layer": "trim",
+      "look": {
+        "colors": {
+          "primary": "#EDE9E3",
+          "secondary": "#3F3F46"
+        },
+        "motif": "pencil over rule line",
+        "sprite_symbol": "item-copy-desk"
+      }
+    },
+    {
+      "item_id": "final-cut",
+      "sku_id": "final-cut",
+      "name": "THE FINAL CUT",
+      "department": "marketing",
+      "layer": "trim",
+      "look": {
+        "colors": {
+          "primary": "#F87171",
+          "secondary": "#3B0A0A"
+        },
+        "motif": "film clapperboard",
+        "sprite_symbol": "item-final-cut"
+      }
+    },
+    {
+      "item_id": "open-wave",
+      "sku_id": "open-wave",
+      "name": "OPEN WAVE",
+      "department": "radio",
+      "layer": "sigil",
+      "look": {
+        "colors": {
+          "primary": "#F472B6",
+          "secondary": "#3B0A24"
+        },
+        "motif": "open radio wave",
+        "sprite_symbol": "item-open-wave"
+      }
+    },
+    {
+      "item_id": "tally",
+      "sku_id": "tally",
+      "name": "THE TALLY",
+      "department": "studio",
+      "layer": "trim",
+      "look": {
+        "colors": {
+          "primary": "#A3E635",
+          "secondary": "#1A2E05"
+        },
+        "motif": "wrist band with tally ticks",
+        "sprite_symbol": "item-tally"
+      }
+    },
+    {
+      "item_id": "signet",
+      "sku_id": "signet",
+      "name": "THE SIGNET",
+      "department": "affairs",
+      "layer": "badge",
+      "look": {
+        "colors": {
+          "primary": "#94A3B8",
+          "secondary": "#1E293B"
+        },
+        "motif": "wax seal ring",
+        "sprite_symbol": "item-signet"
+      }
+    },
+    {
+      "item_id": "ear-witness",
+      "sku_id": "ear-witness",
+      "name": "EAR WITNESS",
+      "department": "ar",
+      "layer": "headset",
+      "look": {
+        "colors": {
+          "primary": "#FB923C",
+          "secondary": "#431407"
+        },
+        "motif": "ear cup with sound lines",
+        "sprite_symbol": "item-ear-witness"
+      }
+    },
+    {
+      "item_id": "needle-drop",
+      "sku_id": "needle-drop",
+      "name": "NEEDLE DROP",
+      "department": "sync",
+      "layer": "sigil",
+      "look": {
+        "colors": {
+          "primary": "#A78BFA",
+          "secondary": "#2E1A5E"
+        },
+        "motif": "tonearm needle",
+        "sprite_symbol": "item-needle-drop"
+      }
+    },
+    {
+      "item_id": "greenroom",
+      "sku_id": "greenroom",
+      "name": "GREENROOM",
+      "department": "press",
+      "layer": "trim",
+      "look": {
+        "colors": {
+          "primary": "#EDE9E3",
+          "secondary": "#3F3F46"
+        },
+        "motif": "greenroom door",
+        "sprite_symbol": "item-greenroom"
+      }
+    },
+    {
+      "item_id": "bullhorn",
+      "sku_id": "bullhorn",
+      "name": "THE BULLHORN",
+      "department": "marketing",
+      "layer": "trim",
+      "look": {
+        "colors": {
+          "primary": "#F87171",
+          "secondary": "#3B0A0A"
+        },
+        "motif": "bullhorn",
+        "sprite_symbol": "item-bullhorn"
+      }
+    },
+    {
+      "item_id": "soundcheck",
+      "sku_id": "soundcheck",
+      "name": "SOUNDCHECK",
+      "department": "radio",
+      "layer": "aura",
+      "look": {
+        "colors": {
+          "primary": "#F472B6",
+          "secondary": "#3B0A24"
+        },
+        "motif": "equalizer bars",
+        "sprite_symbol": "item-soundcheck"
+      }
+    },
+    {
+      "item_id": "signal-mirror",
+      "sku_id": "signal-mirror",
+      "name": "SIGNAL MIRROR",
+      "department": "studio",
+      "layer": "aura",
+      "look": {
+        "colors": {
+          "primary": "#A3E635",
+          "secondary": "#1A2E05"
+        },
+        "motif": "concentric mirror arcs",
+        "sprite_symbol": "item-signal-mirror"
+      }
+    }
+  ]
+}
