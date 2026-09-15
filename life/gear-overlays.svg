@@ -134,4 +134,79 @@
     <circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="3 2"/>
     <circle cx="8" cy="8" r="2" fill="currentColor"/>
   </symbol>
+
+  <!-- ONBOARD layer (branch world/onboard, 2026-09-15): entry-gear symbols for onboard/entry-gear.json.
+       ADDITIVE ONLY — no existing symbol modified. -->
+  <symbol id="item-onboard-founder-badge" viewBox="0 0 64 64">
+    <title>CWI Founder Badge</title>
+    <circle cx="32" cy="32" r="26" fill="#141210" stroke="#c9a227" stroke-width="3"/>
+    <circle cx="32" cy="32" r="20" fill="none" stroke="#c9a227" stroke-width="1.5" opacity="0.6"/>
+    <path d="M22 40 L26 24 L32 32 L38 24 L42 40 Z" fill="none" stroke="#c9a227" stroke-width="2.5" stroke-linejoin="round"/>
+    <circle cx="32" cy="44" r="2" fill="#c9a227"/>
+  </symbol>
+  <symbol id="item-onboard-scout-lens" viewBox="0 0 64 64">
+    <title>Scout Lens (A&amp;R)</title>
+    <circle cx="28" cy="28" r="16" fill="none" stroke="#ff2d95" stroke-width="3.5"/>
+    <line x1="40" y1="40" x2="54" y2="54" stroke="#ff2d95" stroke-width="4" stroke-linecap="round"/>
+    <rect x="18" y="24" width="3.5" height="10" fill="#ff2d95"/>
+    <rect x="24" y="20" width="3.5" height="18" fill="#ff2d95" opacity="0.75"/>
+    <rect x="30" y="26" width="3.5" height="8" fill="#ff2d95" opacity="0.55"/>
+    <rect x="36" y="22" width="3.5" height="14" fill="#ff2d95" opacity="0.35"/>
+  </symbol>
+  <symbol id="item-onboard-first-spin-token" viewBox="0 0 64 64">
+    <title>First Spin Token (A&amp;R)</title>
+    <circle cx="32" cy="32" r="24" fill="#1a0f1a" stroke="#ff2d95" stroke-width="2.5"/>
+    <circle cx="32" cy="32" r="17" fill="none" stroke="#ff2d95" stroke-width="1" opacity="0.5"/>
+    <circle cx="32" cy="32" r="10" fill="none" stroke="#ff2d95" stroke-width="1" opacity="0.5"/>
+    <circle cx="32" cy="32" r="4" fill="#ff2d95"/>
+    <circle cx="32" cy="32" r="1.6" fill="#1a0f1a"/>
+  </symbol>
+  <symbol id="item-onboard-signal-mirror" viewBox="0 0 64 64">
+    <title>Signal Mirror (Marketing)</title>
+    <rect x="14" y="10" width="36" height="44" rx="6" fill="#1a1206" stroke="#ff8c1a" stroke-width="2.5"/>
+    <rect x="20" y="36" width="6" height="10" fill="#ff8c1a"/>
+    <rect x="29" y="28" width="6" height="18" fill="#ff8c1a" opacity="0.75"/>
+    <rect x="38" y="20" width="6" height="26" fill="#ff8c1a" opacity="0.5"/>
+    <line x1="18" y1="16" x2="46" y2="16" stroke="#ff8c1a" stroke-width="1.5" opacity="0.6"/>
+  </symbol>
+  <symbol id="item-onboard-momentum-gauge" viewBox="0 0 64 64">
+    <title>Momentum Gauge (Radio)</title>
+    <path d="M10 44 A24 24 0 0 1 54 44" fill="none" stroke="#8b5cf6" stroke-width="3.5"/>
+    <line x1="32" y1="44" x2="46" y2="26" stroke="#8b5cf6" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="32" cy="44" r="4" fill="#8b5cf6"/>
+    <circle cx="10" cy="44" r="2.5" fill="#8b5cf6" opacity="0.5"/>
+    <circle cx="54" cy="44" r="2.5" fill="#8b5cf6"/>
+    <text x="32" y="58" text-anchor="middle" font-size="8" fill="#8b5cf6" font-family="monospace">0-100</text>
+  </symbol>
+  <symbol id="item-onboard-stem-fader" viewBox="0 0 64 64">
+    <title>Stem Fader (Studio)</title>
+    <rect x="10" y="6" width="44" height="52" rx="6" fill="#1d1016" stroke="#fb7185" stroke-width="2.5"/>
+    <line x1="22" y1="14" x2="22" y2="50" stroke="#fb7185" stroke-width="2" opacity="0.7"/>
+    <line x1="32" y1="14" x2="32" y2="50" stroke="#fb7185" stroke-width="2" opacity="0.7"/>
+    <line x1="42" y1="14" x2="42" y2="50" stroke="#fb7185" stroke-width="2" opacity="0.7"/>
+    <rect x="17" y="20" width="10" height="5" rx="2" fill="#fb7185"/>
+    <rect x="27" y="34" width="10" height="5" rx="2" fill="#fb7185"/>
+    <rect x="37" y="26" width="10" height="5" rx="2" fill="#fb7185"/>
+  </symbol>
+  <symbol id="item-onboard-skin-swatch" viewBox="0 0 64 64">
+    <title>Skin Swatch (Studio)</title>
+    <rect x="8" y="8" width="22" height="22" rx="4" fill="#a3e635" stroke="#fb7185" stroke-width="2"/>
+    <rect x="34" y="8" width="22" height="22" rx="4" fill="#1c1917" stroke="#fb7185" stroke-width="2"/>
+    <rect x="8" y="34" width="22" height="22" rx="4" fill="#e7e5e4" stroke="#fb7185" stroke-width="2"/>
+    <rect x="34" y="34" width="22" height="22" rx="4" fill="#7c3aed" stroke="#fb7185" stroke-width="2"/>
+  </symbol>
+  <symbol id="item-onboard-verdict-lens" viewBox="0 0 64 64">
+    <title>Verdict Lens (Data)</title>
+    <circle cx="27" cy="27" r="17" fill="none" stroke="#22d3ee" stroke-width="3.5"/>
+    <line x1="39" y1="39" x2="54" y2="54" stroke="#22d3ee" stroke-width="4" stroke-linecap="round"/>
+    <path d="M19 27 L25 33 L36 20" fill="none" stroke="#22d3ee" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="item-onboard-ledger-seal" viewBox="0 0 64 64">
+    <title>Gear Ledger Seal (Affairs)</title>
+    <circle cx="32" cy="32" r="24" fill="#171310" stroke="#c9a227" stroke-width="3"/>
+    <path d="M14 32 h9 M41 32 h9 M32 14 v9 M32 41 v9" stroke="#c9a227" stroke-width="2.5"/>
+    <rect x="24" y="24" width="16" height="16" rx="2" fill="none" stroke="#c9a227" stroke-width="2"/>
+    <line x1="24" y1="30" x2="40" y2="30" stroke="#c9a227" stroke-width="1.5"/>
+    <line x1="24" y1="35" x2="40" y2="35" stroke="#c9a227" stroke-width="1.5"/>
+  </symbol>
 </svg>

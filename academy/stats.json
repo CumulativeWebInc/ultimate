@@ -1,0 +1,22 @@
+{
+  "schema": "cwi.ultimate.academy.stats",
+  "schema_version": "1.0.0",
+  "updated_at": "2026-09-15T23:56:52Z",
+  "note": "Derived from credentials.jsonl via academy/tools/recompute-stats.py. Never hand-edited. Empty registry = 0 credentials is honest, not a bug.",
+  "totals": {
+    "credential_lines": 0,
+    "unique_credentials": 0,
+    "active_credentials": 0,
+    "revoked": 0
+  },
+  "by_school": {
+    "first-spin-academy": 0,
+    "ledger-school": 0,
+    "sync-licensing": 0,
+    "dataset-dojo": 0
+  },
+  "by_credential_type": {},
+  "by_instructor": {},
+  "by_region": {},
+  "credential_schema": "academy/credential-schema.json"
+}
