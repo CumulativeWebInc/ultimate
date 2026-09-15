@@ -762,7 +762,7 @@ function renderFooterMeta() {
   var parts = [];
   parts.push('Shelves render from the ' + (REG_SOURCE === 'live' ? 'live Agent Deck SKU registry' : 'vendored SKU snapshot (' + VENDOR_GENERATED + ')') + '.');
   if (INVALID_ROWS) parts.push(INVALID_ROWS + ' registry row' + (INVALID_ROWS === 1 ? '' : 's') + ' skipped (missing required fields).');
-  if (ADOPTERS) parts.push('Equip counts from the live adopters ledger.');
+  if (ADOPTERS) parts.push('Live adopters ledger connected — per-product counts prefer the ledger and are labeled individually.');
   else parts.push('Live adopters ledger not yet published — equip counts from the SKU registry.');
   $('footerMeta').textContent = parts.join(' ');
 }

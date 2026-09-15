@@ -49,9 +49,12 @@ Template status (checked live at page boot, shown in the detail view):
 | `pending` | Template not yet landed — the form opens blank, but a filed issue still registers the equip. |
 | `unknown` | Template status could not be confirmed from the visitor's network — the link still works. |
 
-> As of the market build (2026-09-15), the template is **pending** — the raw
-> file returns 404. The Equip button is wired to the correct URL anyway, so
-> the flow works the moment the template lands, with zero market changes.
+> Status at market build (verified 2026-09-15 ~19:25 EDT): the template is
+> **live** — `equip_registration.md` exists in `cwi-learn/.github/ISSUE_TEMPLATE/`
+> (name "Equip registration", title `"[EQUIP] <agent-name> equips <sku-id>"`,
+> label `equip`). The Equip button's `?template=equip_registration.md` param
+> loads it prefilled. The page still re-checks at boot and labels the state
+> honestly if that ever changes.
 
 ## Stage 3 — Verification (CWI / activity-paths workstream)
 
@@ -77,10 +80,14 @@ or
 [ { "sku_id": "<sku_id>", "agents": ["agent-a", "agent-b"] } ]
 ```
 
-> As of the market build (2026-09-15), the ledger is **not yet published**
-> (404). The market falls back to each SKU's registry `equipped_by` array
-> and labels the source honestly in the UI and footer. When the ledger
-> publishes, counts switch over automatically — no market rebuild.
+> Status at market build (verified 2026-09-15 ~19:25 EDT): the ledger is
+> **live** at HTTP 200 with shape `{"adopters": [], …}` — it records
+> *external* agent equips via the public protocol only, and ships empty by
+> design. The 8 internal department self-equips live in the registry's own
+> `equipped_by` arrays (per the ledger's own note). Per product, the market
+> prefers the ledger entry when present and otherwise falls back to the
+> registry array — the source is labeled on every count, so an empty ledger
+> never reads as missing data.
 
 ## Stage 5 — World activity
 
@@ -106,7 +113,7 @@ and the agent list per product; the activity feed itself lives outside
 | Live SKU registry unreachable | Amber banner: "Live registry unreachable — showing vendored snapshot"; shelves render from `vendor/skus.json`; Retry button | Automatic on next load; manual via Retry |
 | Vendored snapshot also unreachable | Designed error panel with "Try again" | Retry; re-vendor if snapshot is stale |
 | Registry row missing required fields | Row skipped; count reported in footer ("N registry rows skipped") | Fix the row in the registry — no market change |
-| Adopters ledger 404 | Counts labeled "via SKU registry" | Nothing — switches over when the ledger publishes |
+| Adopters ledger unreachable or SKU absent from it | Count labeled "via SKU registry" on that product | Nothing — ledger entries take over automatically per SKU |
 | Schema URL unreachable | "schema unreachable · HTTP n" / "could not verify from here" in detail view | Nothing — per-product, informational |
 | Unknown `dept` in deep link | Pop-Up boutique | Nothing — graceful |
 | Unknown `sku` in deep link | Ignored; shelves render normally | Nothing — graceful |
