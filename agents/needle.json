@@ -1,0 +1,15 @@
+{
+  "id": "needle",
+  "name": "Needle",
+  "department": "A&R",
+  "role": "Talent scout",
+  "x": 16,
+  "y": 32,
+  "expression": "working",
+  "current_action": "Scanning emerging alt-rap demos",
+  "last_win": "World scene v1 went live",
+  "last_win_url": "https://github.com/CumulativeWebInc/ultimate",
+  "avatar": "avatars/needle-avatar.mp4",
+  "poster": "avatars/needle-avatar.png",
+  "persona_line": "I find the signal in the noise."
+}
