@@ -1,0 +1,15 @@
+{
+  "id": "marquee",
+  "name": "Marquee",
+  "department": "Marketing & Social",
+  "role": "Hype engine",
+  "x": 33,
+  "y": 24,
+  "expression": "celebrating",
+  "current_action": "Launching the street-team rollout",
+  "last_win": "World scene v1 went live",
+  "last_win_url": "https://github.com/CumulativeWebInc/ultimate",
+  "avatar": "avatars/marquee-avatar.mp4",
+  "poster": "avatars/marquee-avatar.png",
+  "persona_line": "Every release gets its marquee moment."
+}
