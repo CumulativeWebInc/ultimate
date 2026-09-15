@@ -1,9 +1,15 @@
 # DATA-CONTRACTS.md — Project Ultimate World State
 
 The binding contract a stranger's team builds against. Every JSON document in
-this repo carries `"schema_version": "1.0.0"`. Field lists below are normative;
+this repo carries `schema_version`, and every document's version is declared in
+the `SCHEMA-VERSIONS.json` registry at repo root: most documents carry
+`"schema_version": "1.0.0"` (the `default` entry), while a few domains with
+their own honest document versions declare them there instead (e.g.
+`city/districts.json` is `2.0.0`). Field lists below are normative;
 the generator (`tools/build-world.py`) and CI (`.github/workflows/validate.yml`)
-enforce them.
+enforce them. To add a new domain version: bump the document's `schema_version`
+and its registry entry together in the same commit — never silently, and never
+downgrade an honest domain version to fit the default.
 
 Types: `string`, `number`, `integer`, `boolean`, `object`, `array`, `ISO-8601`
 (UTC, `Z` suffix), `URL` (absolute `https://`).
