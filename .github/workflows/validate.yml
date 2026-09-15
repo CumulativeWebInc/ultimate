@@ -45,24 +45,100 @@ jobs:
                       except Exception as e:
                           fail(f"{path}: invalid JSON: {e}")
 
-          # 2. schema_version contract on the world's core documents
-          contract_paths = ["world.json", "rules.json", "status.json",
-                            "agents/index.json", "guests/index.json",
-                            "activity/ledger.json"]
-          contract_paths += [f"agents/{a}.json" for a in
-                             ["needle","marquee","seal","dial","dateline",
-                              "fader","ledger","charter"]]
-          for rel in contract_paths:
+          # 2. schema_version contract + strict field-level schema checks
+          CONTRACT_VERSION = "1.0.0"
+          EXPRESSIONS = {"celebrating", "working", "idle", "alert"}
+
+          def need(doc, rel, fields):
+              for f in fields:
+                  if f not in doc:
+                      fail(f"{rel}: missing required field \"{f}\"")
+
+          # --- world.json ---
+          try:
+              world = json.load(open(os.path.join(root, "world.json"), encoding="utf-8"))
+              need(world, "world.json", ["schema_version", "generated_at", "generator",
+                                         "world", "agents_index", "guests_index",
+                                         "activity_ledger", "rules", "counts"])
+              need(world["world"], "world.json.world", ["time_of_day", "atmosphere", "cycle_hours"])
+              for k in ("agents", "guests", "activity_events_24h"):
+                  if not isinstance(world["counts"].get(k), int) or world["counts"][k] < 0:
+                      fail(f"world.json: counts.{k} must be a non-negative integer")
+              if world.get("generator") != "tools/build-world.py":
+                  fail("world.json: generator must be \"tools/build-world.py\"")
+          except Exception:
+              pass  # JSON parse failures already reported above
+
+          # --- rules.json ---
+          try:
+              rules = json.load(open(os.path.join(root, "rules.json"), encoding="utf-8"))
+              need(rules, "rules.json", ["schema_version", "preamble", "conduct",
+                                         "joining", "what_counts_as_activity",
+                                         "truth_law", "enforcement"])
+              if rules.get("truth_law") != "only real, verifiable actions render in the world; nothing is faked":
+                  fail("rules.json: truth_law wording is immutable in v1")
+          except Exception:
+              pass
+
+          # --- status.json ---
+          try:
+              status = json.load(open(os.path.join(root, "status.json"), encoding="utf-8"))
+              need(status, "status.json", ["schema_version", "world_url", "counts",
+                                           "departments", "guests", "generated_at"])
+              if not status.get("world_url", "").startswith("https://"):
+                  fail("status.json: world_url must be https://")
+          except Exception:
+              pass
+
+          # --- agents/<id>.json (the 8 residents) ---
+          for aid in ["needle", "marquee", "seal", "dial", "dateline",
+                      "fader", "ledger", "charter"]:
+              rel = f"agents/{aid}.json"
               path = os.path.join(root, rel)
               if not os.path.exists(path):
                   fail(f"{rel}: required file missing")
                   continue
               try:
-                  doc = json.load(open(path, encoding="utf-8"))
+                  a = json.load(open(path, encoding="utf-8"))
               except Exception:
-                  continue  # already reported above
-              if doc.get("schema_version") != "1.0.0":
-                  fail(f"{rel}: schema_version must be \"1.0.0\"")
+                  continue
+              need(a, rel, ["schema_version", "id", "name", "department", "role",
+                            "x", "y", "expression", "current_action", "last_win",
+                            "last_win_url", "avatar", "poster", "persona_line"])
+              if a.get("id") != aid:
+                  fail(f"{rel}: id {a.get('id')!r} must match filename stem {aid!r}")
+              if a.get("expression") not in EXPRESSIONS:
+                  fail(f"{rel}: expression {a.get('expression')!r} not in {sorted(EXPRESSIONS)}")
+              for axis in ("x", "y"):
+                  v = a.get(axis)
+                  if not isinstance(v, (int, float)) or not (0 <= v <= 100):
+                      fail(f"{rel}: {axis} must be a number in 0..100")
+              if not a.get("last_win_url", "").startswith("https://"):
+                  fail(f"{rel}: last_win_url must be https://")
+
+          # --- agents/index.json must match the resident files ---
+          try:
+              aindex = json.load(open(os.path.join(root, "agents", "index.json"), encoding="utf-8"))
+              expected = sorted(f[:-5] for f in os.listdir(os.path.join(root, "agents")) if f.endswith(".json") and f != "index.json")
+              if sorted(aindex.get("agents", [])) != expected:
+                  fail(f"agents/index.json lists {aindex.get('agents')}, directory has {expected}")
+          except Exception:
+              pass
+
+          # --- schema_version consistency: every document matches the contract ---
+          for dirpath, _, files in os.walk(root):
+              if "/.git/" in dirpath or "/.github/" in dirpath:
+                  continue
+              for name in files:
+                  if not name.endswith(".json"):
+                      continue
+                  path = os.path.join(dirpath, name)
+                  try:
+                      doc = json.load(open(path, encoding="utf-8"))
+                  except Exception:
+                      continue  # parse failures already reported
+                  if isinstance(doc, dict) and "schema_version" in doc and doc["schema_version"] != CONTRACT_VERSION:
+                      fail(f"{os.path.relpath(path, root)}: schema_version {doc['schema_version']!r} != contract {CONTRACT_VERSION!r}")
 
           # 3. guests: file-per-guest + name==filename + index matches dir
           guests_dir = os.path.join(root, "guests")
@@ -121,13 +197,18 @@ jobs:
           except Exception:
               pass
 
-          # 5. activity ledger events carry the required fields
+          # 5. activity ledger events carry the required fields + rollup policy intact
           try:
               ledger = json.load(open(os.path.join(root, "activity", "ledger.json"), encoding="utf-8"))
+              if "rollup_policy" not in ledger or "30 days" not in str(ledger["rollup_policy"]):
+                  fail("activity/ledger.json: rollup_policy missing or retention windows altered")
               for i, ev in enumerate(ledger.get("events", [])):
                   for field in ("ts", "actor", "action", "detail"):
                       if not ev.get(field):
                           fail(f"activity/ledger.json event {i}: missing or empty \"{field}\"")
+              for day, s in ledger.get("daily_summaries", {}).items():
+                  if not isinstance(s.get("events"), int):
+                      fail(f"activity/ledger.json daily_summaries[{day}]: events must be an integer")
           except Exception:
               pass
 
