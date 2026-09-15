@@ -46,8 +46,36 @@ jobs:
                           fail(f"{path}: invalid JSON: {e}")
 
           # 2. schema_version contract + strict field-level schema checks
-          CONTRACT_VERSION = "1.0.0"
           EXPRESSIONS = {"celebrating", "working", "idle", "alert"}
+
+          # 2a. per-domain schema-version registry (SCHEMA-VERSIONS.json):
+          # every .json document must declare schema_version and match the
+          # expectation for its registry pattern. A document with no registry
+          # coverage fails loudly. The registry file declares its own
+          # schema_version (meta-schema 1.0.0), so it is checked like any other.
+          REGISTRY_PATH = os.path.join(root, "SCHEMA-VERSIONS.json")
+          REGISTRY_DOC_KEYS = {"$description", "how_to_add_a_new_domain_version"}
+          try:
+              REGISTRY = json.load(open(REGISTRY_PATH, encoding="utf-8"))
+              if not isinstance(REGISTRY, dict):
+                  raise ValueError("registry root must be a JSON object")
+              for _rk, _rv in REGISTRY.items():
+                  if _rk in REGISTRY_DOC_KEYS:
+                      continue
+                  if not isinstance(_rv, str):
+                      raise ValueError(f"registry entry {_rk!r} must map to a version string")
+          except Exception as e:
+              fail(f"SCHEMA-VERSIONS.json missing or invalid: {e}")
+              REGISTRY = {}
+
+          def expected_version(rel):
+              import fnmatch
+              for _pat, _ver in REGISTRY.items():
+                  if _pat in REGISTRY_DOC_KEYS or _pat == "default":
+                      continue
+                  if fnmatch.fnmatch(rel, _pat):
+                      return _ver
+              return REGISTRY.get("default")
 
           def need(doc, rel, fields):
               for f in fields:
@@ -125,7 +153,8 @@ jobs:
           except Exception:
               pass
 
-          # --- schema_version consistency: every document matches the contract ---
+          # --- schema_version consistency: every dict document must declare
+          # schema_version and match its SCHEMA-VERSIONS.json expectation ---
           for dirpath, _, files in os.walk(root):
               if "/.git/" in dirpath or "/.github/" in dirpath:
                   continue
@@ -133,12 +162,20 @@ jobs:
                   if not name.endswith(".json"):
                       continue
                   path = os.path.join(dirpath, name)
+                  rel = os.path.relpath(path, root)
                   try:
                       doc = json.load(open(path, encoding="utf-8"))
                   except Exception:
                       continue  # parse failures already reported
-                  if isinstance(doc, dict) and "schema_version" in doc and doc["schema_version"] != CONTRACT_VERSION:
-                      fail(f"{os.path.relpath(path, root)}: schema_version {doc['schema_version']!r} != contract {CONTRACT_VERSION!r}")
+                  if not isinstance(doc, dict):
+                      continue  # only documents carry schema_version
+                  exp = expected_version(rel)
+                  if exp is None:
+                      fail(f"{rel}: not covered by any SCHEMA-VERSIONS.json pattern and no default is set")
+                  elif "schema_version" not in doc:
+                      fail(f"{rel}: missing schema_version (SCHEMA-VERSIONS.json expects {exp!r})")
+                  elif doc["schema_version"] != exp:
+                      fail(f"{rel}: schema_version {doc['schema_version']!r} != registry expects {exp!r}")
 
           # 3. guests: file-per-guest + name==filename + index matches dir
           guests_dir = os.path.join(root, "guests")
