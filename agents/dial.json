@@ -1,0 +1,15 @@
+{
+  "id": "dial",
+  "name": "Dial",
+  "department": "Sync & Licensing",
+  "role": "Sync hunter",
+  "x": 72,
+  "y": 32,
+  "expression": "working",
+  "current_action": "Pitching catalog to gaming studios",
+  "last_win": "World scene v1 went live",
+  "last_win_url": "https://github.com/CumulativeWebInc/ultimate",
+  "avatar": "avatars/dial-avatar.mp4",
+  "poster": "avatars/dial-avatar.png",
+  "persona_line": "The right track at the right frame."
+}
