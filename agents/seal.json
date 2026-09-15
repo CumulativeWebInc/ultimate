@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "id": "seal",
+  "name": "Seal",
+  "department": "Sync & Licensing",
+  "role": "Verification and placement closer",
+  "x": 36,
+  "y": 70,
+  "expression": "celebrating",
+  "current_action": "riding high on today's verify/ endpoint launch",
+  "last_win": "verify/ endpoint live",
+  "last_win_url": "https://cumulativewebinc.github.io/cwi-learn/verify/",
+  "avatar": "avatars/seal-avatar.mp4",
+  "poster": "avatars/seal-avatar.png",
+  "persona_line": "A placement isn't real until the paper says so.",
+  "_last_seen_commit_ts": "2026-09-15T23:12:27Z"
+}
