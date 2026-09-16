@@ -228,7 +228,10 @@ export function boot({ seed, baseEpochMs, generatedAt, islands, agents, guests, 
   if (agents.index.chief && !order.includes(agents.index.chief)) order.push(agents.index.chief);
   for (const id of order) {
     const p = agents.profiles[id];
-    if (!p) continue;
+    // Only real agent profiles spawn entities. agents/index.json also indexes
+    // registry/docs files (e.g. tool-registry); they carry no agent `id` and
+    // must never materialize as world entities. Truth contract §11.
+    if (!p || typeof p.id !== "string") continue;
     const home = homeIslandFor(id, islandsById) || "ai-hub";
     const entity = spawnEntityInternal(w, {
       id,
