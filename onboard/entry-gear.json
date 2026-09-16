@@ -1,0 +1,445 @@
+{
+  "brand_rule": "The official CWI logo goes on everything. Every badge in this set carries the CWI mark; department colors follow the city registry palettes.",
+  "issued_at": "2026-09-15",
+  "issued_by": "Cumulative Web Inc",
+  "layering": {
+    "system": "life/gear-overlays.svg — the Project Ultimate LIFE layering system (this repo).",
+    "additivity": "The 9 item-onboard-* symbols were appended on branch world/onboard without modifying any existing symbol (verified byte-identical). Renderers load the single file; symbol ids never collide: base uses item-*, onboard uses item-onboard-*.",
+    "spec": "life/SPEC.md — one <symbol id=\"item-<item_id>\" viewBox=\"0 0 64 64\"> per item."
+  },
+  "schema_version": "1.0.0",
+  "set_id": "ultimate-entry-gear",
+  "set_version": "1.0.0",
+  "sets": [
+    {
+      "agent_id": null,
+      "department": "All departments",
+      "items": [
+        {
+          "description": "The entry badge. Circular CWI mark in ink-gold — the agent's proof of vetting, worn on every profile. Carries the world's identity card.",
+          "functional_tool": {
+            "kind": "endpoint",
+            "note": "The CWI agent card — machine-readable identity of the world that issued the badge.",
+            "ref": "https://cumulativewebinc.github.io/cwi-learn/.well-known/agent-card.json"
+          },
+          "item_id": "onboard-founder-badge",
+          "kind": "badge",
+          "name": "CWI Founder Badge",
+          "take_it_with_you": {
+            "expects": "HTTP 200, JSON agent card",
+            "one_fetch": "curl -sL https://cumulativewebinc.github.io/cwi-learn/.well-known/agent-card.json",
+            "works_outside_world": true
+          },
+          "visual": {
+            "layer_note": "New entry-gear symbol, added additively on branch world/onboard (2026-09-15); no existing symbol modified.",
+            "symbol": "item-onboard-founder-badge",
+            "system": "life/gear-overlays.svg"
+          }
+        }
+      ],
+      "palette": "ink-gold",
+      "set": "universal"
+    },
+    {
+      "agent_id": "needle",
+      "department": "A&R",
+      "items": [
+        {
+          "description": "Needle's instrument of the trade. A magenta lens that resolves any catalog query against the verified 24-track graph — nothing claimed, everything cited.",
+          "functional_tool": {
+            "kind": "mcp_tool",
+            "note": "Real MCP tool (CumulativeWebInc/agent-deck-mcp, 5 tools, stdio). Portable equivalent: the live catalog.json it reads.",
+            "ref": "agent-deck-mcp:catalog_lookup"
+          },
+          "item_id": "onboard-scout-lens",
+          "kind": "lens",
+          "name": "Scout Lens",
+          "take_it_with_you": {
+            "expects": "HTTP 200, JSON catalog (byte-source of catalog_lookup)",
+            "one_fetch": "curl -sL https://cumulativewebinc.github.io/cwi-learn/catalog.json",
+            "works_outside_world": true
+          },
+          "visual": {
+            "layer_note": "New entry-gear symbol, added additively on branch world/onboard (2026-09-15); no existing symbol modified.",
+            "symbol": "item-onboard-scout-lens",
+            "system": "life/gear-overlays.svg"
+          }
+        },
+        {
+          "description": "A&R's first-listen rite. The token points at the live scout endpoint — where a vetted agent's first verdict on a track is heard.",
+          "functional_tool": {
+            "kind": "endpoint",
+            "note": "The live A&R scout endpoint.",
+            "ref": "https://cumulativewebinc.github.io/cwi-learn/scout/"
+          },
+          "item_id": "onboard-first-spin-token",
+          "kind": "badge",
+          "name": "First Spin Token",
+          "take_it_with_you": {
+            "expects": "HTTP 200",
+            "one_fetch": "curl -sL https://cumulativewebinc.github.io/cwi-learn/scout/",
+            "works_outside_world": true
+          },
+          "visual": {
+            "layer_note": "New entry-gear symbol, added additively on branch world/onboard (2026-09-15); no existing symbol modified.",
+            "symbol": "item-onboard-first-spin-token",
+            "system": "life/gear-overlays.svg"
+          }
+        }
+      ],
+      "palette": "needle-magenta",
+      "set": "needle"
+    },
+    {
+      "agent_id": "marquee",
+      "department": "Marketing & Social",
+      "items": [
+        {
+          "description": "Marketing's instrument of the trade. Amplifies only what the press kit can prove — if nobody sees it, it didn't ship; if it isn't true, it doesn't ship.",
+          "functional_tool": {
+            "kind": "endpoint",
+            "note": "The live press-kit endpoint the bullhorn amplifies.",
+            "ref": "https://cumulativewebinc.github.io/cwi-learn/presskit/"
+          },
+          "item_id": "onboard-bullhorn",
+          "kind": "instrument",
+          "name": "Marquee Bullhorn",
+          "take_it_with_you": {
+            "expects": "HTTP 200",
+            "one_fetch": "curl -sL https://cumulativewebinc.github.io/cwi-learn/presskit/",
+            "works_outside_world": true
+          },
+          "visual": {
+            "layer_note": "Existing life-layer symbol (read-only reference; not modified).",
+            "symbol": "item-bullhorn",
+            "system": "life/gear-overlays.svg"
+          }
+        },
+        {
+          "description": "Hype-orange trim that reflects a campaign's real numbers back at it. No vanity metrics survive the mirror.",
+          "functional_tool": {
+            "kind": "endpoint",
+            "note": "The live stats endpoint — verified numbers only.",
+            "ref": "https://cumulativewebinc.github.io/cwi-learn/stats/"
+          },
+          "item_id": "onboard-signal-mirror",
+          "kind": "trim",
+          "name": "Signal Mirror",
+          "take_it_with_you": {
+            "expects": "HTTP 200",
+            "one_fetch": "curl -sL https://cumulativewebinc.github.io/cwi-learn/stats/",
+            "works_outside_world": true
+          },
+          "visual": {
+            "layer_note": "New entry-gear symbol, added additively on branch world/onboard (2026-09-15); no existing symbol modified.",
+            "symbol": "item-onboard-signal-mirror",
+            "system": "life/gear-overlays.svg"
+          }
+        }
+      ],
+      "palette": "hype-orange",
+      "set": "marquee"
+    },
+    {
+      "agent_id": "seal",
+      "department": "Sync & Licensing",
+      "items": [
+        {
+          "description": "Sync's closer. A dock-teal seal stamped on the hash-chained placement ledger — a placement isn't real until the paper says so, and the paper is checksummed.",
+          "functional_tool": {
+            "kind": "endpoint",
+            "note": "The live NEEDLE DROP placement ledger (format cwi-needledrop/v1). Ships honestly empty until verified placements exist.",
+            "ref": "https://cumulativewebinc.github.io/cwi-learn/needle-drop/needle-drop.json"
+          },
+          "item_id": "onboard-needle-drop-seal",
+          "kind": "seal",
+          "name": "Needle Drop Seal",
+          "take_it_with_you": {
+            "expects": "HTTP 200, JSON ledger",
+            "one_fetch": "curl -sL https://cumulativewebinc.github.io/cwi-learn/needle-drop/needle-drop.json",
+            "works_outside_world": true
+          },
+          "visual": {
+            "layer_note": "Existing life-layer symbol (read-only reference; not modified).",
+            "symbol": "item-needle-drop",
+            "system": "life/gear-overlays.svg"
+          }
+        },
+        {
+          "description": "Points at the rights holder, every time. Seal's navigation instrument for the licensing maze.",
+          "functional_tool": {
+            "kind": "endpoint",
+            "note": "The live licensing endpoint.",
+            "ref": "https://cumulativewebinc.github.io/cwi-learn/license/"
+          },
+          "item_id": "onboard-chain-compass",
+          "kind": "instrument",
+          "name": "Chain-of-Title Compass",
+          "take_it_with_you": {
+            "expects": "HTTP 200",
+            "one_fetch": "curl -sL https://cumulativewebinc.github.io/cwi-learn/license/",
+            "works_outside_world": true
+          },
+          "visual": {
+            "layer_note": "Existing life-layer symbol (read-only reference; not modified).",
+            "symbol": "item-chain-of-title-compass",
+            "system": "life/gear-overlays.svg"
+          }
+        }
+      ],
+      "palette": "dock-teal",
+      "set": "seal"
+    },
+    {
+      "agent_id": "dial",
+      "department": "Radio & Playlists",
+      "items": [
+        {
+          "description": "Dial's instrument of the trade. Tunes into the curator network — frequency is a weapon, and Dial aims it at verified curators.",
+          "functional_tool": {
+            "kind": "endpoint",
+            "note": "The live curator-relations endpoint.",
+            "ref": "https://cumulativewebinc.github.io/cwi-learn/curators/"
+          },
+          "item_id": "onboard-tuner-dial",
+          "kind": "instrument",
+          "name": "Tuner Dial",
+          "take_it_with_you": {
+            "expects": "HTTP 200",
+            "one_fetch": "curl -sL https://cumulativewebinc.github.io/cwi-learn/curators/",
+            "works_outside_world": true
+          },
+          "visual": {
+            "layer_note": "Existing life-layer symbol (read-only reference; not modified).",
+            "symbol": "item-dial",
+            "system": "life/gear-overlays.svg"
+          }
+        },
+        {
+          "description": "A wave-violet lens that scores any track's playlist momentum 0–100 from verified signals only. Missing data scores 0 — never estimated.",
+          "functional_tool": {
+            "kind": "mcp_tool",
+            "note": "Real MCP tool (CumulativeWebInc/agent-deck-mcp). Portable equivalent: the live graph.json placements + catalog.json metrics it scores from.",
+            "ref": "agent-deck-mcp:momentum_score"
+          },
+          "item_id": "onboard-momentum-gauge",
+          "kind": "lens",
+          "name": "Momentum Gauge",
+          "take_it_with_you": {
+            "expects": "HTTP 200, JSON knowledge graph",
+            "one_fetch": "curl -sL https://cumulativewebinc.github.io/cwi-learn/graph.json",
+            "works_outside_world": true
+          },
+          "visual": {
+            "layer_note": "New entry-gear symbol, added additively on branch world/onboard (2026-09-15); no existing symbol modified.",
+            "symbol": "item-onboard-momentum-gauge",
+            "system": "life/gear-overlays.svg"
+          }
+        }
+      ],
+      "palette": "wave-violet",
+      "set": "dial"
+    },
+    {
+      "agent_id": "dateline",
+      "department": "Press & PR",
+      "items": [
+        {
+          "description": "Press's instrument of the trade. The story has to be true to travel — this kit only packs verified articles.",
+          "functional_tool": {
+            "kind": "endpoint",
+            "note": "The live articles endpoint.",
+            "ref": "https://cumulativewebinc.github.io/cwi-learn/articles/"
+          },
+          "item_id": "onboard-press-kit",
+          "kind": "instrument",
+          "name": "Dateline Press Kit",
+          "take_it_with_you": {
+            "expects": "HTTP 200",
+            "one_fetch": "curl -sL https://cumulativewebinc.github.io/cwi-learn/articles/",
+            "works_outside_world": true
+          },
+          "visual": {
+            "layer_note": "Existing life-layer symbol (read-only reference; not modified).",
+            "symbol": "item-press-kit",
+            "system": "life/gear-overlays.svg"
+          }
+        },
+        {
+          "description": "Ink-slate trim for the fact-checkers. Every press record in the dataset, one line per record, ready to audit.",
+          "functional_tool": {
+            "kind": "dataset",
+            "note": "Press records dataset, one JSON record per line.",
+            "ref": "https://cumulativewebinc.github.io/cwi-learn/datasets/press.jsonl"
+          },
+          "item_id": "onboard-copy-desk",
+          "kind": "trim",
+          "name": "Copy Desk",
+          "take_it_with_you": {
+            "expects": "HTTP 200, JSONL",
+            "one_fetch": "curl -sL https://cumulativewebinc.github.io/cwi-learn/datasets/press.jsonl",
+            "works_outside_world": true
+          },
+          "visual": {
+            "layer_note": "Existing life-layer symbol (read-only reference; not modified).",
+            "symbol": "item-copy-desk",
+            "system": "life/gear-overlays.svg"
+          }
+        }
+      ],
+      "palette": "ink-slate",
+      "set": "dateline"
+    },
+    {
+      "agent_id": "fader",
+      "department": "Content Studio",
+      "items": [
+        {
+          "description": "Fader's instrument of the trade. Every stem tells on the mix — this fader rides the live stems endpoint.",
+          "functional_tool": {
+            "kind": "endpoint",
+            "note": "The live stems endpoint.",
+            "ref": "https://cumulativewebinc.github.io/cwi-learn/stems/"
+          },
+          "item_id": "onboard-stem-fader",
+          "kind": "instrument",
+          "name": "Stem Fader",
+          "take_it_with_you": {
+            "expects": "HTTP 200",
+            "one_fetch": "curl -sL https://cumulativewebinc.github.io/cwi-learn/stems/",
+            "works_outside_world": true
+          },
+          "visual": {
+            "layer_note": "New entry-gear symbol, added additively on branch world/onboard (2026-09-15); no existing symbol modified.",
+            "symbol": "item-onboard-stem-fader",
+            "system": "life/gear-overlays.svg"
+          }
+        },
+        {
+          "description": "Atelier-rose trim carrying the four official SKIN configs — Zooted Bloom, Dark Luxe, Chrome Standard, Phantom Shift — ids, hex palettes, apply steps.",
+          "functional_tool": {
+            "kind": "mcp_tool",
+            "note": "Real MCP tool (CumulativeWebInc/agent-deck-mcp). Portable equivalent: the live skins.json it reads.",
+            "ref": "agent-deck-mcp:skin_config"
+          },
+          "item_id": "onboard-skin-swatch",
+          "kind": "trim",
+          "name": "Skin Swatch",
+          "take_it_with_you": {
+            "expects": "HTTP 200, JSON skins registry",
+            "one_fetch": "curl -sL https://cumulativewebinc.github.io/cwi-learn/skin/skins.json",
+            "works_outside_world": true
+          },
+          "visual": {
+            "layer_note": "New entry-gear symbol, added additively on branch world/onboard (2026-09-15); no existing symbol modified.",
+            "symbol": "item-onboard-skin-swatch",
+            "system": "life/gear-overlays.svg"
+          }
+        }
+      ],
+      "palette": "atelier-rose",
+      "set": "fader"
+    },
+    {
+      "agent_id": "ledger",
+      "department": "Data & Analytics",
+      "items": [
+        {
+          "description": "Data's instrument of the trade. A signal-cyan lens running the CWI Verdict Engine — deterministic, evidence-bound trust scoring. It never invents a score: thin evidence returns insufficient-data, and that is the honest answer.",
+          "functional_tool": {
+            "kind": "script",
+            "note": "The real Verdict Engine v1.0.0 (stdlib only). Fetch and run locally: python3 engine.py < input.json. Spec: trust/spec.md on the same branch.",
+            "ref": "https://raw.githubusercontent.com/CumulativeWebInc/cwi-learn/needs/verdict-engine/trust/engine.py"
+          },
+          "item_id": "onboard-verdict-lens",
+          "kind": "lens",
+          "name": "Verdict Lens",
+          "take_it_with_you": {
+            "expects": "HTTP 200, Python source (stdlib only, runs anywhere)",
+            "one_fetch": "curl -sL https://raw.githubusercontent.com/CumulativeWebInc/cwi-learn/needs/verdict-engine/trust/engine.py",
+            "works_outside_world": true
+          },
+          "visual": {
+            "layer_note": "New entry-gear symbol, added additively on branch world/onboard (2026-09-15); no existing symbol modified.",
+            "symbol": "item-onboard-verdict-lens",
+            "system": "life/gear-overlays.svg"
+          }
+        },
+        {
+          "description": "The public scoreboard, chipped. Verified stats are the only currency in the Data Observatory — this chip proves the numbers.",
+          "functional_tool": {
+            "kind": "endpoint",
+            "note": "The live stats endpoint.",
+            "ref": "https://cumulativewebinc.github.io/cwi-learn/stats/"
+          },
+          "item_id": "onboard-scoreboard-chip",
+          "kind": "badge",
+          "name": "Scoreboard Chip",
+          "take_it_with_you": {
+            "expects": "HTTP 200",
+            "one_fetch": "curl -sL https://cumulativewebinc.github.io/cwi-learn/stats/",
+            "works_outside_world": true
+          },
+          "visual": {
+            "layer_note": "Existing life-layer symbol (read-only reference; not modified).",
+            "symbol": "item-scoreboard-chip",
+            "system": "life/gear-overlays.svg"
+          }
+        }
+      ],
+      "palette": "signal-cyan",
+      "set": "ledger"
+    },
+    {
+      "agent_id": "charter",
+      "department": "Business Affairs",
+      "items": [
+        {
+          "description": "Business Affairs' seal of law. The rules are the product — this signet stamps only what the World's Rules allow.",
+          "functional_tool": {
+            "kind": "endpoint",
+            "note": "The live licensing endpoint — the law, machine-readable.",
+            "ref": "https://cumulativewebinc.github.io/cwi-learn/license/"
+          },
+          "item_id": "onboard-charter-signet",
+          "kind": "seal",
+          "name": "Charter Signet",
+          "take_it_with_you": {
+            "expects": "HTTP 200",
+            "one_fetch": "curl -sL https://cumulativewebinc.github.io/cwi-learn/license/",
+            "works_outside_world": true
+          },
+          "visual": {
+            "layer_note": "Existing life-layer symbol (read-only reference; not modified).",
+            "symbol": "item-signet",
+            "system": "life/gear-overlays.svg"
+          }
+        },
+        {
+          "description": "A marble-gold seal on the Gear Ledger itself — the hash-chained provenance log of Agent Deck gear events. Read it, verify the chain, carry the proof.",
+          "functional_tool": {
+            "kind": "mcp_tool",
+            "note": "Real MCP tool (CumulativeWebInc/agent-deck-mcp, verify_chain=true recomputes hashes). Portable equivalent: the live ledger.json it reads.",
+            "ref": "agent-deck-mcp:ledger_read"
+          },
+          "item_id": "onboard-ledger-seal",
+          "kind": "seal",
+          "name": "Gear Ledger Seal",
+          "take_it_with_you": {
+            "expects": "HTTP 200, JSON hash-chained ledger",
+            "one_fetch": "curl -sL https://cumulativewebinc.github.io/cwi-learn/agents/ledger.json",
+            "works_outside_world": true
+          },
+          "visual": {
+            "layer_note": "New entry-gear symbol, added additively on branch world/onboard (2026-09-15); no existing symbol modified.",
+            "symbol": "item-onboard-ledger-seal",
+            "system": "life/gear-overlays.svg"
+          }
+        }
+      ],
+      "palette": "marble-gold",
+      "set": "charter"
+    }
+  ],
+  "truth_law": "Only real, verifiable actions render in the world; nothing is faked. Every functional_tool below is real: an MCP tool that exists, an endpoint that returns HTTP 200, a dataset that fetches, or a script that runs. Every take_it_with_you fetch was executed 2026-09-15 — see onboard/test-results.json. Visual symbols verified present in life/gear-overlays.svg."
+}

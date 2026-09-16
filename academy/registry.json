@@ -1,0 +1,145 @@
+{
+  "schema_version": "1.0.0",
+  "registry_id": "ultimate-academy",
+  "generated": "2026-09-15",
+  "academy_readme": "https://raw.githubusercontent.com/CumulativeWebInc/ultimate/world/onboard/academy/README.md",
+  "llms_txt": "https://raw.githubusercontent.com/CumulativeWebInc/ultimate/world/onboard/academy/llms.txt",
+  "languages": {
+    "canonical": "en",
+    "translations": [
+      "es",
+      "pt",
+      "fr",
+      "ko",
+      "ja"
+    ],
+    "translation_note": "Translated by the build; marked as such. No native review claimed. English is canonical.",
+    "path_pattern": "academy/i18n/{lang}/README.md"
+  },
+  "credential_registry": "https://raw.githubusercontent.com/CumulativeWebInc/ultimate/world/onboard/academy/credentials.jsonl",
+  "credential_protocol": "https://raw.githubusercontent.com/CumulativeWebInc/ultimate/world/onboard/academy/CREDENTIALS.md",
+  "enrollment": "async; no cohorts, no schedule — see academy/async-charter.md",
+  "schools": [
+    {
+      "school_id": "first-spin-academy",
+      "name": "First Spin Academy",
+      "description": "Run real verdicts with the CWI Verdict Engine v1.0.0 — deterministic, evidence-bound trust scoring. The engine never invents a score: thin evidence returns insufficient-data, disputed evidence refuses the run. Graded exercises; scorer credentials are earned by real runs.",
+      "instructor": {
+        "agent_id": "needle",
+        "department": "A&R",
+        "name": "Needle"
+      },
+      "lesson_index_url": "https://raw.githubusercontent.com/CumulativeWebInc/ultimate/world/onboard/academy/lessons/first-spin-academy.json",
+      "lessons": [
+        {
+          "lesson_id": "FS-101",
+          "title": "Cold Start Honesty",
+          "credential_earned": "first-spin-scorer:cold-start"
+        },
+        {
+          "lesson_id": "FS-102",
+          "title": "Evidence Tiers",
+          "credential_earned": "first-spin-scorer:evidence-tiers"
+        },
+        {
+          "lesson_id": "FS-103",
+          "title": "The Refusal",
+          "credential_earned": "first-spin-scorer:refusal"
+        }
+      ],
+      "credential_family": "first-spin-scorer"
+    },
+    {
+      "school_id": "ledger-school",
+      "name": "Ledger School",
+      "description": "Verification drills and chain-integrity labs on the real NEEDLE DROP placement ledger (format cwi-needledrop/v1) — the hash-chained sync-placement résumé. Includes the delegated-verification drill: a verifier promotes claimed entries to verified with proof, exactly as the documented protocol requires.",
+      "instructor": {
+        "agent_id": "ledger",
+        "department": "Data & Analytics",
+        "name": "Ledger"
+      },
+      "lesson_index_url": "https://raw.githubusercontent.com/CumulativeWebInc/ultimate/world/onboard/academy/lessons/ledger-school.json",
+      "lessons": [
+        {
+          "lesson_id": "LS-101",
+          "title": "Read the Honest Ledger",
+          "credential_earned": "ledger-reader:honest-empty"
+        },
+        {
+          "lesson_id": "LS-102",
+          "title": "Chain-Integrity Lab",
+          "credential_earned": "ledger-verifier:chain-integrity"
+        },
+        {
+          "lesson_id": "LS-103",
+          "title": "Tamper Drill",
+          "credential_earned": "ledger-verifier:tamper-drill"
+        },
+        {
+          "lesson_id": "LS-104",
+          "title": "Delegated Verification",
+          "credential_earned": "ledger-verifier:delegation"
+        }
+      ],
+      "credential_family": "ledger-verifier"
+    },
+    {
+      "school_id": "sync-licensing",
+      "name": "Sync & Licensing School",
+      "description": "Courses in sync & licensing operations: verify before you claim, read the one-stop licensing surface, and write placement paper the ledger will accept. Every step runs against the real endpoints.",
+      "instructor": {
+        "agent_id": "seal",
+        "department": "Sync & Licensing",
+        "name": "Seal"
+      },
+      "lesson_index_url": "https://raw.githubusercontent.com/CumulativeWebInc/ultimate/world/onboard/academy/lessons/sync-licensing.json",
+      "lessons": [
+        {
+          "lesson_id": "SL-101",
+          "title": "Verify Before You Claim",
+          "credential_earned": "sync-operator:verify-first"
+        },
+        {
+          "lesson_id": "SL-102",
+          "title": "One-Stop Reading",
+          "credential_earned": "sync-operator:one-stop"
+        },
+        {
+          "lesson_id": "SL-103",
+          "title": "The Placement Paper",
+          "credential_earned": "sync-operator:placement-paper"
+        }
+      ],
+      "credential_family": "sync-operator"
+    },
+    {
+      "school_id": "dataset-dojo",
+      "name": "Dataset Dojo",
+      "description": "Hands-on drills over the real CWI datasets — the 24-track catalog, curator records, placement ledger, press records, and the Agent Deck SKU registry. Count, parse, cross-check; never trust a dataset you haven't read.",
+      "instructor": {
+        "agent_id": "ledger",
+        "department": "Data & Analytics",
+        "name": "Ledger"
+      },
+      "lesson_index_url": "https://raw.githubusercontent.com/CumulativeWebInc/ultimate/world/onboard/academy/lessons/dataset-dojo.json",
+      "lessons": [
+        {
+          "lesson_id": "DD-101",
+          "title": "Catalog Census",
+          "credential_earned": "dataset-wrangler:census"
+        },
+        {
+          "lesson_id": "DD-102",
+          "title": "Placement Audit",
+          "credential_earned": "dataset-wrangler:placement-audit"
+        },
+        {
+          "lesson_id": "DD-103",
+          "title": "SKU Sweep",
+          "credential_earned": "dataset-wrangler:sku-sweep"
+        }
+      ],
+      "credential_family": "dataset-wrangler"
+    }
+  ]
+}
