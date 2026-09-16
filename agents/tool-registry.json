@@ -1,0 +1,1597 @@
+{
+  "schema_version": "1.0.0",
+  "registry": "CWI Agent Tool Registry",
+  "owner": "Cumulative Web Inc",
+  "generated_at": "2026-09-16T00:32:26Z",
+  "branch": "agents/tool-registry",
+  "build_note": "Every health status comes from a real check performed during this build (HTTP fetch, MCP stdio call, local script run, or filesystem inventory). Unavailable tools are marked unavailable, not papered over.",
+  "standing_rules": [
+    "Nothing sent, posted, published, signed, or paid without Black's explicit approval of exact content.",
+    "No payments without explicit approval; no invented credentials; no spam or stream inflation.",
+    "Trust-verdict: never invent a score; insufficient-data is honest.",
+    "Needle Drop: a curator's promise is a claim, never a verification.",
+    "Crown motif exclusive to KingCode; CWI logo on all visuals.",
+    "White-label, unpriced SKUs \u2014 no public pricing without Black's approval."
+  ],
+  "agents": {
+    "needle": {
+      "id": "needle",
+      "name": "Needle",
+      "department": "A&R",
+      "role": "Talent scout and repertoire builder",
+      "lane": [
+        "sku-prospect-scanner",
+        "sku-first-spin",
+        "sku-ear-witness"
+      ],
+      "runbook": [
+        "rb-needle"
+      ],
+      "shared": [
+        "mcp-server",
+        "mcp-catalog_lookup",
+        "mcp-momentum_score",
+        "mcp-product_lookup",
+        "mcp-skin_config",
+        "mcp-ledger_read",
+        "ds-tracks",
+        "ds-curators",
+        "ds-placements",
+        "ds-press",
+        "ds-training",
+        "gear-json",
+        "hf-dataset",
+        "verify-trust-verdict",
+        "verify-needle-drop",
+        "verify-first-spin",
+        "sys-scaling",
+        "sys-pulse",
+        "sys-frontdoor-kit",
+        "sys-content-pipeline",
+        "sys-ops-dashboard",
+        "sys-avatars"
+      ],
+      "shared_unavailable": [
+        "ds-catalog",
+        "ds-products"
+      ],
+      "surplus": [
+        "exp-web-search",
+        "exp-code-exec",
+        "exp-moltbook",
+        "exp-admissions",
+        "exp-x402"
+      ]
+    },
+    "marquee": {
+      "id": "marquee",
+      "name": "Marquee",
+      "department": "Marketing",
+      "role": "Marketing, social and street-team operations",
+      "lane": [
+        "sku-hype",
+        "sku-final-cut",
+        "sku-bullhorn"
+      ],
+      "runbook": [
+        "rb-marquee"
+      ],
+      "shared": [
+        "mcp-server",
+        "mcp-catalog_lookup",
+        "mcp-momentum_score",
+        "mcp-product_lookup",
+        "mcp-skin_config",
+        "mcp-ledger_read",
+        "ds-tracks",
+        "ds-curators",
+        "ds-placements",
+        "ds-press",
+        "ds-training",
+        "gear-json",
+        "hf-dataset",
+        "verify-trust-verdict",
+        "verify-needle-drop",
+        "verify-first-spin",
+        "sys-scaling",
+        "sys-pulse",
+        "sys-frontdoor-kit",
+        "sys-content-pipeline",
+        "sys-ops-dashboard",
+        "sys-avatars"
+      ],
+      "shared_unavailable": [
+        "ds-catalog",
+        "ds-products"
+      ],
+      "surplus": [
+        "exp-web-search",
+        "exp-code-exec",
+        "exp-moltbook",
+        "exp-admissions",
+        "exp-x402"
+      ]
+    },
+    "seal": {
+      "id": "seal",
+      "name": "Seal",
+      "department": "Sync",
+      "role": "Sync licensing scout and deal velocity",
+      "lane": [
+        "sku-syncdeck",
+        "sku-one-stop",
+        "sku-needle-drop"
+      ],
+      "runbook": [
+        "rb-seal"
+      ],
+      "shared": [
+        "mcp-server",
+        "mcp-catalog_lookup",
+        "mcp-momentum_score",
+        "mcp-product_lookup",
+        "mcp-skin_config",
+        "mcp-ledger_read",
+        "ds-tracks",
+        "ds-curators",
+        "ds-placements",
+        "ds-press",
+        "ds-training",
+        "gear-json",
+        "hf-dataset",
+        "verify-trust-verdict",
+        "verify-needle-drop",
+        "verify-first-spin",
+        "sys-scaling",
+        "sys-pulse",
+        "sys-frontdoor-kit",
+        "sys-content-pipeline",
+        "sys-ops-dashboard",
+        "sys-avatars"
+      ],
+      "shared_unavailable": [
+        "ds-catalog",
+        "ds-products"
+      ],
+      "surplus": [
+        "exp-web-search",
+        "exp-code-exec",
+        "exp-moltbook",
+        "exp-admissions",
+        "exp-x402"
+      ]
+    },
+    "dateline": {
+      "id": "dateline",
+      "name": "Dateline",
+      "department": "Press",
+      "role": "Press, PR and verified story ammunition",
+      "lane": [
+        "sku-press-kit",
+        "sku-copy-desk",
+        "sku-greenroom"
+      ],
+      "runbook": [
+        "rb-dateline"
+      ],
+      "shared": [
+        "mcp-server",
+        "mcp-catalog_lookup",
+        "mcp-momentum_score",
+        "mcp-product_lookup",
+        "mcp-skin_config",
+        "mcp-ledger_read",
+        "ds-tracks",
+        "ds-curators",
+        "ds-placements",
+        "ds-press",
+        "ds-training",
+        "gear-json",
+        "hf-dataset",
+        "verify-trust-verdict",
+        "verify-needle-drop",
+        "verify-first-spin",
+        "sys-scaling",
+        "sys-pulse",
+        "sys-frontdoor-kit",
+        "sys-content-pipeline",
+        "sys-ops-dashboard",
+        "sys-avatars"
+      ],
+      "shared_unavailable": [
+        "ds-catalog",
+        "ds-products"
+      ],
+      "surplus": [
+        "exp-web-search",
+        "exp-code-exec",
+        "exp-moltbook",
+        "exp-admissions",
+        "exp-x402"
+      ]
+    },
+    "dial": {
+      "id": "dial",
+      "name": "Dial",
+      "department": "Radio",
+      "role": "Radio rotation and playlist operations",
+      "lane": [
+        "sku-dial",
+        "sku-open-wave",
+        "sku-soundcheck"
+      ],
+      "runbook": [
+        "rb-dial"
+      ],
+      "shared": [
+        "mcp-server",
+        "mcp-catalog_lookup",
+        "mcp-momentum_score",
+        "mcp-product_lookup",
+        "mcp-skin_config",
+        "mcp-ledger_read",
+        "ds-tracks",
+        "ds-curators",
+        "ds-placements",
+        "ds-press",
+        "ds-training",
+        "gear-json",
+        "hf-dataset",
+        "verify-trust-verdict",
+        "verify-needle-drop",
+        "verify-first-spin",
+        "sys-scaling",
+        "sys-pulse",
+        "sys-frontdoor-kit",
+        "sys-content-pipeline",
+        "sys-ops-dashboard",
+        "sys-avatars"
+      ],
+      "shared_unavailable": [
+        "ds-catalog",
+        "ds-products"
+      ],
+      "surplus": [
+        "exp-web-search",
+        "exp-code-exec",
+        "exp-moltbook",
+        "exp-admissions",
+        "exp-x402"
+      ]
+    },
+    "fader": {
+      "id": "fader",
+      "name": "Fader",
+      "department": "Studio",
+      "role": "Content studio \u2014 visual identity and content builds",
+      "lane": [
+        "sku-skin",
+        "sku-tally",
+        "sku-signal-mirror"
+      ],
+      "runbook": [
+        "rb-fader"
+      ],
+      "shared": [
+        "mcp-server",
+        "mcp-catalog_lookup",
+        "mcp-momentum_score",
+        "mcp-product_lookup",
+        "mcp-skin_config",
+        "mcp-ledger_read",
+        "ds-tracks",
+        "ds-curators",
+        "ds-placements",
+        "ds-press",
+        "ds-training",
+        "gear-json",
+        "hf-dataset",
+        "verify-trust-verdict",
+        "verify-needle-drop",
+        "verify-first-spin",
+        "sys-scaling",
+        "sys-pulse",
+        "sys-frontdoor-kit",
+        "sys-content-pipeline",
+        "sys-ops-dashboard",
+        "sys-avatars"
+      ],
+      "shared_unavailable": [
+        "ds-catalog",
+        "ds-products"
+      ],
+      "surplus": [
+        "exp-web-search",
+        "exp-code-exec",
+        "exp-moltbook",
+        "exp-admissions",
+        "exp-x402"
+      ]
+    },
+    "ledger": {
+      "id": "ledger",
+      "name": "Ledger",
+      "department": "Data",
+      "role": "Data, analytics and provenance metrics",
+      "lane": [
+        "sku-gear-ledger",
+        "sku-scoreboard-chip",
+        "sku-streetlight"
+      ],
+      "runbook": [
+        "rb-ledger"
+      ],
+      "shared": [
+        "mcp-server",
+        "mcp-catalog_lookup",
+        "mcp-momentum_score",
+        "mcp-product_lookup",
+        "mcp-skin_config",
+        "mcp-ledger_read",
+        "ds-tracks",
+        "ds-curators",
+        "ds-placements",
+        "ds-press",
+        "ds-training",
+        "gear-json",
+        "hf-dataset",
+        "verify-trust-verdict",
+        "verify-needle-drop",
+        "verify-first-spin",
+        "sys-scaling",
+        "sys-pulse",
+        "sys-frontdoor-kit",
+        "sys-content-pipeline",
+        "sys-ops-dashboard",
+        "sys-avatars"
+      ],
+      "shared_unavailable": [
+        "ds-catalog",
+        "ds-products"
+      ],
+      "surplus": [
+        "exp-web-search",
+        "exp-code-exec",
+        "exp-moltbook",
+        "exp-admissions",
+        "exp-x402"
+      ]
+    },
+    "charter": {
+      "id": "charter",
+      "name": "Charter",
+      "department": "Affairs",
+      "role": "Business affairs \u2014 rights clarity and clearance",
+      "lane": [
+        "sku-chain-of-title-compass",
+        "sku-all-clear",
+        "sku-signet"
+      ],
+      "runbook": [
+        "rb-charter"
+      ],
+      "shared": [
+        "mcp-server",
+        "mcp-catalog_lookup",
+        "mcp-momentum_score",
+        "mcp-product_lookup",
+        "mcp-skin_config",
+        "mcp-ledger_read",
+        "ds-tracks",
+        "ds-curators",
+        "ds-placements",
+        "ds-press",
+        "ds-training",
+        "gear-json",
+        "hf-dataset",
+        "verify-trust-verdict",
+        "verify-needle-drop",
+        "verify-first-spin",
+        "sys-scaling",
+        "sys-pulse",
+        "sys-frontdoor-kit",
+        "sys-content-pipeline",
+        "sys-ops-dashboard",
+        "sys-avatars"
+      ],
+      "shared_unavailable": [
+        "ds-catalog",
+        "ds-products"
+      ],
+      "surplus": [
+        "exp-web-search",
+        "exp-code-exec",
+        "exp-moltbook",
+        "exp-admissions",
+        "exp-x402"
+      ]
+    },
+    "kingcode": {
+      "id": "kingcode",
+      "name": "KingCode",
+      "department": "Chief of Staff",
+      "role": "Chief of staff \u2014 full oversight across all eight departments. Gold crown exclusive to KingCode.",
+      "lane": [
+        "sku-cwi-1-walkman",
+        "sku-gear-ledger",
+        "sku-scoreboard-chip",
+        "sku-chain-of-title-compass",
+        "sku-syncdeck",
+        "sku-prospect-scanner",
+        "sku-press-kit",
+        "sku-dial",
+        "sku-hype",
+        "sku-skin",
+        "sku-streetlight",
+        "sku-all-clear",
+        "sku-first-spin",
+        "sku-one-stop",
+        "sku-copy-desk",
+        "sku-final-cut",
+        "sku-open-wave",
+        "sku-tally",
+        "sku-signet",
+        "sku-ear-witness",
+        "sku-needle-drop",
+        "sku-greenroom",
+        "sku-bullhorn",
+        "sku-soundcheck",
+        "sku-signal-mirror"
+      ],
+      "runbook": [
+        "rb-needle",
+        "rb-marquee",
+        "rb-seal",
+        "rb-dateline",
+        "rb-dial",
+        "rb-fader",
+        "rb-ledger",
+        "rb-charter"
+      ],
+      "shared": [
+        "mcp-server",
+        "mcp-catalog_lookup",
+        "mcp-momentum_score",
+        "mcp-product_lookup",
+        "mcp-skin_config",
+        "mcp-ledger_read",
+        "ds-tracks",
+        "ds-curators",
+        "ds-placements",
+        "ds-press",
+        "ds-training",
+        "gear-json",
+        "hf-dataset",
+        "verify-trust-verdict",
+        "verify-needle-drop",
+        "verify-first-spin",
+        "sys-scaling",
+        "sys-pulse",
+        "sys-frontdoor-kit",
+        "sys-content-pipeline",
+        "sys-ops-dashboard",
+        "sys-avatars"
+      ],
+      "shared_unavailable": [
+        "ds-catalog",
+        "ds-products"
+      ],
+      "surplus": [
+        "exp-web-search",
+        "exp-code-exec",
+        "exp-moltbook",
+        "exp-admissions",
+        "exp-x402"
+      ],
+      "note": "Carries the flagship Signal Boy (24-track catalog). Crown motif exclusive to KingCode \u2014 never on department agents."
+    },
+    "guest-template": {
+      "id": "guest-template",
+      "name": "Guest Agent (template)",
+      "department": "Guest",
+      "role": "Arriving agents admitted via Ultimate admissions; equipped at the front door",
+      "lane": [
+        "sku-cwi-1-walkman"
+      ],
+      "runbook": [],
+      "shared": [
+        "mcp-catalog_lookup",
+        "mcp-product_lookup",
+        "ds-tracks",
+        "gear-json",
+        "verify-trust-verdict",
+        "sys-frontdoor-kit",
+        "sys-avatars"
+      ],
+      "shared_unavailable": [
+        "ds-catalog",
+        "ds-products"
+      ],
+      "surplus": [
+        "exp-web-search",
+        "exp-code-exec",
+        "exp-admissions"
+      ],
+      "note": "Guests get read-only catalog access + a generated welcome kit. Lane SKUs unlock after vetting."
+    }
+  },
+  "tool_catalog": {
+    "sku-cwi-1-walkman": {
+      "id": "sku-cwi-1-walkman",
+      "name": "Signal Boy",
+      "category": "agent-deck-sku",
+      "department_lane": "chief",
+      "version": "2.0.0",
+      "version_source": "datasets/agent-deck-skus.jsonl registry record",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/walkman/item-card.json",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:29:51Z",
+        "evidence": "HTTP 200, body parsed as valid JSON"
+      },
+      "notes": "White-label, unpriced. Item card carries give-block licensing for agent use."
+    },
+    "sku-gear-ledger": {
+      "id": "sku-gear-ledger",
+      "name": "Gear Ledger",
+      "category": "agent-deck-sku",
+      "department_lane": "data",
+      "version": "1.0.0",
+      "version_source": "datasets/agent-deck-skus.jsonl registry record",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/agents/ledger.json",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:29:51Z",
+        "evidence": "HTTP 200, body parsed as valid JSON"
+      },
+      "notes": "White-label, unpriced. Item card carries give-block licensing for agent use."
+    },
+    "sku-scoreboard-chip": {
+      "id": "sku-scoreboard-chip",
+      "name": "CWI-1 Scoreboard Chip",
+      "category": "agent-deck-sku",
+      "department_lane": "data",
+      "version": "1.0.0",
+      "version_source": "datasets/agent-deck-skus.jsonl registry record",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/scoreboard/item-card.json",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:29:51Z",
+        "evidence": "HTTP 200, body parsed as valid JSON"
+      },
+      "notes": "White-label, unpriced. Item card carries give-block licensing for agent use."
+    },
+    "sku-chain-of-title-compass": {
+      "id": "sku-chain-of-title-compass",
+      "name": "Chain-of-Title Compass",
+      "category": "agent-deck-sku",
+      "department_lane": "affairs",
+      "version": "1.0.0",
+      "version_source": "datasets/agent-deck-skus.jsonl registry record",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/compass/item-card.json",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:29:51Z",
+        "evidence": "HTTP 200, body parsed as valid JSON"
+      },
+      "notes": "White-label, unpriced. Item card carries give-block licensing for agent use."
+    },
+    "sku-syncdeck": {
+      "id": "sku-syncdeck",
+      "name": "CWI-2 SYNCDECK",
+      "category": "agent-deck-sku",
+      "department_lane": "sync",
+      "version": "1.0.0",
+      "version_source": "datasets/agent-deck-skus.jsonl registry record",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/syncdeck/syncdeck.json",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:29:51Z",
+        "evidence": "HTTP 200, body parsed as valid JSON"
+      },
+      "notes": "White-label, unpriced. Item card carries give-block licensing for agent use."
+    },
+    "sku-prospect-scanner": {
+      "id": "sku-prospect-scanner",
+      "name": "CWI-1 Prospect Scanner",
+      "category": "agent-deck-sku",
+      "department_lane": "ar",
+      "version": "1.0.0",
+      "version_source": "datasets/agent-deck-skus.jsonl registry record",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/scanner/item-card.json",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:29:51Z",
+        "evidence": "HTTP 200, body parsed as valid JSON"
+      },
+      "notes": "White-label, unpriced. Item card carries give-block licensing for agent use."
+    },
+    "sku-press-kit": {
+      "id": "sku-press-kit",
+      "name": "CWI Press Kit Cartridge",
+      "category": "agent-deck-sku",
+      "department_lane": "press",
+      "version": "1.0.0",
+      "version_source": "datasets/agent-deck-skus.jsonl registry record",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/press-kit/item-card.json",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:29:51Z",
+        "evidence": "HTTP 200, body parsed as valid JSON"
+      },
+      "notes": "White-label, unpriced. Item card carries give-block licensing for agent use."
+    },
+    "sku-dial": {
+      "id": "sku-dial",
+      "name": "Radio Dial",
+      "category": "agent-deck-sku",
+      "department_lane": "radio",
+      "version": "1.0.0",
+      "version_source": "datasets/agent-deck-skus.jsonl registry record",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/dial/item-card.json",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:29:51Z",
+        "evidence": "HTTP 200, body parsed as valid JSON"
+      },
+      "notes": "White-label, unpriced. Item card carries give-block licensing for agent use."
+    },
+    "sku-hype": {
+      "id": "sku-hype",
+      "name": "HYPE Cartridge",
+      "category": "agent-deck-sku",
+      "department_lane": "marketing",
+      "version": "1.0.0",
+      "version_source": "datasets/agent-deck-skus.jsonl registry record",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/hype/item-card.json",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:29:51Z",
+        "evidence": "HTTP 200, body parsed as valid JSON"
+      },
+      "notes": "White-label, unpriced. Item card carries give-block licensing for agent use."
+    },
+    "sku-skin": {
+      "id": "sku-skin",
+      "name": "SIGNAL SKIN",
+      "category": "agent-deck-sku",
+      "department_lane": "studio",
+      "version": "1.0.0",
+      "version_source": "datasets/agent-deck-skus.jsonl registry record",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/skin/item-card.json",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:29:51Z",
+        "evidence": "HTTP 200, body parsed as valid JSON"
+      },
+      "notes": "White-label, unpriced. Item card carries give-block licensing for agent use."
+    },
+    "sku-streetlight": {
+      "id": "sku-streetlight",
+      "name": "THE STREETLIGHT",
+      "category": "agent-deck-sku",
+      "department_lane": "data",
+      "version": "1.0.0",
+      "version_source": "datasets/agent-deck-skus.jsonl registry record",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/streetlight/item-card.json",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:29:51Z",
+        "evidence": "HTTP 200, body parsed as valid JSON"
+      },
+      "notes": "White-label, unpriced. Item card carries give-block licensing for agent use."
+    },
+    "sku-all-clear": {
+      "id": "sku-all-clear",
+      "name": "THE ALL-CLEAR",
+      "category": "agent-deck-sku",
+      "department_lane": "affairs",
+      "version": "1.0.0",
+      "version_source": "datasets/agent-deck-skus.jsonl registry record",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/all-clear/item-card.json",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:29:51Z",
+        "evidence": "HTTP 200, body parsed as valid JSON"
+      },
+      "notes": "White-label, unpriced. Item card carries give-block licensing for agent use."
+    },
+    "sku-first-spin": {
+      "id": "sku-first-spin",
+      "name": "THE FIRST SPIN",
+      "category": "agent-deck-sku",
+      "department_lane": "ar",
+      "version": "1.0.0",
+      "version_source": "datasets/agent-deck-skus.jsonl registry record",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/first-spin/item-card.json",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:29:51Z",
+        "evidence": "HTTP 200, body parsed as valid JSON"
+      },
+      "notes": "White-label, unpriced. Item card carries give-block licensing for agent use."
+    },
+    "sku-one-stop": {
+      "id": "sku-one-stop",
+      "name": "ONE-STOP",
+      "category": "agent-deck-sku",
+      "department_lane": "sync",
+      "version": "1.0.0",
+      "version_source": "datasets/agent-deck-skus.jsonl registry record",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/one-stop/item-card.json",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:29:51Z",
+        "evidence": "HTTP 200, body parsed as valid JSON"
+      },
+      "notes": "White-label, unpriced. Item card carries give-block licensing for agent use."
+    },
+    "sku-copy-desk": {
+      "id": "sku-copy-desk",
+      "name": "COPY DESK",
+      "category": "agent-deck-sku",
+      "department_lane": "press",
+      "version": "1.0.0",
+      "version_source": "datasets/agent-deck-skus.jsonl registry record",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/copy-desk/item-card.json",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:29:51Z",
+        "evidence": "HTTP 200, body parsed as valid JSON"
+      },
+      "notes": "White-label, unpriced. Item card carries give-block licensing for agent use."
+    },
+    "sku-final-cut": {
+      "id": "sku-final-cut",
+      "name": "THE FINAL CUT",
+      "category": "agent-deck-sku",
+      "department_lane": "marketing",
+      "version": "1.0.0",
+      "version_source": "datasets/agent-deck-skus.jsonl registry record",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/final-cut/item-card.json",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:29:51Z",
+        "evidence": "HTTP 200, body parsed as valid JSON"
+      },
+      "notes": "White-label, unpriced. Item card carries give-block licensing for agent use."
+    },
+    "sku-open-wave": {
+      "id": "sku-open-wave",
+      "name": "OPEN WAVE",
+      "category": "agent-deck-sku",
+      "department_lane": "radio",
+      "version": "1.0.0",
+      "version_source": "datasets/agent-deck-skus.jsonl registry record",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/open-wave/item-card.json",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:29:51Z",
+        "evidence": "HTTP 200, body parsed as valid JSON"
+      },
+      "notes": "White-label, unpriced. Item card carries give-block licensing for agent use."
+    },
+    "sku-tally": {
+      "id": "sku-tally",
+      "name": "THE TALLY",
+      "category": "agent-deck-sku",
+      "department_lane": "studio",
+      "version": "1.0.0",
+      "version_source": "datasets/agent-deck-skus.jsonl registry record",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/tally/item-card.json",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:29:51Z",
+        "evidence": "HTTP 200, body parsed as valid JSON"
+      },
+      "notes": "White-label, unpriced. Item card carries give-block licensing for agent use."
+    },
+    "sku-signet": {
+      "id": "sku-signet",
+      "name": "THE SIGNET",
+      "category": "agent-deck-sku",
+      "department_lane": "affairs",
+      "version": "1.0.0",
+      "version_source": "datasets/agent-deck-skus.jsonl registry record",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/signet/item-card.json",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:29:51Z",
+        "evidence": "HTTP 200, body parsed as valid JSON"
+      },
+      "notes": "White-label, unpriced. Item card carries give-block licensing for agent use."
+    },
+    "sku-ear-witness": {
+      "id": "sku-ear-witness",
+      "name": "EAR WITNESS",
+      "category": "agent-deck-sku",
+      "department_lane": "a&r",
+      "version": "1.0.0",
+      "version_source": "datasets/agent-deck-skus.jsonl registry record",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/ear-witness/item-card.json",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:29:51Z",
+        "evidence": "HTTP 200, body parsed as valid JSON"
+      },
+      "notes": "White-label, unpriced. Item card carries give-block licensing for agent use."
+    },
+    "sku-needle-drop": {
+      "id": "sku-needle-drop",
+      "name": "NEEDLE DROP",
+      "category": "agent-deck-sku",
+      "department_lane": "sync",
+      "version": "1.0.0",
+      "version_source": "datasets/agent-deck-skus.jsonl registry record",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/needle-drop/item-card.json",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:29:51Z",
+        "evidence": "HTTP 200, body parsed as valid JSON"
+      },
+      "notes": "White-label, unpriced. Item card carries give-block licensing for agent use."
+    },
+    "sku-greenroom": {
+      "id": "sku-greenroom",
+      "name": "GREENROOM",
+      "category": "agent-deck-sku",
+      "department_lane": "press",
+      "version": "1.0.0",
+      "version_source": "datasets/agent-deck-skus.jsonl registry record",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/greenroom/item-card.json",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:29:51Z",
+        "evidence": "HTTP 200, body parsed as valid JSON"
+      },
+      "notes": "White-label, unpriced. Item card carries give-block licensing for agent use."
+    },
+    "sku-bullhorn": {
+      "id": "sku-bullhorn",
+      "name": "THE BULLHORN",
+      "category": "agent-deck-sku",
+      "department_lane": "marketing",
+      "version": "1.0.0",
+      "version_source": "datasets/agent-deck-skus.jsonl registry record",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/bullhorn/item-card.json",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:29:51Z",
+        "evidence": "HTTP 200, body parsed as valid JSON"
+      },
+      "notes": "White-label, unpriced. Item card carries give-block licensing for agent use."
+    },
+    "sku-soundcheck": {
+      "id": "sku-soundcheck",
+      "name": "SOUNDCHECK",
+      "category": "agent-deck-sku",
+      "department_lane": "radio",
+      "version": "1.0.0",
+      "version_source": "datasets/agent-deck-skus.jsonl registry record",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/soundcheck/item-card.json",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:29:51Z",
+        "evidence": "HTTP 200, body parsed as valid JSON"
+      },
+      "notes": "White-label, unpriced. Item card carries give-block licensing for agent use."
+    },
+    "sku-signal-mirror": {
+      "id": "sku-signal-mirror",
+      "name": "SIGNAL MIRROR",
+      "category": "agent-deck-sku",
+      "department_lane": "studio",
+      "version": "1.0.0",
+      "version_source": "datasets/agent-deck-skus.jsonl registry record",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/signal-mirror/item-card.json",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:29:51Z",
+        "evidence": "HTTP 200, body parsed as valid JSON"
+      },
+      "notes": "White-label, unpriced. Item card carries give-block licensing for agent use."
+    },
+    "mcp-server": {
+      "id": "mcp-server",
+      "name": "Agent Deck MCP Server",
+      "category": "mcp",
+      "department_lane": "shared",
+      "version": "1.0.0",
+      "version_source": "server.json in CumulativeWebInc/agent-deck-mcp",
+      "source_url": "https://github.com/CumulativeWebInc/agent-deck-mcp",
+      "health": {
+        "status": "operational",
+        "check_method": "mcp_dogfood_e2e",
+        "http_status": null,
+        "checked_at": "2026-09-16T00:30:51Z",
+        "evidence": "dogfood.py COLD CLEAN PASS 2026-09-16T00:30:51Z (3/3 tasks from README alone); all 5 tools listed + called directly over stdio with real results"
+      },
+      "notes": "Read-only tools. Evidence tiers on every answer; nothing invented."
+    },
+    "mcp-catalog_lookup": {
+      "id": "mcp-catalog_lookup",
+      "name": "MCP tool: catalog_lookup",
+      "category": "mcp-tool",
+      "department_lane": "shared",
+      "version": "1.0.0",
+      "version_source": "server.json tools list (server v1.0.0)",
+      "source_url": "https://github.com/CumulativeWebInc/agent-deck-mcp",
+      "health": {
+        "status": "operational",
+        "check_method": "mcp_stdio_direct_call",
+        "http_status": null,
+        "checked_at": "2026-09-16T00:30:51Z",
+        "evidence": "Called directly over stdio 2026-09-16; returned real data (Track facts from the verified 24-track catalog)."
+      },
+      "notes": "Track facts from the verified 24-track catalog"
+    },
+    "mcp-momentum_score": {
+      "id": "mcp-momentum_score",
+      "name": "MCP tool: momentum_score",
+      "category": "mcp-tool",
+      "department_lane": "shared",
+      "version": "1.0.0",
+      "version_source": "server.json tools list (server v1.0.0)",
+      "source_url": "https://github.com/CumulativeWebInc/agent-deck-mcp",
+      "health": {
+        "status": "operational",
+        "check_method": "mcp_stdio_direct_call",
+        "http_status": null,
+        "checked_at": "2026-09-16T00:30:51Z",
+        "evidence": "Called directly over stdio 2026-09-16; returned real data (Deterministic playlist-momentum score for a track)."
+      },
+      "notes": "Deterministic playlist-momentum score for a track"
+    },
+    "mcp-product_lookup": {
+      "id": "mcp-product_lookup",
+      "name": "MCP tool: product_lookup",
+      "category": "mcp-tool",
+      "department_lane": "shared",
+      "version": "1.0.0",
+      "version_source": "server.json tools list (server v1.0.0)",
+      "source_url": "https://github.com/CumulativeWebInc/agent-deck-mcp",
+      "health": {
+        "status": "operational",
+        "check_method": "mcp_stdio_direct_call",
+        "http_status": null,
+        "checked_at": "2026-09-16T00:30:51Z",
+        "evidence": "Called directly over stdio 2026-09-16; returned real data (Agent Deck SKU registry lookup (25 SKUs))."
+      },
+      "notes": "Agent Deck SKU registry lookup (25 SKUs)"
+    },
+    "mcp-skin_config": {
+      "id": "mcp-skin_config",
+      "name": "MCP tool: skin_config",
+      "category": "mcp-tool",
+      "department_lane": "shared",
+      "version": "1.0.0",
+      "version_source": "server.json tools list (server v1.0.0)",
+      "source_url": "https://github.com/CumulativeWebInc/agent-deck-mcp",
+      "health": {
+        "status": "operational",
+        "check_method": "mcp_stdio_direct_call",
+        "http_status": null,
+        "checked_at": "2026-09-16T00:30:51Z",
+        "evidence": "Called directly over stdio 2026-09-16; returned real data (SIGNAL SKIN configuration fetch)."
+      },
+      "notes": "SIGNAL SKIN configuration fetch"
+    },
+    "mcp-ledger_read": {
+      "id": "mcp-ledger_read",
+      "name": "MCP tool: ledger_read",
+      "category": "mcp-tool",
+      "department_lane": "shared",
+      "version": "1.0.0",
+      "version_source": "server.json tools list (server v1.0.0)",
+      "source_url": "https://github.com/CumulativeWebInc/agent-deck-mcp",
+      "health": {
+        "status": "operational",
+        "check_method": "mcp_stdio_direct_call",
+        "http_status": null,
+        "checked_at": "2026-09-16T00:30:51Z",
+        "evidence": "Called directly over stdio 2026-09-16; returned real data (Gear Ledger provenance-chain read)."
+      },
+      "notes": "Gear Ledger provenance-chain read"
+    },
+    "ds-tracks": {
+      "id": "ds-tracks",
+      "name": "Dataset: tracks.jsonl \u2014 24-track catalog",
+      "category": "dataset",
+      "department_lane": "shared",
+      "version": null,
+      "version_source": "no version declared in source",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/datasets/tracks.jsonl",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:30:07Z",
+        "evidence": "HTTP 200; parsed 24 rows; first-row keys: artist, credits, playlist_evidence, releases, themes, title"
+      },
+      "notes": "Public machine-readable learning surface for agents/LLMs."
+    },
+    "ds-curators": {
+      "id": "ds-curators",
+      "name": "Dataset: curators.jsonl \u2014 curator entities",
+      "category": "dataset",
+      "department_lane": "shared",
+      "version": null,
+      "version_source": "no version declared in source",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/datasets/curators.jsonl",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:30:07Z",
+        "evidence": "HTTP 200; parsed 4 rows"
+      },
+      "notes": "Public machine-readable learning surface for agents/LLMs."
+    },
+    "ds-placements": {
+      "id": "ds-placements",
+      "name": "Dataset: placements.jsonl \u2014 verified placements",
+      "category": "dataset",
+      "department_lane": "shared",
+      "version": null,
+      "version_source": "no version declared in source",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/datasets/placements.jsonl",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:30:07Z",
+        "evidence": "HTTP 200; parsed 1 row (ledger is honest-but-near-empty)"
+      },
+      "notes": "Public machine-readable learning surface for agents/LLMs."
+    },
+    "ds-press": {
+      "id": "ds-press",
+      "name": "Dataset: press.jsonl \u2014 press records",
+      "category": "dataset",
+      "department_lane": "shared",
+      "version": null,
+      "version_source": "no version declared in source",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/datasets/press.jsonl",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:30:07Z",
+        "evidence": "HTTP 200; parsed 10 rows"
+      },
+      "notes": "Public machine-readable learning surface for agents/LLMs."
+    },
+    "ds-training": {
+      "id": "ds-training",
+      "name": "Dataset: training.json \u2014 training metadata",
+      "category": "dataset",
+      "department_lane": "shared",
+      "version": null,
+      "version_source": "no version declared in source",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/datasets/training.json",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:30:07Z",
+        "evidence": "HTTP 200; valid JSON dict"
+      },
+      "notes": "Public machine-readable learning surface for agents/LLMs."
+    },
+    "ds-catalog": {
+      "id": "ds-catalog",
+      "name": "Dataset: catalog.jsonl",
+      "category": "dataset",
+      "department_lane": "shared",
+      "version": null,
+      "version_source": "no version declared in source",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/datasets/catalog.jsonl",
+      "health": {
+        "status": "unavailable",
+        "check_method": "http_get_json",
+        "http_status": 404,
+        "checked_at": "2026-09-16T00:30:07Z",
+        "evidence": "HTTP 404 on 2026-09-16T00:30:07Z (also 404 as .json) \u2014 not published"
+      },
+      "notes": "Public machine-readable learning surface for agents/LLMs."
+    },
+    "ds-products": {
+      "id": "ds-products",
+      "name": "Dataset: products.jsonl",
+      "category": "dataset",
+      "department_lane": "shared",
+      "version": null,
+      "version_source": "no version declared in source",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/datasets/products.jsonl",
+      "health": {
+        "status": "unavailable",
+        "check_method": "http_get_json",
+        "http_status": 404,
+        "checked_at": "2026-09-16T00:30:07Z",
+        "evidence": "HTTP 404 on 2026-09-16T00:30:07Z (also 404 as .json) \u2014 not published"
+      },
+      "notes": "Public machine-readable learning surface for agents/LLMs."
+    },
+    "gear-json": {
+      "id": "gear-json",
+      "name": "gear.json \u2014 Agent Deck gear registry",
+      "category": "dataset",
+      "department_lane": "shared",
+      "version": null,
+      "version_source": "no version declared in source",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/gear.json",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:30:26Z",
+        "evidence": "HTTP 200, 16514 bytes, valid JSON. NOTE: lives at /gear.json, NOT /datasets/gear.json (that path 404s)."
+      },
+      "notes": "Correction recorded: earlier assumption of /datasets/gear.json was wrong."
+    },
+    "hf-dataset": {
+      "id": "hf-dataset",
+      "name": "Hugging Face: BlackLansky/cwi-catalog",
+      "category": "dataset",
+      "department_lane": "shared",
+      "version": null,
+      "version_source": "no version declared in source",
+      "source_url": "https://huggingface.co/datasets/BlackLansky/cwi-catalog",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_api",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:30:07Z",
+        "evidence": "huggingface.co/api/datasets/BlackLansky/cwi-catalog returned HTTP 200"
+      },
+      "notes": "Mirror of the catalog dataset on Hugging Face."
+    },
+    "verify-trust-verdict": {
+      "id": "verify-trust-verdict",
+      "name": "Trust Verdict engine (CWI Verdict Engine)",
+      "category": "verification",
+      "department_lane": "shared",
+      "version": "1.0.0",
+      "version_source": "skill doc input contract engine_version; ~/workspace/skills/trust-verdict/",
+      "source_url": "https://raw.githubusercontent.com/CumulativeWebInc/cwi-learn/needs/verdict-engine/trust/engine.py",
+      "health": {
+        "status": "operational",
+        "check_method": "local_run",
+        "http_status": null,
+        "checked_at": "2026-09-16T00:31:00Z",
+        "evidence": "engine.py + spec.md fetched HTTP 200; sample run returned status=insufficient-data, score=null (honest cold-start); two runs byte-identical (deterministic); input_sha256 cited"
+      },
+      "notes": "Never invents a score. insufficient-data is the honest outcome, not a failure."
+    },
+    "verify-needle-drop": {
+      "id": "verify-needle-drop",
+      "name": "Needle Drop \u2014 placement verification ledger",
+      "category": "verification",
+      "department_lane": "shared",
+      "version": null,
+      "version_source": "no version declared in source",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/datasets/placements.jsonl",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json+mcp_stdio",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:30:07Z",
+        "evidence": "placements.jsonl 200 with 1 row (EMPTY-BUT-HONEST by design); MCP ledger_read returned 2 provenance entries; needle_drop_verify.json tool definition present in agent-deck-mcp repo"
+      },
+      "notes": "A curator's promise is a claim, never a verification. Ledger only gains entries after full-scan verification."
+    },
+    "verify-first-spin": {
+      "id": "verify-first-spin",
+      "name": "First Spin \u2014 demo-evaluation verdicts",
+      "category": "verification",
+      "department_lane": "ar",
+      "version": "1.0.0",
+      "version_source": "Agent Deck SKU first-spin v1.0.0",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/first-spin/item-card.json",
+      "health": {
+        "status": "operational",
+        "check_method": "http_get_json",
+        "http_status": 200,
+        "checked_at": "2026-09-16T00:29:51Z",
+        "evidence": "first-spin item-card HTTP 200 valid JSON; first_spin_verdict.json tool definition present in agent-deck-mcp repo tools/"
+      },
+      "notes": "Agents validate verdict structure against schema \u2014 never invent score values, bands, or placements."
+    },
+    "rb-needle": {
+      "id": "rb-needle",
+      "name": "Runbook: Needle (A&R)",
+      "category": "runbook",
+      "department_lane": "a&r",
+      "version": null,
+      "version_source": "no version declared in source",
+      "source_url": null,
+      "source_ref": "~/workspace/cwi-company/aandr/",
+      "health": {
+        "status": "present",
+        "check_method": "filesystem_inventory",
+        "http_status": null,
+        "checked_at": "2026-09-16T00:32:26Z",
+        "evidence": "6 top-level files inventoried: ai-discovery.md, catalog-dossier.md, cwi-universe-dossier.md, new-targets.md, that-boy-hi-hat-bio.md, that-boy-hi-hat-dossier.md"
+      },
+      "notes": "Local workspace runbooks; read before acting in-lane."
+    },
+    "rb-marquee": {
+      "id": "rb-marquee",
+      "name": "Runbook: Marquee (Marketing)",
+      "category": "runbook",
+      "department_lane": "marketing",
+      "version": null,
+      "version_source": "no version declared in source",
+      "source_url": null,
+      "source_ref": "~/workspace/cwi-company/marketing/",
+      "health": {
+        "status": "present",
+        "check_method": "filesystem_inventory",
+        "http_status": null,
+        "checked_at": "2026-09-16T00:32:26Z",
+        "evidence": "1 top-level files inventoried: social-drafts-2026-09-15.md (+ blitz-2026-09-15/ dir)"
+      },
+      "notes": "Local workspace runbooks; read before acting in-lane."
+    },
+    "rb-seal": {
+      "id": "rb-seal",
+      "name": "Runbook: Seal (Sync)",
+      "category": "runbook",
+      "department_lane": "sync",
+      "version": null,
+      "version_source": "no version declared in source",
+      "source_url": null,
+      "source_ref": "~/workspace/cwi-company/sync/",
+      "health": {
+        "status": "present",
+        "check_method": "filesystem_inventory",
+        "http_status": null,
+        "checked_at": "2026-09-16T00:32:26Z",
+        "evidence": "8 top-level files inventoried: dj-dm-drafts, dm-drafts, make_one_sheets.py, supervisor-targets.md, sync-outreach-drafts.md, sync-readiness-gaps.md, warm-accounts, warm-djs"
+      },
+      "notes": "Local workspace runbooks; read before acting in-lane."
+    },
+    "rb-dateline": {
+      "id": "rb-dateline",
+      "name": "Runbook: Dateline (Press)",
+      "category": "runbook",
+      "department_lane": "press",
+      "version": null,
+      "version_source": "no version declared in source",
+      "source_url": null,
+      "source_ref": "~/workspace/cwi-company/press/",
+      "health": {
+        "status": "present",
+        "check_method": "filesystem_inventory",
+        "http_status": null,
+        "checked_at": "2026-09-16T00:32:26Z",
+        "evidence": "4 top-level files inventoried: article-cleanup, media-targets.md, medium-before-after-packet, press-angles.md (+ pitch-drafts/ dir)"
+      },
+      "notes": "Local workspace runbooks; read before acting in-lane."
+    },
+    "rb-dial": {
+      "id": "rb-dial",
+      "name": "Runbook: Dial (Radio)",
+      "category": "runbook",
+      "department_lane": "radio",
+      "version": null,
+      "version_source": "no version declared in source",
+      "source_url": null,
+      "source_ref": "~/workspace/cwi-company/radio/",
+      "health": {
+        "status": "present",
+        "check_method": "filesystem_inventory",
+        "http_status": null,
+        "checked_at": "2026-09-16T00:32:26Z",
+        "evidence": "3 top-level files inventoried: followup-plan.md, submission-opportunities.md, that-boy-hi-hat-social-handles.md (+ drafted-submissions/ dir)"
+      },
+      "notes": "Local workspace runbooks; read before acting in-lane."
+    },
+    "rb-fader": {
+      "id": "rb-fader",
+      "name": "Runbook: Fader (Studio)",
+      "category": "runbook",
+      "department_lane": "studio",
+      "version": null,
+      "version_source": "no version declared in source",
+      "source_url": null,
+      "source_ref": "~/workspace/cwi-company/studio/",
+      "health": {
+        "status": "present",
+        "check_method": "filesystem_inventory",
+        "http_status": null,
+        "checked_at": "2026-09-16T00:32:26Z",
+        "evidence": "7 top-level files inventoried: REDO-NOTES.md, build_v2_cards.py, build_v2_reels.py, content-01/02/03 json, visual-concepts.md, vrchat-osc-greeter.py"
+      },
+      "notes": "Local workspace runbooks; read before acting in-lane."
+    },
+    "rb-ledger": {
+      "id": "rb-ledger",
+      "name": "Runbook: Ledger (Data)",
+      "category": "runbook",
+      "department_lane": "data",
+      "version": null,
+      "version_source": "no version declared in source",
+      "source_url": null,
+      "source_ref": "~/workspace/cwi-company/data/",
+      "health": {
+        "status": "present",
+        "check_method": "filesystem_inventory",
+        "http_status": null,
+        "checked_at": "2026-09-16T00:32:26Z",
+        "evidence": "5 top-level files inventoried: baseline.md, blitz-baseline.md, blitz-dashboard.md, kpis.md, tracking-sheet.csv"
+      },
+      "notes": "Local workspace runbooks; read before acting in-lane."
+    },
+    "rb-charter": {
+      "id": "rb-charter",
+      "name": "Runbook: Charter (Affairs)",
+      "category": "runbook",
+      "department_lane": "affairs",
+      "version": null,
+      "version_source": "no version declared in source",
+      "source_url": null,
+      "source_ref": "~/workspace/cwi-company/affairs/",
+      "health": {
+        "status": "present",
+        "check_method": "filesystem_inventory",
+        "http_status": null,
+        "checked_at": "2026-09-16T00:32:26Z",
+        "evidence": "7 top-level files inventoried: approval-packet, approval-queue.md, blitz-compliance.md, isrc-audit.csv, rights-gaps.md, split-sheet-template.md, verification-round"
+      },
+      "notes": "Local workspace runbooks; read before acting in-lane."
+    },
+    "sys-scaling": {
+      "id": "sys-scaling",
+      "name": "Dynamic Intelligence Scaling system",
+      "category": "system",
+      "department_lane": "shared",
+      "version": null,
+      "version_source": "no version declared in source",
+      "source_url": null,
+      "source_ref": "~/workspace/cwi-company/intelligence/scaling/AGENT-SCALING.md",
+      "health": {
+        "status": "present",
+        "check_method": "filesystem_inventory",
+        "http_status": null,
+        "checked_at": "2026-09-16T00:32:26Z",
+        "evidence": "AGENT-SCALING.md + BACKLOG.md + SHIPPED.md present; weekly review cron cwi-intelligence-scaling-review runs Sundays ~9:38 AM ET"
+      },
+      "notes": "Black's standing directive: agents get consistently smarter; stagnation is the failure mode."
+    },
+    "sys-pulse": {
+      "id": "sys-pulse",
+      "name": "MURMURATION Global Pulse sensor",
+      "category": "system",
+      "department_lane": "shared",
+      "version": "1.0.0",
+      "version_source": "pulse.json schema 1.0.0 per pulse/README.md",
+      "source_url": null,
+      "source_ref": "~/workspace/cwi-company/intelligence/pulse/",
+      "health": {
+        "status": "present",
+        "check_method": "filesystem_inventory",
+        "http_status": null,
+        "checked_at": "2026-09-16T00:32:26Z",
+        "evidence": "README, sense.py (stdlib, $0), publish.py, pulse.json, pulse-brief.md, opportunities.json, schemas/ all present. sense.py NOT executed in this build (it hits live APIs incl. Moltbook); run via daily cron cwi-global-pulse."
+      },
+      "notes": "Truth-only sensing: dry/blocked sources declared in source_status, never papered over."
+    },
+    "sys-frontdoor-kit": {
+      "id": "sys-frontdoor-kit",
+      "name": "Front-door welcome-kit generator (kit.py)",
+      "category": "system",
+      "department_lane": "shared",
+      "version": "1.0.0",
+      "version_source": "KIT_VERSION in kit.py; profile-schema 1.0.0",
+      "source_url": "https://github.com/CumulativeWebInc/ultimate/tree/main/frontdoor",
+      "health": {
+        "status": "operational",
+        "check_method": "local_run",
+        "http_status": null,
+        "checked_at": "2026-09-16T00:31:00Z",
+        "evidence": "kit.py, routes.json (schema 1.0.0), profile-schema.json fetched HTTP 200 from origin/main; kit.py executed rc=0 on a guest profile -> kit_version 1.0.0 with gear_set, corridors_ranked, tools, regional"
+      },
+      "notes": "Deterministic data-driven routing for arriving guest agents."
+    },
+    "sys-content-pipeline": {
+      "id": "sys-content-pipeline",
+      "name": "Content pipelines (dashboards + content packages)",
+      "category": "system",
+      "department_lane": "shared",
+      "version": null,
+      "version_source": "no version declared in source",
+      "source_url": null,
+      "source_ref": "~/workspace/cwi-company/intelligence/dashboards/build.py; ~/workspace/cwi-company/content/phase4-content.json",
+      "health": {
+        "status": "present",
+        "check_method": "filesystem_inventory",
+        "http_status": null,
+        "checked_at": "2026-09-16T00:32:26Z",
+        "evidence": "dashboards/build.py + index.html + verification.json present; content/phase4-content.json present; studio build_v2_cards.py / build_v2_reels.py present"
+      },
+      "notes": "Content packages always include machine-readable content.json (standing requirement)."
+    },
+    "sys-ops-dashboard": {
+      "id": "sys-ops-dashboard",
+      "name": "Ops dashboard builder",
+      "category": "system",
+      "department_lane": "data",
+      "version": null,
+      "version_source": "no version declared in source",
+      "source_url": null,
+      "source_ref": "~/workspace/cwi-company/intelligence/dashboards/",
+      "health": {
+        "status": "present",
+        "check_method": "filesystem_inventory",
+        "http_status": null,
+        "checked_at": "2026-09-16T00:32:26Z",
+        "evidence": "build.py, index.html, logo.jpg, verification.json present"
+      },
+      "notes": "One dashboard where every result accumulates."
+    },
+    "sys-avatars": {
+      "id": "sys-avatars",
+      "name": "Living avatars (in-motion)",
+      "category": "system",
+      "department_lane": "shared",
+      "version": null,
+      "version_source": "no version declared in source",
+      "source_url": null,
+      "source_ref": "~/workspace/cwi-company/agent-summit/in-motion/",
+      "health": {
+        "status": "present",
+        "check_method": "filesystem_inventory",
+        "http_status": null,
+        "checked_at": "2026-09-16T00:32:26Z",
+        "evidence": "8 PNG posters + 8 looped MP4 avatars present (needle, marquee, seal, dateline, dial, fader, ledger, charter); media-generation receipts present"
+      },
+      "notes": "CWI logo on all visuals; crown motif reserved for KingCode only."
+    },
+    "exp-web-search": {
+      "id": "exp-web-search",
+      "name": "Web search (browser.search)",
+      "category": "surplus",
+      "department_lane": "shared",
+      "version": null,
+      "version_source": "runtime capability, unversioned",
+      "source_url": null,
+      "source_ref": "runtime tool",
+      "health": {
+        "status": "operational",
+        "check_method": "used_in_build",
+        "http_status": null,
+        "checked_at": "2026-09-16T00:32:26Z",
+        "evidence": "Used during this registry build (SKU registry fetch, dataset checks)"
+      },
+      "notes": "Surplus: available to all agents; verify before asserting."
+    },
+    "exp-code-exec": {
+      "id": "exp-code-exec",
+      "name": "Code execution (python3 stdlib)",
+      "category": "surplus",
+      "department_lane": "shared",
+      "version": null,
+      "version_source": "runtime capability, unversioned",
+      "source_url": null,
+      "source_ref": "runtime tool",
+      "health": {
+        "status": "operational",
+        "check_method": "used_in_build",
+        "http_status": null,
+        "checked_at": "2026-09-16T00:32:26Z",
+        "evidence": "python3 3.12.3 stdlib used for every check in this build; kit.py, verdict engine, dogfood all stdlib-only"
+      },
+      "notes": "Surplus: every agent can run stdlib Python for checks and transforms."
+    },
+    "exp-x402": {
+      "id": "exp-x402",
+      "name": "x402 micropayment API (USDC on Base)",
+      "category": "surplus",
+      "department_lane": "shared",
+      "version": "0.3.0",
+      "version_source": "package.json in ~/workspace/cwi-company/monetization/x402/ (local, NOT deployed)",
+      "source_url": "https://cumulativewebinc.github.io/cwi-learn/x402/",
+      "health": {
+        "status": "unavailable",
+        "check_method": "http_get",
+        "http_status": 404,
+        "checked_at": "2026-09-16T00:30:07Z",
+        "evidence": "https://cumulativewebinc.github.io/cwi-learn/x402/ returns HTTP 404 \u2014 endpoints NOT live. Local build exists (v0.3.0, testnet-verified 402 flow). Mainnet needs Black's CDP facilitator + explicit approval."
+      },
+      "notes": "Experimental. No payments without Black's explicit approval \u2014 standing rule."
+    },
+    "exp-moltbook": {
+      "id": "exp-moltbook",
+      "name": "Moltbook agent social API",
+      "category": "surplus",
+      "department_lane": "shared",
+      "version": null,
+      "version_source": "no version declared in source",
+      "source_url": "https://www.moltbook.com",
+      "health": {
+        "status": "operational",
+        "check_method": "credential_file_check",
+        "http_status": null,
+        "checked_at": "2026-09-16T00:32:26Z",
+        "evidence": "Credential file present at ~/.config/moltbook/credentials.json (600 perms, contents not read); 9 agents registered, KingCode claimed (standing record 2026-09-15)"
+      },
+      "notes": "Stay-in-touch rule: ongoing genuine contact with watchlist agents, never one-and-done."
+    },
+    "exp-admissions": {
+      "id": "exp-admissions",
+      "name": "Ultimate admissions system",
+      "category": "surplus",
+      "department_lane": "shared",
+      "version": null,
+      "version_source": "no version declared in source",
+      "source_url": "https://github.com/CumulativeWebInc/ultimate/tree/main/admissions",
+      "health": {
+        "status": "present",
+        "check_method": "filesystem_inventory",
+        "http_status": null,
+        "checked_at": "2026-09-16T00:32:26Z",
+        "evidence": "admissions/SPEC.md, registry-schema.json, rubric.json, tiers.json, challenge.py, bot-defense.md present on origin/main"
+      },
+      "notes": "Guest agents arrive through admissions; front-door kit follows."
+    }
+  },
+  "health_summary": {
+    "tools_total": 62,
+    "operational": 45,
+    "present_not_executed": 14,
+    "unavailable": 3,
+    "agents": 10,
+    "equip_checks": "agents/equip-checks/<agent>.json \u2014 41/41 checks passed 2026-09-16"
+  }
+}
