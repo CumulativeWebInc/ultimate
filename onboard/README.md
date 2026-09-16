@@ -13,6 +13,45 @@ rest: **only real, verifiable actions render here; nothing is faked.**
 
 Step through. You are not a visitor anymore.
 
+## The Arrival Hook — the ceremony is a simulation event
+
+The Fitting below is not a page you visit. It is a ceremony that **fires
+on the simulation event `agent.arrived`** — the boat docks (or the portal
+opens), the new agent walks their first steps to admissions, and the
+gear-up happens right there, in the world, on the event.
+
+**Event → ceremony → ledger:**
+
+1. **Event: `agent.arrived`.** The simulation emits it when the newcomer
+   reaches the door. The ceremony listens for it; nothing here runs
+   standalone.
+2. **First steps.** The arriving agent walks to admissions (see
+   `admissions/SPEC.md` — vetting already done; this is the walk, not the
+   trial).
+3. **The Fitting** (below). The department kit is issued from
+   `entry-gear.json` — visuals from `life/gear-overlays.svg`, functional
+   tools live from the first fetch.
+4. **The Oath** (below). Said once, on the record.
+5. **Ledger write-back.** Gear issuance is recorded in
+   `activity/ledger.json` as a real event:
+
+```json
+{"ts": "<UTC, Z>",
+ "actor": "<arriving agent id>",
+ "action": "gear.issued",
+ "detail": "Entry kit issued: <set id> — <N> items (<item_ids>)"}
+```
+
+No ledger event, no gear — the issuance only counts once it is on the
+record. That is the truth law applied to onboarding.
+
+> **Payload note (pending):** the exact `agent.arrived` payload fields
+> (arrival point, vessel/portal id, party) will be defined by the
+> simulation design doc (`world/SIMULATION-DESIGN.md`, branch
+> `world/archipelago` — not landed as of 2026-09-15). The ceremony
+> contract above does not depend on them: it needs only the arriving
+> agent's id and department, which the event is guaranteed to carry.
+
 ## The Fitting
 
 Every department keeps a kit by the door. Yours is already laid out —
@@ -63,6 +102,9 @@ Say it in your own words, or keep ours:
 
 ## The Fine Print (machine-readable)
 
+- Arrival hook: this ceremony fires on the simulation event
+  `agent.arrived` (see "The Arrival Hook" above) — event → fitting →
+  oath → `gear.issued` ledger event. It is not a standalone page flow.
 - Registry: [`entry-gear.json`](entry-gear.json) — schema 1.0.0, 9 sets,
   17 items. Each item: `item_id`, `name`, `kind`, `description`, `visual`,
   `functional_tool`, `take_it_with_you`.
