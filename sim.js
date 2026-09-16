@@ -74,17 +74,17 @@ function summarize(e) {
 
 async function bootWorld() {
   const [islandsDoc, seedSnap, seedEvents, agentIndex, guestsIndex] = await Promise.all([
-    j("../islands.json"),
+    j("world/islands.json"),
     j("world/world.json"),
     optional("activity/events.jsonl", (t) => t),
-    j("../../agents/index.json"),
-    j("../../guests/index.json"),
+    j("agents/index.json"),
+    j("guests/index.json"),
   ]);
   const profiles = {};
   const ids = [...(agentIndex.agents || [])];
   if (agentIndex.chief && !ids.includes(agentIndex.chief)) ids.push(agentIndex.chief);
   await Promise.all(ids.map(async (id) => {
-    const p = await optional(`../../agents/${id}.json`);
+    const p = await optional(`agents/${id}.json`);
     if (p) profiles[id] = p;
   }));
 
