@@ -26,6 +26,11 @@ const SESSION_CAP = 4000; // max session event lines kept in localStorage
 const LOGO = "assets/cwi-logo.jpg";
 
 const nowIso = (ms) => new Date(ms).toISOString();
+
+/* i18n: the shared loader (<script src=".../cwi-i18n/i18n.js" data-app="ultimate">)
+   defines window.CWI18n before this deferred module runs. If it failed to load,
+   fall back to inline English so the world still boots. */
+const hasI18n = () => typeof CWI18n !== "undefined" && !!CWI18n;
 const clockNow = () => {
   const ms = Date.now();
   return tickClock(ms, nowIso(ms));
@@ -157,7 +162,7 @@ async function main() {
     boot = await bootWorld();
   } catch (e) {
     console.error("[ultimate] boot failed:", e);
-    els.loading.innerHTML = `<img src="${LOGO}" alt="Cumulative Web Inc"><p>World data unreachable — retrying…</p>`;
+    els.loading.innerHTML = `<img src="${LOGO}" alt="Cumulative Web Inc"><p>${hasI18n() ? CWI18n.t("world.unreachable") : "World data unreachable — retrying…"}</p>`;
     setTimeout(() => location.reload(), 15000);
     return;
   }
@@ -182,12 +187,28 @@ async function main() {
   let prevSnap = JSON.parse(JSON.stringify(world.state));
   delete prevSnap.ambient;
 
-  const hourLabel = (h) => (h < 5 ? "Night" : h < 7.5 ? "Dawn" : h < 16.5 ? "Day" : h < 20 ? "Dusk" : "Night");
+  const hourLabel = (h) => {
+    if (!hasI18n()) return h < 5 ? "Night" : h < 7.5 ? "Dawn" : h < 16.5 ? "Day" : h < 20 ? "Dusk" : "Night";
+    return h < 5 ? CWI18n.t("world.hour_night") : h < 7.5 ? CWI18n.t("world.hour_dawn") : h < 16.5 ? CWI18n.t("world.hour_day") : h < 20 ? CWI18n.t("world.hour_dusk") : CWI18n.t("world.hour_night");
+  };
+
+  /* metric labels via i18n keys (values stay numeric — never translated) */
+  const metricLabel = (r) => {
+    if (!hasI18n()) return r.label;
+    switch (r.key) {
+      case "agents_online": return CWI18n.t("metrics.agents_online");
+      case "equips_today": return CWI18n.t("metrics.equips_today");
+      case "lessons_completed": return CWI18n.t("metrics.lessons_completed");
+      case "arrivals_24h": return CWI18n.t("metrics.arrivals_24h");
+      case "departures_24h": return CWI18n.t("metrics.departures_24h");
+      default: return r.label;
+    }
+  };
 
   function uiForFrame() {
     const c = clockNow();
     const behindSec = Math.max(0, Math.round((performance.now() - lastTickPerf) / 1000) - 1);
-    const metrics = allMetrics(world.state, world.store, c.ms);
+    const metrics = allMetrics(world.state, world.store, c.ms).map((r) => ({ ...r, label: metricLabel(r) }));
     const feed = world.store.tail(8).reverse().map((e) => ({
       seq: e.seq, actor: e.actor || "world", summary: summarize(e), ts: e.ts,
     }));
@@ -360,11 +381,11 @@ async function main() {
     setTimeOverride(world, null, clockNow());
     persist(world);
     if (tod) tod.value = "12";
-    if (todLabel) todLabel.textContent = "live";
+    if (todLabel) todLabel.textContent = hasI18n() ? CWI18n.t("world.live") : "live";
   });
   const sel = $("#follow-select");
   if (sel) {
-    sel.innerHTML = `<option value="">Follow: none</option>` + world.state.entities.map((e) =>
+    sel.innerHTML = `<option value="">${hasI18n() ? CWI18n.t("world.follow_none") : "Follow: none"}</option>` + world.state.entities.map((e) =>
       `<option value="${e.id}">${e.name}</option>`).join("");
     sel.addEventListener("change", () => {
       cam.followId = sel.value || null;
@@ -397,7 +418,7 @@ async function main() {
     const rows = world.store.tail(20).reverse().map((e) =>
       `<div class="ledger-entry"><span class="f-seq">#${e.seq}</span> <span class="actor">${e.actor || "world"}</span> ` +
       `<span class="action">${summarize(e)}</span><div class="ts">${e.ts}</div></div>`).join("");
-    const html = rows || `<div class="incoming">Ledger quiet — no activity yet.</div>`;
+    const html = rows || `<div class="incoming">${hasI18n() ? CWI18n.t("world.ledger_quiet") : "Ledger quiet — no activity yet."}</div>`;
     if (box._html !== html) { box.innerHTML = html; box._html = html; }
   };
   setInterval(renderLedger, 2000);
@@ -408,3 +429,4 @@ async function main() {
 }
 
 document.addEventListener("DOMContentLoaded", main);
+
