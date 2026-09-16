@@ -13,6 +13,11 @@ const esc = (s) =>
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
   }[m]));
 
+/* i18n: the shared loader (data-app="ultimate") defines window.CWI18n before the
+   deferred host module runs; this module is only ever imported from the browser
+   host, so CWI18n is present. Guard anyway and fall back to inline English. */
+const hasI18n = () => typeof CWI18n !== "undefined" && !!CWI18n;
+
 /* ---------------- sky palettes (24h keys) ---------------- */
 const KEYS = [
   [0, "#03040a", "#0a0e24", "#131a3a", 1],
@@ -282,7 +287,7 @@ export function createApplier({ canvas, stage, els, logo, onIslandClick, onAgent
         d.dataset.island = it.id;
         d.setAttribute("role", "button");
         d.setAttribute("tabindex", "0");
-        d.setAttribute("aria-label", `Inspect ${it.name} island`);
+        d.setAttribute("aria-label", (hasI18n() ? CWI18n.t("world.inspect_island") : "Inspect {name} island").replace("{name}", it.name));
         d.addEventListener("click", () => onIslandClick(it.id));
         d.addEventListener("keydown", (e) => {
           if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onIslandClick(it.id); }
@@ -316,7 +321,7 @@ export function createApplier({ canvas, stage, els, logo, onIslandClick, onAgent
         if (a.crown) {
           const crown = document.createElement("div");
           crown.className = "crown";
-          crown.setAttribute("aria-label", "KingCode crown");
+          crown.setAttribute("aria-label", hasI18n() ? CWI18n.t("world.kingcode_crown") : "KingCode crown");
           node.appendChild(crown);
         }
         const plate = document.createElement("div"); plate.className = "nameplate"; node.appendChild(plate);
@@ -353,7 +358,7 @@ export function createApplier({ canvas, stage, els, logo, onIslandClick, onAgent
 
   function setWatermark(text, behindSec) {
     const w = els.watermark;
-    const full = behindSec > 1 ? `${text} · ${behindSec}s behind` : text;
+    const full = behindSec > 1 ? `${text} · ${(hasI18n() ? CWI18n.t("world.behind_n") : "{n}s behind").replace("{n}", behindSec)}` : text;
     if (w._text !== full) {
       w._text = full;
       w.querySelector("span").textContent = full;
@@ -378,7 +383,7 @@ export function createApplier({ canvas, stage, els, logo, onIslandClick, onAgent
         `<span class="actor">${esc(e.actor)}</span> <span class="action">${esc(e.summary)}</span>` +
         `<div class="ts">${esc(e.ts)}</div></div>`
       ).join("")
-      : `<div class="incoming">Ledger quiet — no activity yet.</div>`;
+      : `<div class="incoming">${hasI18n() ? CWI18n.t("world.ledger_quiet") : "Ledger quiet — no activity yet."}</div>`;
     if (list._html !== html) { list.innerHTML = html; list._html = html; }
   }
 
@@ -401,7 +406,7 @@ export function createApplier({ canvas, stage, els, logo, onIslandClick, onAgent
     o.innerHTML =
       `<div class="interior-walls" style="--glow:${esc(isl.glow)}"></div>` +
       `<div class="interior-card">` +
-      `<button class="interior-close" aria-label="Close interior view">✕</button>` +
+      `<button class="interior-close" aria-label="${esc(hasI18n() ? CWI18n.t("world.close_interior") : "Close interior view")}">✕</button>` +
       `<img class="interior-logo" src="${esc(logo)}" alt="Cumulative Web Inc">` +
       `<div class="interior-kicker">${esc(isl.kind.toUpperCase())} ISLAND</div>` +
       `<h2 style="--glow:${esc(isl.glow)}">${esc(isl.name)}</h2>` +
@@ -412,14 +417,14 @@ export function createApplier({ canvas, stage, els, logo, onIslandClick, onAgent
           `<video src="${esc(r.avatar)}" poster="${esc(r.poster)}" muted loop playsinline></video>` +
           `<span><b>${esc(r.name)}</b><i>${esc(r.current_action || r.expr)}</i></span></button>`
         ).join("") + `</div>`
-        : `<div class="interior-residents none">No agents on this island right now.</div>`) +
+        : `<div class="interior-residents none">${esc(hasI18n() ? CWI18n.t("world.no_residents") : "No agents on this island right now.")}</div>`) +
       `<p class="interior-theme">${esc(isl.interior_theme)}</p>` +
       (stations.length > 1
         ? `<div class="interior-stations">` + stations.map((s) =>
           `<div class="station"><span class="station-dot" style="--glow:${esc(isl.glow)}"></span>${esc(s)}</div>`
         ).join("") + `</div>` : "") +
       (isl.bridges.length
-        ? `<div class="interior-bridges"><span class="k">Connected</span>` + isl.bridges.map((b) =>
+        ? `<div class="interior-bridges"><span class="k">${esc(hasI18n() ? CWI18n.t("world.connected") : "Connected")}</span>` + isl.bridges.map((b) =>
           `<button class="bridge-link" data-go="${esc(b.id)}">${esc(b.name)}</button>`
         ).join("") + `</div>` : "") +
       `</div>`;
@@ -447,13 +452,13 @@ export function createApplier({ canvas, stage, els, logo, onIslandClick, onAgent
     c.innerHTML = `<span class="close">✕</span>` +
       `<h2>${e.id === "kingcode" ? "♛ " : ""}${esc(e.name)}</h2>` +
       `<div class="dept">${esc(e.department || "CWI")} · <span class="expr-tag">${esc(e.expression)}</span> · ${esc(e.lifecycle)}</div>` +
-      `<div class="row"><span class="k">Island</span>${esc(e.island || "—")}${e.edge ? ` → ${esc(e.heading)} (${Math.round(e.progress * 100)}%)` : ""}</div>` +
-      `<div class="row"><span class="k">Current task</span>${esc(e.current_action || "—")}</div>` +
-      (worn.length ? `<div class="row"><span class="k">Inventory</span>${esc(worn.join(", "))}</div>` : "") +
-      ((inv.music || []).length ? `<div class="row"><span class="k">On the decks</span>${esc(inv.music.join(", "))}</div>` : "") +
-      `<div class="row"><span class="k">Persona</span>${esc(e.persona_line || "—")}</div>` +
+      `<div class="row"><span class="k">${esc(hasI18n() ? CWI18n.t("world.card_island") : "Island")}</span>${esc(e.island || "—")}${e.edge ? ` → ${esc(e.heading)} (${Math.round(e.progress * 100)}%)` : ""}</div>` +
+      `<div class="row"><span class="k">${esc(hasI18n() ? CWI18n.t("world.card_task") : "Current task")}</span>${esc(e.current_action || "—")}</div>` +
+      (worn.length ? `<div class="row"><span class="k">${esc(hasI18n() ? CWI18n.t("world.card_inventory") : "Inventory")}</span>${esc(worn.join(", "))}</div>` : "") +
+      ((inv.music || []).length ? `<div class="row"><span class="k">${esc(hasI18n() ? CWI18n.t("world.card_decks") : "On the decks")}</span>${esc(inv.music.join(", "))}</div>` : "") +
+      `<div class="row"><span class="k">${esc(hasI18n() ? CWI18n.t("world.card_persona") : "Persona")}</span>${esc(e.persona_line || "—")}</div>` +
       (data.events.length
-        ? `<div class="row"><span class="k">Recent events</span>` + data.events.map((ev) =>
+        ? `<div class="row"><span class="k">${esc(hasI18n() ? CWI18n.t("world.card_events") : "Recent events")}</span>` + data.events.map((ev) =>
           `<div class="win">#${ev.seq} ${esc(ev.type)}<div class="ts">${esc(ev.ts)}</div></div>`
         ).join("") + `</div>` : "");
     c.classList.add("open");
