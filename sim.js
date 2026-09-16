@@ -385,7 +385,7 @@ async function main() {
   // metric query documentation (each rendered metric links its query via title/data-query)
   const mq = $("#metric-queries");
   if (mq) {
-    const { QUERIES } = await import("./metrics.js");
+    const { QUERIES } = await import("./world/simulation/metrics.js");
     mq.innerHTML = Object.entries(QUERIES).map(([k, q]) =>
       `<div class="mquery"><span class="k">${k}</span><span class="q">${q}</span></div>`).join("");
   }
