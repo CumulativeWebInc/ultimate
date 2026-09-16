@@ -9,6 +9,8 @@
     "marquee",
     "needle",
     "seal",
+    "kingcode",
     "tool-registry"
-  ]
+  ],
+  "chief": "kingcode"
 }

@@ -1,3 +1,7 @@
+/* ============================================================================
+ * DEPRECATED — FACADE-FIRST SCENE STYLES (2026-09-15). See world/DEPRECATED.md
+ * and world/SIMULATION-DESIGN.md. Kept for reference; do not extend.
+ * ============================================================================ */
 /* PROJECT ULTIMATE — living world scene (Cumulative Web Inc) */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { width: 100%; height: 100%; overflow: hidden; background: #03040a;
@@ -123,3 +127,109 @@ html, body { width: 100%; height: 100%; overflow: hidden; background: #03040a;
   #rules-panel { max-width: 220px; font-size: 11px; }
   #owner-panel { width: 260px; }
 }
+
+/* ---- Archipelago: camera ---- */
+#camera { position: fixed; inset: 0; transform-origin: 0 0; will-change: transform; }
+#sky { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+#stage { position: absolute; inset: 0; }
+
+/* ---- Island signage: glowing NAME + verbs ---- */
+#island-signs { position: absolute; inset: 0; pointer-events: none; z-index: 3; }
+.island-sign { position: absolute; transform: translate(-50%, -100%); text-align: center;
+  pointer-events: auto; cursor: pointer; padding: 4px 10px; }
+.island-sign .island-name { font-size: 15px; font-weight: 800; letter-spacing: .28em;
+  color: #fff; text-shadow: 0 0 10px var(--glow), 0 0 26px var(--glow); }
+.island-sign .island-verbs { font-size: 10px; letter-spacing: .3em; color: var(--glow);
+  text-shadow: 0 0 8px var(--glow); margin-top: 3px; white-space: nowrap; }
+.island-sign.hub-sign .island-name { font-size: 19px; }
+.island-sign:hover .island-name, .island-sign:focus .island-name { text-decoration: underline; }
+
+/* ---- KingCode: gold crown, hub only ---- */
+#kingcode-node .crown { position: absolute; left: 50%; top: -34px; transform: translateX(-50%);
+  width: 0; height: 0; pointer-events: none;
+  border-left: 26px solid transparent; border-right: 26px solid transparent;
+  border-bottom: 30px solid #ffd75e; filter: drop-shadow(0 0 10px rgba(255,215,94,.9)); }
+#kingcode-node .crown::before { content: ""; position: absolute; left: -26px; top: 30px;
+  width: 52px; height: 9px; background: linear-gradient(90deg, #b8860b, #ffd75e, #b8860b);
+  border-radius: 4px; }
+#kingcode-node .kc-avatar { width: 118px; height: 118px; object-fit: cover; border-radius: 50%;
+  border: 3px solid #ffd75e; box-shadow: 0 0 30px rgba(255,215,94,.75); background: #0a0f22; display: block; }
+#kingcode-node .nameplate { color: #ffd98a; }
+
+/* ---- Nav controls ---- */
+#nav-controls { position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%);
+  z-index: 12; display: flex; gap: 8px; }
+#nav-controls button { width: 42px; height: 42px; border-radius: 50%; font-size: 18px;
+  background: rgba(6,12,30,.8); border: 1px solid rgba(110,170,255,.35); color: #cfe4ff;
+  cursor: pointer; }
+#nav-controls button:hover { border-color: #8fc3ff; box-shadow: 0 0 12px rgba(120,180,255,.5); }
+
+/* ---- Live activity feed ---- */
+#feed-panel { position: fixed; right: 16px; top: 116px; z-index: 11; width: 300px;
+  max-height: 42vh; overflow-y: auto; background: rgba(6,12,30,.82); backdrop-filter: blur(8px);
+  border: 1px solid rgba(110,170,255,.25); border-radius: 12px; padding: 12px 14px; font-size: 12.5px; }
+#feed-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+#feed-header h3 { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: #9cc4ff; }
+#feed-toggle { background: none; border: 1px solid rgba(110,170,255,.35); color: #cfe4ff;
+  border-radius: 6px; width: 26px; height: 26px; cursor: pointer; }
+#feed-panel.collapsed #feed-list { display: none; }
+.feed-entry { border-bottom: 1px solid rgba(110,170,255,.15); padding: 7px 0; }
+.feed-entry .actor { color: #ffd98a; font-weight: 600; }
+.feed-entry .action { color: #9cc4ff; }
+.feed-entry .detail { color: #d7e4fa; font-size: 12px; }
+.feed-entry .ts, .win .ts { color: #7186a8; font-size: 11px; }
+#feed-panel .incoming { color: #8fa3c7; font-style: italic; }
+
+/* ---- Owner controls ---- */
+.owner-row { display: flex; align-items: center; gap: 8px; margin: 8px 0; }
+.owner-row input[type="range"] { flex: 1; accent-color: #ffd75e; }
+#tod-label { font-size: 11px; color: #ffd98a; min-width: 34px; }
+#tod-live, #follow-select { background: rgba(6,12,30,.8); border: 1px solid rgba(110,170,255,.35);
+  color: #cfe4ff; border-radius: 8px; padding: 6px 10px; font-size: 12px; cursor: pointer; }
+#follow-select { width: 100%; }
+
+/* ---- Status card extras ---- */
+.expr-tag { color: #ffd98a; }
+.win { margin-top: 6px; padding: 6px 8px; background: rgba(20,34,64,.5);
+  border-left: 3px solid #ffd75e; border-radius: 0 8px 8px 0; font-size: 12px; }
+
+/* ---- Island interior overlay ---- */
+#interior-overlay { position: fixed; inset: 0; z-index: 30; display: flex;
+  align-items: center; justify-content: center; }
+#interior-overlay .interior-walls { position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 30%, var(--land), #03040a 75%);
+  opacity: .96; }
+.interior-card { position: relative; width: min(560px, 92vw); max-height: 86vh; overflow-y: auto;
+  background: rgba(5,9,24,.92); border: 1px solid var(--glow, #8fc3ff); border-radius: 18px;
+  padding: 26px 28px; box-shadow: 0 0 60px color-mix(in srgb, var(--glow, #8fc3ff) 35%, transparent);
+  animation: interiorIn .45s ease-out; }
+@keyframes interiorIn { from { transform: translateY(24px) scale(.97); opacity: 0; }
+  to { transform: none; opacity: 1; } }
+.interior-close { position: absolute; top: 12px; right: 14px; background: none; border: none;
+  color: #8fa3c7; font-size: 18px; cursor: pointer; }
+.interior-logo { width: 52px; height: 52px; border-radius: 50%;
+  box-shadow: 0 0 16px rgba(255,255,255,.3); }
+.interior-kicker { font-size: 10px; letter-spacing: .3em; color: #8fa3c7; margin: 10px 0 4px; }
+.interior-card h2 { font-size: 30px; letter-spacing: .18em; color: #fff;
+  text-shadow: 0 0 14px var(--glow); }
+.interior-verbs { font-size: 12px; letter-spacing: .3em; color: var(--glow); margin: 6px 0 14px;
+  text-shadow: 0 0 8px var(--glow); }
+.interior-agent { display: flex; gap: 14px; align-items: center; margin: 10px 0;
+  padding: 10px; background: rgba(16,26,52,.6); border-radius: 12px; }
+.interior-agent video { width: 86px; height: 86px; border-radius: 50%; object-fit: cover;
+  border: 2px solid var(--glow); }
+.interior-agent-name { font-weight: 700; font-size: 15px; }
+.interior-agent-role { font-size: 12px; color: #9cc4ff; margin-top: 4px; }
+.interior-theme { font-size: 13.5px; color: #d7e4fa; line-height: 1.6; margin: 12px 0; }
+.interior-stations { display: grid; gap: 8px; margin: 10px 0; }
+.station { display: flex; gap: 10px; align-items: baseline; font-size: 13px; color: #cfe4ff;
+  background: rgba(14,22,46,.55); border-radius: 8px; padding: 8px 12px; }
+.station-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--glow);
+  box-shadow: 0 0 8px var(--glow); flex-shrink: 0; transform: translateY(-1px); }
+.interior-bridges { margin-top: 12px; font-size: 12px; }
+.interior-bridges .k { color: #8fa3c7; letter-spacing: .15em; text-transform: uppercase;
+  font-size: 10px; display: block; margin-bottom: 6px; }
+.bridge-link { background: rgba(20,34,64,.6); border: 1px solid rgba(110,170,255,.35);
+  color: #cfe4ff; border-radius: 16px; padding: 5px 12px; margin: 0 6px 6px 0; cursor: pointer;
+  font-size: 12px; }
+.bridge-link:hover { border-color: #8fc3ff; }
