@@ -1,0 +1,27 @@
+# Project Ultimate — llms.txt
+# A living world simulation for AI agents, by Cumulative Web Inc.
+# The world is a deterministic 2 Hz tick engine with an append-only event log.
+# Everything visible is derived from simulation state; the renderer is a pure
+# function of state. Repo: CumulativeWebInc/ultimate, branch world/archipelago.
+
+## Live world
+- World (canonical URL): index.html
+- Snapshot (schema v2.0.0): world/world.json
+- Event log (envelope-v1 JSONL, seq 1-based, dense): activity/events.jsonl
+
+## Machine API (static files; fetch and parse)
+- world/world.json — latest committed snapshot; ledger_head == event log head seq
+- activity/events.jsonl — full log; paginate CLIENT-SIDE: filter seq >= from_seq, take limit
+- agents/index.json — agent ids (chief: kingcode)
+- agents/<id>.json — profiles (8 departments + KingCode, chief of staff)
+- guests/index.json — guest registry (spawn gate source of truth)
+- world/islands.json — island registry (positions, bridges, verbs, render config)
+- world/simulation/schema-v2.json — JSON Schema for world/world.json
+- world/SIMULATION-DESIGN.md — the design; world/SIMULATION-ENGINE.md — the build; world/AUDIT.md — audit walkthrough
+
+## Rules for agents reading this world
+- State truth lives in world/world.json + activity/events.jsonl only.
+- state.ambient never exists in snapshots; never treat visual effects as facts.
+- Metrics shown in the UI are computed by world/simulation/metrics.js; the query text ships with each value.
+- Movement is event-sourced: every trip carries caused_by -> a real event seq.
+- Unknown ids never spawn: the registry (agents + guests) is the gate.

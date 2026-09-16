@@ -1,0 +1,382 @@
+{
+  "schema_version": "1.0.0",
+  "$comment": "JSON Schema (draft-07 subset) for world/world.json v2.0.0 \u2014 the Project Ultimate simulation snapshot. This document is schema_version 1.0.0 (the schema document's own version); it DESCRIBES world.json v2.0.0. Normative prose: world/SIMULATION-DESIGN.md \u00a72 and world/SIMULATION-ENGINE.md.",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "additionalProperties": true,
+  "properties": {
+    "ambient": {
+      "$comment": "MUST be absent: ambient is cosmetic, derived from tick, never persisted (\u00a711.4).",
+      "not": {}
+    },
+    "arrivals": {
+      "items": {
+        "properties": {
+          "entity_id": {
+            "type": "string"
+          },
+          "state": {
+            "enum": [
+              "announced",
+              "docking",
+              "disembarking"
+            ]
+          },
+          "target_island": {
+            "type": "string"
+          },
+          "vessel": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "entity_id",
+          "vessel",
+          "target_island",
+          "state",
+          "sail_tick",
+          "eta_tick",
+          "admit_tick"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "base_epoch_ms": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "counts": {
+      "properties": {
+        "agents": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "events_24h": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "guests": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "vessels": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "agents",
+        "guests",
+        "vessels",
+        "events_24h"
+      ],
+      "type": "object"
+    },
+    "departures": {
+      "items": {
+        "properties": {
+          "entity_id": {
+            "type": "string"
+          },
+          "state": {
+            "enum": [
+              "farewell",
+              "boarding"
+            ]
+          }
+        },
+        "required": [
+          "entity_id",
+          "state",
+          "start_tick",
+          "vessel"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "entities": {
+      "items": {
+        "properties": {
+          "activity": {
+            "properties": {
+              "ends_tick": {
+                "minimum": 0,
+                "type": "integer"
+              },
+              "started_tick": {
+                "minimum": 0,
+                "type": "integer"
+              },
+              "target": {
+                "type": "string"
+              },
+              "verb": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "verb",
+              "target",
+              "started_tick",
+              "ends_tick"
+            ],
+            "type": [
+              "object",
+              "null"
+            ]
+          },
+          "avatar": {
+            "type": "string"
+          },
+          "celebrate_until": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "current_action": {
+            "type": "string"
+          },
+          "department": {
+            "type": "string"
+          },
+          "edge": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 2,
+            "minItems": 2,
+            "type": [
+              "array",
+              "null"
+            ]
+          },
+          "expression": {
+            "enum": [
+              "celebrating",
+              "working",
+              "alert",
+              "idle"
+            ]
+          },
+          "heading": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "home_island": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "inventory": {
+            "properties": {
+              "items": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "music": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "worn": {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              }
+            },
+            "required": [
+              "worn",
+              "items",
+              "music"
+            ],
+            "type": "object"
+          },
+          "island": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "kind": {
+            "enum": [
+              "department",
+              "chief",
+              "guest",
+              "vessel-crew"
+            ]
+          },
+          "last_trip_cause": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "lifecycle": {
+            "enum": [
+              "arriving",
+              "resident",
+              "departing",
+              "departed"
+            ]
+          },
+          "name": {
+            "type": "string"
+          },
+          "persona_line": {
+            "type": "string"
+          },
+          "pos": {
+            "properties": {
+              "x": {
+                "type": "number"
+              },
+              "y": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "x",
+              "y"
+            ],
+            "type": "object"
+          },
+          "poster": {
+            "type": "string"
+          },
+          "progress": {
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          }
+        },
+        "required": [
+          "id",
+          "kind",
+          "name",
+          "home_island",
+          "island",
+          "pos",
+          "heading",
+          "progress",
+          "edge",
+          "lifecycle",
+          "activity",
+          "expression",
+          "avatar",
+          "poster",
+          "inventory",
+          "current_action",
+          "persona_line"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "generated_at": {
+      "type": "string"
+    },
+    "islands_ref": {
+      "type": "string"
+    },
+    "ledger_head": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "schema_version": {
+      "const": "2.0.0"
+    },
+    "seed": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "tick": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "tick_hz": {
+      "const": 2
+    },
+    "time_override": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "vessels": {
+      "items": {
+        "properties": {
+          "carrying": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "dir": {
+            "enum": [
+              1,
+              -1
+            ]
+          },
+          "docked": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "string"
+          },
+          "route": {
+            "items": {
+              "type": "string"
+            },
+            "maxItems": 2,
+            "minItems": 2,
+            "type": "array"
+          },
+          "u": {
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number"
+          }
+        },
+        "required": [
+          "id",
+          "route",
+          "u",
+          "dir",
+          "carrying",
+          "docked"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "work_queues": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "schema_version",
+    "generated_at",
+    "tick",
+    "tick_hz",
+    "seed",
+    "base_epoch_ms",
+    "islands_ref",
+    "entities",
+    "vessels",
+    "arrivals",
+    "departures",
+    "work_queues",
+    "time_override",
+    "ledger_head",
+    "counts"
+  ],
+  "title": "Project Ultimate world.json v2.0.0",
+  "type": "object"
+}
