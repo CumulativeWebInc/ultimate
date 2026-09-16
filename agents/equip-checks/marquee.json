@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "agent_id": "marquee",
+  "checked_at": "2026-09-16T00:31:56Z",
+  "branch": "agents/tool-registry",
+  "summary": {
+    "total": 4,
+    "passed": 4,
+    "failed": 0
+  },
+  "equipped": true,
+  "checks": [
+    {
+      "tool_id": "sku-hype",
+      "check": "http_get_json",
+      "target": "https://cumulativewebinc.github.io/cwi-learn/hype/item-card.json",
+      "result": "pass",
+      "http_status": 200,
+      "detail": "valid JSON, top-level keys: ['contents', 'equip_instructions', 'item', 'item_card', 'stats']",
+      "seconds": 0.57,
+      "checked_at": "2026-09-16T00:31:55Z"
+    },
+    {
+      "tool_id": "sku-final-cut",
+      "check": "http_get_json",
+      "target": "https://cumulativewebinc.github.io/cwi-learn/final-cut/item-card.json",
+      "result": "pass",
+      "http_status": 200,
+      "detail": "valid JSON, top-level keys: ['contents', 'equip_instructions', 'item', 'item_card', 'pack_count']",
+      "seconds": 0.66,
+      "checked_at": "2026-09-16T00:31:55Z"
+    },
+    {
+      "tool_id": "mcp-product_lookup",
+      "check": "mcp_stdio_call",
+      "target": "agent-deck-mcp::product_lookup args={\"sku\": \"hype\"}",
+      "result": "pass",
+      "http_status": null,
+      "detail": "returned 15426 chars; sanity_ok=True",
+      "seconds": 0.0,
+      "checked_at": "2026-09-16T00:31:53Z"
+    },
+    {
+      "tool_id": "ds-press",
+      "check": "http_get_json",
+      "target": "https://cumulativewebinc.github.io/cwi-learn/datasets/press.jsonl",
+      "result": "pass",
+      "http_status": 200,
+      "detail": "parsed 10 rows",
+      "seconds": 0.51,
+      "checked_at": "2026-09-16T00:31:56Z"
+    }
+  ]
+}

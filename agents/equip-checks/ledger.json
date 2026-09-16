@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "agent_id": "ledger",
+  "checked_at": "2026-09-16T00:32:04Z",
+  "branch": "agents/tool-registry",
+  "summary": {
+    "total": 4,
+    "passed": 4,
+    "failed": 0
+  },
+  "equipped": true,
+  "checks": [
+    {
+      "tool_id": "sku-gear-ledger",
+      "check": "http_get_json",
+      "target": "https://cumulativewebinc.github.io/cwi-learn/agents/ledger.json",
+      "result": "pass",
+      "http_status": 200,
+      "detail": "valid JSON, top-level keys: list",
+      "seconds": 0.62,
+      "checked_at": "2026-09-16T00:32:02Z"
+    },
+    {
+      "tool_id": "sku-scoreboard-chip",
+      "check": "http_get_json",
+      "target": "https://cumulativewebinc.github.io/cwi-learn/scoreboard/item-card.json",
+      "result": "pass",
+      "http_status": 200,
+      "detail": "valid JSON, top-level keys: ['contents', 'equip_instructions', 'item', 'item_card', 'stats']",
+      "seconds": 0.53,
+      "checked_at": "2026-09-16T00:32:03Z"
+    },
+    {
+      "tool_id": "mcp-ledger_read",
+      "check": "mcp_stdio_call",
+      "target": "agent-deck-mcp::ledger_read args={\"limit\": 3}",
+      "result": "pass",
+      "http_status": null,
+      "detail": "returned 1293 chars; sanity_ok=True",
+      "seconds": 0.0,
+      "checked_at": "2026-09-16T00:31:53Z"
+    },
+    {
+      "tool_id": "ds-placements",
+      "check": "http_get_json",
+      "target": "https://cumulativewebinc.github.io/cwi-learn/datasets/placements.jsonl",
+      "result": "pass",
+      "http_status": 200,
+      "detail": "parsed 1 rows",
+      "seconds": 0.46,
+      "checked_at": "2026-09-16T00:32:03Z"
+    }
+  ]
+}

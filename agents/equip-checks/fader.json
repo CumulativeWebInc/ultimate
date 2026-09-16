@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "agent_id": "fader",
+  "checked_at": "2026-09-16T00:32:02Z",
+  "branch": "agents/tool-registry",
+  "summary": {
+    "total": 4,
+    "passed": 4,
+    "failed": 0
+  },
+  "equipped": true,
+  "checks": [
+    {
+      "tool_id": "sku-skin",
+      "check": "http_get_json",
+      "target": "https://cumulativewebinc.github.io/cwi-learn/skin/item-card.json",
+      "result": "pass",
+      "http_status": 200,
+      "detail": "valid JSON, top-level keys: ['contents', 'equip_instructions', 'item', 'item_card', 'skin_count']",
+      "seconds": 0.52,
+      "checked_at": "2026-09-16T00:32:01Z"
+    },
+    {
+      "tool_id": "sku-tally",
+      "check": "http_get_json",
+      "target": "https://cumulativewebinc.github.io/cwi-learn/tally/item-card.json",
+      "result": "pass",
+      "http_status": 200,
+      "detail": "valid JSON, top-level keys: ['contents', 'counter_count', 'item', 'item_card', 'stats']",
+      "seconds": 0.53,
+      "checked_at": "2026-09-16T00:32:01Z"
+    },
+    {
+      "tool_id": "mcp-skin_config",
+      "check": "mcp_stdio_call",
+      "target": "agent-deck-mcp::skin_config args={\"skin\": \"zooted-bloom\"}",
+      "result": "pass",
+      "http_status": null,
+      "detail": "returned 5706 chars; sanity_ok=True",
+      "seconds": 0.0,
+      "checked_at": "2026-09-16T00:31:53Z"
+    },
+    {
+      "tool_id": "ds-tracks",
+      "check": "http_get_json",
+      "target": "https://cumulativewebinc.github.io/cwi-learn/datasets/tracks.jsonl",
+      "result": "pass",
+      "http_status": 200,
+      "detail": "parsed 24 rows",
+      "seconds": 0.52,
+      "checked_at": "2026-09-16T00:32:02Z"
+    }
+  ]
+}

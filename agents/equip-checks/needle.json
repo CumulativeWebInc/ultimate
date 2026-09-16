@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "agent_id": "needle",
+  "checked_at": "2026-09-16T00:31:55Z",
+  "branch": "agents/tool-registry",
+  "summary": {
+    "total": 4,
+    "passed": 4,
+    "failed": 0
+  },
+  "equipped": true,
+  "checks": [
+    {
+      "tool_id": "sku-prospect-scanner",
+      "check": "http_get_json",
+      "target": "https://cumulativewebinc.github.io/cwi-learn/scanner/item-card.json",
+      "result": "pass",
+      "http_status": 200,
+      "detail": "valid JSON, top-level keys: ['contents', 'equip_instructions', 'item', 'item_card', 'stats']",
+      "seconds": 0.47,
+      "checked_at": "2026-09-16T00:31:53Z"
+    },
+    {
+      "tool_id": "sku-first-spin",
+      "check": "http_get_json",
+      "target": "https://cumulativewebinc.github.io/cwi-learn/first-spin/item-card.json",
+      "result": "pass",
+      "http_status": 200,
+      "detail": "valid JSON, top-level keys: ['contents', 'equip_instructions', 'item', 'item_card', 'stats']",
+      "seconds": 0.53,
+      "checked_at": "2026-09-16T00:31:53Z"
+    },
+    {
+      "tool_id": "mcp-catalog_lookup",
+      "check": "mcp_stdio_call",
+      "target": "agent-deck-mcp::catalog_lookup args={\"query\": \"Zooted Zone\"}",
+      "result": "pass",
+      "http_status": null,
+      "detail": "returned 1354 chars; sanity_ok=True",
+      "seconds": 0.0,
+      "checked_at": "2026-09-16T00:31:53Z"
+    },
+    {
+      "tool_id": "ds-tracks",
+      "check": "http_get_json",
+      "target": "https://cumulativewebinc.github.io/cwi-learn/datasets/tracks.jsonl",
+      "result": "pass",
+      "http_status": 200,
+      "detail": "parsed 24 rows",
+      "seconds": 0.63,
+      "checked_at": "2026-09-16T00:31:54Z"
+    }
+  ]
+}
