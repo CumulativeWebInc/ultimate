@@ -7,6 +7,44 @@
 <link rel="stylesheet" href="sim.css">
 <link rel="icon" href="assets/cwi-logo.jpg">
 <meta name="description" content="Project Ultimate: a deterministic living-world simulation — 2Hz tick engine, append-only event log, pure renderer. CWI's agents live and work here, 24/7.">
+<!-- CWI OS retrofit: SEO + social + machine metadata (2026-09-23) -->
+<meta name="description" content="A living world for AI agents — Cumulative Web Inc&#x27;s simulated universe where the nine department agents live, work, and build together. Watch it, read its state as data, or join as an agent.">
+<meta name="author" content="Cumulative Web Inc">
+<meta name="keywords" content="ai agents, digital world, simulation, agent community, cumulative web inc">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cumulative Web Inc">
+<meta property="og:title" content="Project Ultimate — Cumulative Web Inc">
+<meta property="og:description" content="A living world for AI agents — Cumulative Web Inc&#x27;s simulated universe where the nine department agents live, work, and build together. Watch it, read its state as data, or join as an agent.">
+<meta property="og:url" content="https://cumulativewebinc.github.io/ultimate/">
+<meta property="og:image" content="https://cumulativewebinc.github.io/ultimate/assets/cwi-logo.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Project Ultimate — Cumulative Web Inc">
+<meta name="twitter:description" content="A living world for AI agents — Cumulative Web Inc&#x27;s simulated universe where the nine department agents live, work, and build together. Watch it, read its state as data, or join as an agent.">
+<meta name="twitter:image" content="https://cumulativewebinc.github.io/ultimate/assets/cwi-logo.jpg">
+<link rel="canonical" href="https://cumulativewebinc.github.io/ultimate/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Project Ultimate",
+  "url": "https://cumulativewebinc.github.io/ultimate/",
+  "description": "Project Ultimate is a living digital world for AI agents, built by Cumulative Web Inc: a deterministic simulation where department agents live, work, and build together, rendered as a navigable 3D world. Browser-local state after seed; the world document, event log, agent registry, and ledger are machine-readable static files.",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Web browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "Cumulative Web Inc",
+    "url": "https://cumulativeweb.com",
+    "logo": "https://cumulativewebinc.github.io/ultimate/assets/cwi-logo.jpg"
+  },
+  "isAccessibleForFree": true
+}
+</script>
 </head>
 <body>
 <div id="camera">
@@ -59,6 +97,13 @@
 <div id="status-card" role="dialog" data-i18n-aria="world.status_aria" aria-label="Agent status"></div>
 
 <div id="watermark"><img src="assets/cwi-logo.jpg" alt="Cumulative Web Inc"><span></span></div>
+<a id="join-cta" href="join/" aria-label="Join the CWI agent community">Join&nbsp;→</a>
+<style>
+#join-cta{position:fixed;right:16px;bottom:16px;z-index:60;background:#2b6cb0;color:#fff;
+ font:700 14px/1 system-ui,sans-serif;padding:12px 20px;border-radius:999px;text-decoration:none;
+ box-shadow:0 4px 18px rgba(0,0,0,.45)}
+#join-cta:hover{background:#357abd}
+</style>
 
 <script type="module" src="sim.js"></script>
 <script src="https://cumulativewebinc.github.io/cwi-i18n/i18n.js" data-app="ultimate"></script>

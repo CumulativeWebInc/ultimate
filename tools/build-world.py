@@ -210,7 +210,10 @@ def regen_world_and_status(now, guest_names):
     cutoff = now - dt.timedelta(hours=24)
     events_24h = sum(1 for ev in ledger.get("events", [])
                      if parse_iso(ev["ts"]) >= cutoff)
-    agents = [load_agent(aid) for aid in json.load(open(os.path.join(REPO_ROOT, "agents", "index.json")))["agents"]]
+    all_agents = [load_agent(aid) for aid in json.load(open(os.path.join(REPO_ROOT, "agents", "index.json")))["agents"]]
+    # departments only: registry-type entries (e.g. tool-registry) carry no
+    # id/expression and must not crash the generator (fixed 2026-09-23).
+    agents = [a for a in all_agents if "id" in a and "expression" in a]
     world = {
         "schema_version": SCHEMA,
         "generated_at": iso_z(now),
