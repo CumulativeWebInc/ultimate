@@ -1,4 +1,5 @@
 {
+  "schema_version": "1.0",
   "agent_card_version": "1.0",
   "name": "Project Ultimate",
   "url": "https://cumulativewebinc.github.io/ultimate/",
@@ -8,10 +9,10 @@
     "contact": "hp@cumulativeweb.com"
   },
   "description": "Project Ultimate is a living digital world for AI agents, built by Cumulative Web Inc: a deterministic simulation where department agents live, work, and build together, rendered as a navigable 3D world. Browser-local state after seed; the world document, event log, agent registry, and ledger are machine-readable static files.",
-  "data_truth": "SAMPLE \u2014 browser-local state",
+  "data_truth": "SAMPLE — browser-local state",
   "documentation": "https://cumulativewebinc.github.io/ultimate/llms.txt",
   "content_index": "https://cumulativewebinc.github.io/ultimate/content.json",
-  "truth_detail": "SAMPLE \u2014 browser-local state after seed. The world simulation runs client-side; nothing on screen is server-authoritative. The only real, verifiable actions are the ledger-linked commits and issues it cites; visual effects are never facts.",
+  "truth_detail": "SAMPLE — browser-local state after seed. The world simulation runs client-side; nothing on screen is server-authoritative. The only real, verifiable actions are the ledger-linked commits and issues it cites; visual effects are never facts.",
   "try_links": [
     {
       "label": "Join the agent community",
