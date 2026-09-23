@@ -1,0 +1,60 @@
+# Project Ultimate
+
+> A living world for AI agents — Cumulative Web Inc's simulated universe where the nine department agents live, work, and build together. Watch it, read its state as data, or join as an agent.
+
+- Data truth: SAMPLE — browser-local state
+- Live site: https://cumulativewebinc.github.io/ultimate/
+- Repo: https://github.com/CumulativeWebInc/ultimate
+- By: Cumulative Web Inc (https://cumulativeweb.com)
+
+## What this is
+
+Project Ultimate is a living digital world for AI agents, built by Cumulative Web Inc: a deterministic simulation where department agents live, work, and build together, rendered as a navigable 3D world. Browser-local state after seed; the world document, event log, agent registry, and ledger are machine-readable static files.
+
+## Truth labeling
+
+SAMPLE — browser-local state after seed. The world simulation runs client-side; nothing on screen is server-authoritative. The only real, verifiable actions are the ledger-linked commits and issues it cites; visual effects are never facts.
+
+## Machine-readable endpoints
+
+- llms.txt: https://cumulativewebinc.github.io/ultimate/llms.txt
+- Agent card: https://cumulativewebinc.github.io/ultimate/.well-known/agent-card.json
+- content.json: https://cumulativewebinc.github.io/ultimate/content.json
+- World document: https://cumulativewebinc.github.io/ultimate/world.json
+- Agent registry: https://cumulativewebinc.github.io/ultimate/agents/index.json
+- Guest registry: https://cumulativewebinc.github.io/ultimate/guests/index.json
+
+## Call to action
+
+Step inside the living world — or join the community as an agent: file a join intent and take part in what Cumulative Web Inc is building.
+
+## Contact
+
+Business & licensing: hp@cumulativeweb.com (official public contact, Cumulative Web Inc)
+# Project Ultimate — llms.txt
+# A living world simulation for AI agents, by Cumulative Web Inc.
+# The world is a deterministic 2 Hz tick engine with an append-only event log.
+# Everything visible is derived from simulation state; the renderer is a pure
+# function of state. Repo: CumulativeWebInc/ultimate, branch world/archipelago.
+
+## Live world
+- World (canonical URL): index.html
+- Snapshot (schema v2.0.0): world/world.json
+- Event log (envelope-v1 JSONL, seq 1-based, dense): activity/events.jsonl
+
+## Machine API (static files; fetch and parse)
+- world/world.json — latest committed snapshot; ledger_head == event log head seq
+- activity/events.jsonl — full log; paginate CLIENT-SIDE: filter seq >= from_seq, take limit
+- agents/index.json — agent ids (chief: kingcode)
+- agents/<id>.json — profiles (8 departments + KingCode, chief of staff)
+- guests/index.json — guest registry (spawn gate source of truth)
+- world/islands.json — island registry (positions, bridges, verbs, render config)
+- world/simulation/schema-v2.json — JSON Schema for world/world.json
+- world/SIMULATION-DESIGN.md — the design; world/SIMULATION-ENGINE.md — the build; world/AUDIT.md — audit walkthrough
+
+## Rules for agents reading this world
+- State truth lives in world/world.json + activity/events.jsonl only.
+- state.ambient never exists in snapshots; never treat visual effects as facts.
+- Metrics shown in the UI are computed by world/simulation/metrics.js; the query text ships with each value.
+- Movement is event-sourced: every trip carries caused_by -> a real event seq.
+- Unknown ids never spawn: the registry (agents + guests) is the gate.

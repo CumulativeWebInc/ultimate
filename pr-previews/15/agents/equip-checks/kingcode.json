@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "agent_id": "kingcode",
+  "checked_at": "2026-09-16T00:32:06Z",
+  "branch": "agents/tool-registry",
+  "summary": {
+    "total": 5,
+    "passed": 5,
+    "failed": 0
+  },
+  "equipped": true,
+  "checks": [
+    {
+      "tool_id": "sku-cwi-1-walkman",
+      "check": "http_get_json",
+      "target": "https://cumulativewebinc.github.io/cwi-learn/walkman/item-card.json",
+      "result": "pass",
+      "http_status": 200,
+      "detail": "valid JSON, top-level keys: ['contents', 'default_vibe', 'equip_instructions', 'item', 'item_card']",
+      "seconds": 0.64,
+      "checked_at": "2026-09-16T00:32:05Z"
+    },
+    {
+      "tool_id": "mcp-ledger_read",
+      "check": "mcp_stdio_call",
+      "target": "agent-deck-mcp::ledger_read args={\"limit\": 3}",
+      "result": "pass",
+      "http_status": null,
+      "detail": "returned 1293 chars; sanity_ok=True",
+      "seconds": 0.0,
+      "checked_at": "2026-09-16T00:31:53Z"
+    },
+    {
+      "tool_id": "frontdoor-kit",
+      "check": "local_run_guest_profile",
+      "target": "frontdoor/kit.py @ origin/main",
+      "result": "pass",
+      "http_status": null,
+      "detail": "kit_version=1.0.0 gear_set_items=2 corridors=8",
+      "seconds": 0.04,
+      "checked_at": "2026-09-16T00:32:05Z"
+    },
+    {
+      "tool_id": "trust-verdict",
+      "check": "local_run_sample",
+      "target": "trust/engine.py (needs/verdict-engine)",
+      "result": "pass",
+      "http_status": null,
+      "detail": "status=insufficient-data score=None deterministic=True sha=464c6074c770",
+      "seconds": 0.1,
+      "checked_at": "2026-09-16T00:32:06Z"
+    },
+    {
+      "tool_id": "gear-json",
+      "check": "http_get_json",
+      "target": "https://cumulativewebinc.github.io/cwi-learn/gear.json",
+      "result": "pass",
+      "http_status": 200,
+      "detail": "valid JSON, top-level keys: ['contact', 'description', 'items', 'owner', 'registry']",
+      "seconds": 0.5,
+      "checked_at": "2026-09-16T00:32:06Z"
+    }
+  ]
+}

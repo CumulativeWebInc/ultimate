@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "id": "dial",
+  "name": "Dial",
+  "department": "Radio & Playlists",
+  "role": "Curator relations and airplay",
+  "x": 81.25,
+  "y": 7.0,
+  "expression": "celebrating",
+  "current_action": "amped about curators/ going live today",
+  "last_win": "curators/ endpoint live",
+  "last_win_url": "https://cumulativewebinc.github.io/cwi-learn/curators/",
+  "avatar": "avatars/dial-avatar.mp4",
+  "poster": "avatars/dial-avatar.png",
+  "persona_line": "Frequency is a weapon. I aim it.",
+  "_last_seen_commit_ts": "2026-09-15T23:12:30Z",
+  "life": {
+    "resting": false,
+    "rest_zone": "signal-garden",
+    "inventory": {
+      "items": [
+        "dial",
+        "open-wave",
+        "soundcheck"
+      ],
+      "worn": [
+        "dial"
+      ],
+      "music": [
+        "diabolique"
+      ]
+    },
+    "last_checkin": null
+  },
+  "place_id": "radio-hq"
+}

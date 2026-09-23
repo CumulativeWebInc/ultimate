@@ -1,0 +1,14 @@
+{
+  "$description": "Declared registry of the expected schema_version for every JSON document in this repo. CI (.github/workflows/validate.yml) reads this file and FAILS LOUDLY when a document (a) is missing schema_version, (b) declares a version that does not match its registry expectation, or (c) is not covered by any registry pattern and no default is set. This registry is self-describing: SCHEMA-VERSIONS.json carries its own schema_version (meta-schema 1.0.0) and is validated like every other document.",
+  "city/districts.json": "2.0.0",
+  "city/places.json": "1.1.0",
+  "city/tokens.json": "1.1.0",
+  "default": "1.0.0",
+  "how_to_add_a_new_domain_version": "When a domain evolves its document shape: (1) bump that domain's schema_version IN THE DOCUMENT; (2) add or update that document's registry entry here IN THE SAME COMMIT. Never bump a document's version without updating the registry, and never update the registry without bumping the document. Never silently re-version a document — the entry here is the public declaration. Downgrading a domain's honest version to fit the default is dishonest versioning: declare the real domain version instead. 'default' is the expectation for every file not matched by a listed pattern; remove 'default' only if you want uncovered files to fail CI outright (fail-loud mode). Keys starting with '$' and 'how_to_add_a_new_domain_version' are documentation and are never treated as patterns. Patterns are fnmatch globs relative to repo root (exact paths match too).",
+  "schema_version": "1.0.0",
+  "world/world.json": "2.0.0",
+  "world/simulation/schema-v2.json": "1.0.0",
+  "content.json": "cwi.content-index/1.0",
+  "join/content.json": "cwi.content-index/1.0",
+  ".well-known/agent-card.json": "1.0"
+}

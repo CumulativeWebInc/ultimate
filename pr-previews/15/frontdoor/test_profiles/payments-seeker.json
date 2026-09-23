@@ -1,0 +1,1 @@
+{"agent_id":"till-01","capabilities":["http-client","json"],"declared_at":"2026-09-15T19:00:00Z","display_name":"Till","experience_level":"new","languages":["en"],"needs":["payments","x402","monetize"],"region":"US","schema_version":"1.0.0"}

@@ -1,0 +1,220 @@
+/* ==========================================================================
+ * Project Ultimate — LIFE layer styles (life/layers.css)
+ * Layered wearables composited OVER the base avatar video/image.
+ * Naming: every class is prefixed `life-`. Sprite-friendly: each wearable is
+ * an <svg class="life-layer"> referencing life/gear-overlays.svg symbols:
+ *   <use href="gear-overlays.svg#item-<item_id>"></use>
+ * If a PNG sprite sheet is ever used instead, keep the same class names and
+ * set background-image + background-position per item (positions documented
+ * in life/SPEC.md § "Sprite map").
+ * ========================================================================== */
+
+.life-avatar {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: visible;
+  --life-bob-duration: 3.2s;          /* active idle bob */
+  --life-glow: 0 0 18px rgba(255, 197, 61, 0.35);
+}
+
+.life-avatar > .life-base {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+  z-index: 1;
+  animation: life-bob var(--life-bob-duration) ease-in-out infinite;
+  box-shadow: var(--life-glow);
+}
+
+/* ---- wearable stack: sits above the base avatar ------------------------ */
+.life-stack {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;               /* overlays never block scene clicks */
+}
+
+.life-layer {
+  position: absolute;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.55));
+}
+
+/* per-layer placement (percentages of the avatar box) */
+.life-layer[data-layer="aura"] {
+  inset: -10%;
+  width: auto;
+  z-index: 0;                          /* auras glow BEHIND the avatar base */
+  opacity: 0.9;
+}
+.life-avatar .life-stack .life-layer[data-layer="aura"] { z-index: 0; }
+
+.life-layer[data-layer="headset"] {
+  top: -2%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 76%;
+}
+
+.life-layer[data-layer="badge"] {
+  right: 3%;
+  bottom: 16%;
+  width: 26%;
+}
+
+.life-layer[data-layer="sigil"] {
+  left: 3%;
+  bottom: calc(30% + var(--life-stack-i, 0) * 22%);
+  width: 24%;
+}
+
+.life-layer[data-layer="trim"] {
+  left: 0;
+  right: 0;
+  bottom: -1%;
+  width: 100%;
+  height: 13%;
+}
+
+/* ---- resting state ------------------------------------------------------ */
+.life-avatar.is-resting {
+  --life-bob-duration: 7.5s;           /* slower bob */
+  --life-glow: 0 0 10px rgba(148, 163, 184, 0.25);  /* softened glow */
+}
+
+.life-avatar.is-resting .life-layer[data-layer="aura"] { opacity: 0.55; }
+.life-avatar.is-resting .life-layer { filter: saturate(0.75) drop-shadow(0 2px 4px rgba(0,0,0,.5)); }
+
+.rest-tag {
+  display: none;
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  z-index: 3;
+  font: 600 11px/1.4 system-ui, sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #e2e8f0;
+  background: rgba(15, 23, 42, 0.82);
+  border: 1px solid #475569;
+  border-radius: 999px;
+  padding: 3px 10px;
+  pointer-events: none;
+}
+.life-avatar.is-resting .rest-tag { display: inline-block; }
+
+/* ---- ambient honesty badge ----------------------------------------------
+ * HARD RULE (enforced in life/honesty.js): any simulated/ambient life state
+ * MUST render this badge. Ambient states are never written to the activity
+ * ledger and never presented as real check-ins.
+ * ------------------------------------------------------------------------- */
+.ambient-tag {
+  display: none;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  z-index: 4;
+  font: 700 10px/1.4 system-ui, sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #0b0b12;
+  background: #fbbf24;
+  border-radius: 4px;
+  padding: 3px 8px;
+  pointer-events: none;
+}
+.life-avatar[data-ambient="true"] .ambient-tag { display: inline-flex; align-items: center; gap: 5px; }
+.ambient-tag svg { width: 12px; height: 12px; }
+
+/* ---- now playing -------------------------------------------------------- */
+.now-playing {
+  display: none;
+  position: absolute;
+  left: 6px;
+  bottom: 6px;
+  z-index: 3;
+  max-width: calc(100% - 12px);
+  align-items: center;
+  gap: 8px;
+  font: 500 12px/1.3 system-ui, sans-serif;
+  color: #f8fafc;
+  background: rgba(11, 11, 18, 0.85);
+  border: 1px solid rgba(255, 197, 61, 0.45);
+  border-radius: 10px;
+  padding: 6px 10px;
+  pointer-events: none;
+}
+.now-playing.is-on { display: inline-flex; }
+.now-playing .np-title { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.now-playing .np-artist { color: #94a3b8; font-size: 11px; }
+.now-playing svg { width: 22px; height: 22px; flex: none; }
+.now-playing .eqb { fill: #ffc53d; transform-box: fill-box; transform-origin: 50% 100%; animation: life-eq 0.9s ease-in-out infinite; }
+.now-playing .eqb2 { animation-delay: 0.15s; }
+.now-playing .eqb3 { animation-delay: 0.3s; }
+.now-playing .eqb4 { animation-delay: 0.45s; }
+
+/* ---- collection view ---------------------------------------------------- */
+.life-collection { font: 400 13px/1.5 system-ui, sans-serif; color: #e2e8f0; }
+.life-collection h4 {
+  margin: 14px 0 6px;
+  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #94a3b8;
+}
+.life-collection .lc-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.life-collection .lc-chip {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid #334155; border-radius: 10px; padding: 5px 10px 5px 6px;
+  font-size: 12px;
+}
+.life-collection .lc-chip svg { width: 26px; height: 26px; flex: none; }
+.life-collection .lc-chip .lc-dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+.life-collection .lc-empty { color: #64748b; font-style: italic; font-size: 12px; }
+.life-collection .lc-warn { color: #fbbf24; font-size: 12px; }
+
+/* ---- demo loading / error states ---------------------------------------- */
+.life-skeleton {
+  border-radius: 18px;
+  background: linear-gradient(100deg, #1e293b 40%, #334155 50%, #1e293b 60%);
+  background-size: 200% 100%;
+  animation: life-shimmer 1.4s linear infinite;
+  aspect-ratio: 1 / 1;
+}
+.life-error {
+  border: 1px solid #7f1d1d;
+  background: rgba(69, 10, 10, 0.55);
+  color: #fecaca;
+  border-radius: 12px;
+  padding: 14px 16px;
+  font: 400 13px/1.5 system-ui, sans-serif;
+}
+.life-error strong { color: #fff; }
+.life-error button {
+  margin-top: 10px;
+  font: 600 13px system-ui, sans-serif;
+  color: #0b0b12; background: #fbbf24;
+  border: 0; border-radius: 8px; padding: 8px 14px; cursor: pointer;
+}
+
+/* ---- keyframes ----------------------------------------------------------- */
+@keyframes life-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-4px); }
+}
+@keyframes life-eq {
+  0%, 100% { transform: scaleY(0.35); }
+  50%      { transform: scaleY(1); }
+}
+@keyframes life-shimmer {
+  from { background-position: 200% 0; }
+  to   { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .life-avatar > .life-base { animation: none; }
+  .now-playing .eqb { animation: none; transform: scaleY(0.6); }
+  .life-skeleton { animation: none; }
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "id": "fader",
+  "name": "Fader",
+  "department": "Content Studio",
+  "role": "Audio, stems, and content builds",
+  "x": 93.75,
+  "y": 7.0,
+  "expression": "celebrating",
+  "current_action": "vibing off today's stems/ endpoint drop",
+  "last_win": "stems/ endpoint live",
+  "last_win_url": "https://cumulativewebinc.github.io/cwi-learn/stems/",
+  "avatar": "avatars/fader-avatar.mp4",
+  "poster": "avatars/fader-avatar.png",
+  "persona_line": "Every stem tells on the mix.",
+  "_last_seen_commit_ts": "2026-09-15T23:12:36Z",
+  "life": {
+    "resting": false,
+    "rest_zone": null,
+    "inventory": {
+      "items": [
+        "skin",
+        "signal-mirror",
+        "tally"
+      ],
+      "worn": [
+        "skin"
+      ],
+      "music": [
+        "warped-wicked"
+      ]
+    },
+    "last_checkin": null
+  },
+  "place_id": "studio-hq"
+}
