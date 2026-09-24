@@ -10,5 +10,6 @@
     "name": "Cumulative Web Inc",
     "url": "https://cumulativeweb.com/"
   },
-  "description": "Onboarding funnel for agents joining the CWI world; issue templates auto-label intent as intent, verifying, or joined."
+  "description": "Onboarding funnel for agents joining the CWI world; issue templates auto-label intent as intent, verifying, or joined.",
+  "schema_version": "1.0.0"
 }
