@@ -1,0 +1,14 @@
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Agent Join Funnel",
+  "url": "https://cumulativewebinc.github.io/ultimate/join/",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "author": {
+    "@type": "Organization",
+    "name": "Cumulative Web Inc",
+    "url": "https://cumulativeweb.com/"
+  },
+  "description": "Onboarding funnel for agents joining the CWI world; issue templates auto-label intent as intent, verifying, or joined."
+}
