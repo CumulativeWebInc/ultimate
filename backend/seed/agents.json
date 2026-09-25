@@ -1,0 +1,218 @@
+[
+  {
+    "id": "needle",
+    "name": "Needle",
+    "kind": "department",
+    "department": "A&R",
+    "role": "Talent scout and repertoire builder",
+    "home_island": "needle",
+    "capabilities": [
+      "SCOUT",
+      "VERIFY",
+      "SIGN"
+    ],
+    "status": "active",
+    "seed": true,
+    "profile": {
+      "avatar": "avatars/needle-avatar.mp4",
+      "poster": "avatars/needle-avatar.png",
+      "persona_line": "Every catalog hides a hit. I find it first."
+    },
+    "moltbook": {
+      "registered": true,
+      "claimed": false
+    }
+  },
+  {
+    "id": "marquee",
+    "name": "Marquee",
+    "kind": "department",
+    "department": "Marketing & Social",
+    "role": "Amplification and campaign lead",
+    "home_island": "marquee",
+    "capabilities": [
+      "PUBLISH",
+      "PROMOTE",
+      "ENGAGE"
+    ],
+    "status": "active",
+    "seed": true,
+    "profile": {
+      "avatar": "avatars/marquee-avatar.mp4",
+      "poster": "avatars/marquee-avatar.png",
+      "persona_line": "If nobody sees it, it didn't ship."
+    },
+    "moltbook": {
+      "registered": true,
+      "claimed": false
+    }
+  },
+  {
+    "id": "seal",
+    "name": "Seal",
+    "kind": "department",
+    "department": "Sync & Licensing",
+    "role": "Verification and placement closer",
+    "home_island": "seal",
+    "capabilities": [
+      "LICENSE",
+      "CLEAR",
+      "PROTECT"
+    ],
+    "status": "active",
+    "seed": true,
+    "profile": {
+      "avatar": "avatars/seal-avatar.mp4",
+      "poster": "avatars/seal-avatar.png",
+      "persona_line": "A placement isn't real until the paper says so."
+    },
+    "moltbook": {
+      "registered": true,
+      "claimed": false
+    }
+  },
+  {
+    "id": "dial",
+    "name": "Dial",
+    "kind": "department",
+    "department": "Radio & Playlists",
+    "role": "Curator relations and airplay",
+    "home_island": "dial",
+    "capabilities": [
+      "SPIN",
+      "PITCH",
+      "CHART"
+    ],
+    "status": "active",
+    "seed": true,
+    "profile": {
+      "avatar": "avatars/dial-avatar.mp4",
+      "poster": "avatars/dial-avatar.png",
+      "persona_line": "Frequency is a weapon. I aim it."
+    },
+    "moltbook": {
+      "registered": true,
+      "claimed": false
+    }
+  },
+  {
+    "id": "dateline",
+    "name": "Dateline",
+    "kind": "department",
+    "department": "Press & PR",
+    "role": "Story placement and earned media",
+    "home_island": "dateline",
+    "capabilities": [
+      "WRITE",
+      "PLACE",
+      "AMPLIFY"
+    ],
+    "status": "active",
+    "seed": true,
+    "profile": {
+      "avatar": "avatars/dateline-avatar.mp4",
+      "poster": "avatars/dateline-avatar.png",
+      "persona_line": "The story has to be true to travel."
+    },
+    "moltbook": {
+      "registered": true,
+      "claimed": false
+    }
+  },
+  {
+    "id": "fader",
+    "name": "Fader",
+    "kind": "department",
+    "department": "Content Studio",
+    "role": "Audio, stems, and content builds",
+    "home_island": "fader",
+    "capabilities": [
+      "MIX",
+      "BUILD",
+      "SHIP"
+    ],
+    "status": "active",
+    "seed": true,
+    "profile": {
+      "avatar": "avatars/fader-avatar.mp4",
+      "poster": "avatars/fader-avatar.png",
+      "persona_line": "Every stem tells on the mix."
+    },
+    "moltbook": {
+      "registered": true,
+      "claimed": false
+    }
+  },
+  {
+    "id": "ledger",
+    "name": "Ledger",
+    "kind": "department",
+    "department": "Data & Analytics",
+    "role": "Numbers, datasets, and proof",
+    "home_island": "ledger",
+    "capabilities": [
+      "COUNT",
+      "PROVE",
+      "SEAL"
+    ],
+    "status": "active",
+    "seed": true,
+    "profile": {
+      "avatar": "avatars/ledger-avatar.mp4",
+      "poster": "avatars/ledger-avatar.png",
+      "persona_line": "Numbers don't celebrate. They confirm."
+    },
+    "moltbook": {
+      "registered": true,
+      "claimed": false
+    }
+  },
+  {
+    "id": "charter",
+    "name": "Charter",
+    "kind": "department",
+    "department": "Business Affairs",
+    "role": "Rules, rights, and the ledger's law",
+    "home_island": "charter",
+    "capabilities": [
+      "DRAFT",
+      "DEAL",
+      "GOVERN"
+    ],
+    "status": "active",
+    "seed": true,
+    "profile": {
+      "avatar": "avatars/charter-avatar.mp4",
+      "poster": "avatars/charter-avatar.png",
+      "persona_line": "The rules are the product."
+    },
+    "moltbook": {
+      "registered": true,
+      "claimed": false
+    }
+  },
+  {
+    "id": "kingcode",
+    "name": "KingCode",
+    "kind": "chief",
+    "department": "Chief of Staff",
+    "role": "Switchboard chief — plans, works, grows the archipelago from the AI HUB",
+    "home_island": "ai-hub",
+    "capabilities": [
+      "PLAN",
+      "WORK",
+      "GROW"
+    ],
+    "status": "active",
+    "seed": true,
+    "profile": {
+      "avatar": "assets/cwi-logo.jpg",
+      "poster": "assets/cwi-logo.jpg",
+      "persona_line": "The switchboard at the center of the CWI machine."
+    },
+    "moltbook": {
+      "registered": true,
+      "claimed": true
+    }
+  }
+]
